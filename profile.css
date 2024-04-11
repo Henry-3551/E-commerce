@@ -1,0 +1,343 @@
+body{
+  background-image: url("index-bg.jpg");
+  background-color: rgba(30,30,30,1);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+h2{
+  display: inline;
+  position: absolute;
+  top: 25%;
+  align-items: center;
+  color: rgba(255,255,255,0.6);
+  font-size: .95rem;
+  font-weight: 400;
+}
+h2 #welcome{
+  color: rgba(255,255,255,0.6);
+}
+.profile{
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.profile-image{
+  position: relative;
+  display: inline-block;
+  background-color: skyblue;
+  background: url("a2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 45px;
+  height: 45px;
+  border: 4px double royalblue;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+ #span{
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: orangered;
+  border: 1px solid rgba(0,0,0,0.6);
+  border-radius: 50%;
+}
+#span.active{
+  background: limegreen;
+}
+.profile .cs-1{
+  position: absolute;
+  top: 10%;
+  right: 0px;
+  background: url("cs-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;background-position: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  
+}
+
+main{
+  padding: 20px;
+  padding-top: 3rem;
+  min-height: 100vh;
+}
+h4{
+  color: white;
+  font-size: .7rem;
+  font-weight: normal;
+}
+.balance-section{
+  position: relative;
+  padding: 1rem;
+  background-image: url("profile-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255,255,255,0.6);
+  backdrop-filter: blur(3px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  min-height: 25vh;
+  border-radius: 1rem;
+  z-index: 0;
+  overflow: hidden;
+}
+.balance-section::before {
+  content: "";
+  position: absolute;
+  height: auto;
+  width: 70px;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  top: 0;
+  left: 0px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.balance-section::after{
+  content: "";
+  position: absolute;
+  height: auto;
+  width: 70px;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  right: 30px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.balance-box{
+  width: 100%;
+  text-align: left;
+}
+.balance-box h4{
+  margin-bottom: 5px;
+}
+.balance-box p{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: purple;
+}
+
+.entice{
+  background-image: url("wallet-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  border-radius: 20px;
+}
+
+.transact-box{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+.transact-box button{
+  padding: 7px 14px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+#btn1{
+  transition-duration: .3s;
+  background: whitesmoke;
+  color: orange;
+}
+
+#btn2{
+  border: none;
+  color: whitesmoke;
+  opacity: 1;
+  margin-left: .9rem;
+  background: linear-gradient(to left, purple, royalblue);
+}
+#btn1:active, #btn2:active{
+  opacity: .7;
+}
+
+.quick-links{
+  background: rgba(255,255,255,0.1);
+  min-height: 70px;
+  max-width: 480px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.quick-links a{
+  color: rgba(255,255,255,0.6);
+  font-size: 10px;
+}
+.quick-links div{
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 5px;
+}
+.quick-links .ql4 {
+  background-image: url("telegram.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.quick-links .ql3{
+  background-image: url("whatsapp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.quick-links .ql2 {
+  background-image: url("withdraw.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.quick-links .ql1 {
+  background-image: url("depo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list{
+  position: relative;
+  padding: 20px;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+}
+.list::after {
+  content: "";
+  position: absolute;
+  height: auto;
+  width: 100px;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  top: 0;
+  right: 30px;
+  transform: rotate(45deg);
+  z-index: -10;
+}
+
+.list #receipt, #file, #bank, #service, #card, #earn, #settings{
+  left: 0;
+  font-size: 12px;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+}
+ul li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background: rgb(32,32,32);
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.6);
+  font-size: .8rem;
+  line-height: 2.2;
+  padding: 5px 16px;
+  border-radius: 1rem;
+  border: .5px solid rgba(0,0,0,0.3);
+  transition-duration: .1s;
+}
+
+ul li:hover{
+  color: royalblue;
+  /*background: rgba(65,105,225,0.07);*/
+}
+li img.dicons{
+  margin-top: 0;
+  float: left;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+  width: 20px;
+  height: 20px;
+}
+
+li img.darrows{
+  position: absolute;
+  right: 16px;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+  width: 12px;
+  height: 12px;
+}
+
+
+
+li:hover p{
+  margin-left: 40px;
+  transition-duration: .1s;
+}
+ul li p{
+  margin-left: 30px;
+}
+#logout{
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 5rem;
+  width: 100%;
+  padding: 10px;
+  background-image: linear-gradient(to left, purple, royalblue);
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition-duration: .3s;
+}
+#logout:hover{
+  background: deepskyblue;
+}
+#logout img{
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+.settings-modal{
+  display: none;
+  position: fixed;
+  background-color: wheat;
+  height: 70vh;
+  width: 80%;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
