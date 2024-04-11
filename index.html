@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page - Primetek</title>
+  <link rel="stylesheet" href="common-style.css">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+
+<body id="body" onmousedown="return false" onselectstart="return false">
+  
+  
+  <header id="header">
+    <nav>
+      <div class="nav current">
+        <!--<i class="fi fi-rr-home"></i>-->
+
+        <a href="index.html"><h1><span>P</span>rimetek</h1></a>
+
+        <a href="notification.html">
+        <i id="fi-bell" class="fi fi-rr-bell"></i></a>
+      </div>
+    </nav>
+    
+     <div class="swiper-container">
+    
+       <div class="swiper-wrapper">
+    
+         <div id="swiper1" class="swiper-slide">
+    
+         </div>
+    
+         <div id="swiper2" class="swiper-slide">
+    
+         </div>
+    
+         <div id="swiper3" class="swiper-slide">
+    
+         </div>
+    
+         <!-- Add more slides as needed -->
+       </div>
+    
+       <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+       <div class="swiper-pagination"></div>
+     </div>
+    
+    
+     <script>
+       var swiper = new Swiper('.swiper-container', {
+         direction: 'horizontal',
+         loop: true,
+    
+         scrollbar: {
+           el: '.swiper-scrollbar',
+           draggable: true,
+         },
+    
+         effect: 'flip',
+    
+         autoplay: {
+           delay: 2500,
+         },
+    
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+         pagination: {
+           el: '.swiper-pagination',
+           clickable: true,
+           /*type: 'bullet',*/
+         },
+         // Add more options as needed
+       });
+     </script>
+     
+     <section class="deposit-slide">
+       
+     </section>
+  </header>
+  
+  <main>
+    <div id="about">
+      
+      <h3>About Us</h3>
+      <p>We are a tech startup company. Founded by top tech genuises from colleges all over Nigeria. </p>
+    </div>
+    
+    <div>
+      <div id="mission"></div>
+      <h3>Our Mission</h3>
+      <p>The goal for building this amazing platform is to increase the standard of living in the society and also build a sustainable investment platform people can trust. We assure you that if you follow all the rules and instructions on this platform, you will earn a stable income for a long period of time. Isn't that great?!😚
+      </p>
+    </div>
+    
+    <div>
+      <div id="what-we-do"></div>
+      <h3>What We Do</h3>
+      <p>Primetek is a proprietary ecommerce platform in which customers, buyers and retailers purchase available products at cheaper rate and get profit after a due cycle or period.
+    </div>
+    
+    <div>
+      <div id="guarantee"></div>
+      <h3>Our Guarantee</h3>
+      <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption.</p>
+    </div>
+    
+     <section class="testimonials hiddenTop">
+        <div id="testimonial"></div>
+       <h3 id="h3-intro">Testimonials</h3>
+    
+       <h4>What do customers say about Primetek ?</h4>
+        
+      <div class="wrapper">
+        <div class="carousel owl-carousel">
+          <div>
+            <span id="av1" class="avatar"></span>
+            <span id="intro">
+              <i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Abbie Salamatu</p>
+            
+            <p>Awesome program. Professional and very punctual with payments. Really trusted platform with a special value for users. Thanks Primetek ventures for the good experience.</p>
+          </div>
+          
+          <div>
+            <span id="av2" class="avatar"></span>
+            <span id="intro"><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Donald Ubong</p>
+            
+            <p>Primetek is a reliable platform to earn income just by investing in affordable products.  It's not my frst time of using Primetek and it won't be my last.</p>
+          </div>
+          
+          <div>
+            <span id="av3" class="avatar"></span>
+            <span id="intro"><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Ahmed Bilal</p>
+            
+            <p>This startup is the best so far. Although more efforts has to be added to ensure its growth and scalability. Well done to the founders👍</p>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(".carousel").owlCarousel({
+          margin: 20,
+          loop: true,
+          autoplay: false,
+          //autoplayTimeout: 2500,
+          //autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+              nav: false
+            },
+            600: {
+              items: 2,
+              nav: false
+            },
+            1000: {
+              items: 3,
+              nav: false
+            }
+          }
+        });
+      </script>
+    
+     </section>
+     
+     <div class="contact">
+       <h3>Contact</h3>
+       <p>Email:</p>
+       <a href="mailto:primetekventures@gmail.com">primetekventures@gmail.com</a>
+     </div>
+     
+  </main>
+  
+  <footer>
+    
+  </footer>
+  
+   <section class="horizontal-nav">
+      <a href="index.html"><div class="current">
+        <i class="fi fi-rr-home"></i>
+        <h5>HOME</h5>
+      </div></a>
+      
+      <a href="product.html"><div>
+        <i class="fi fi-rr-box-open"></i>
+        <h5>PRODUCT</h5>
+      </div></a>
+      
+      <a href="deposit.html"><div>
+        <i class="fi fi-rr-money-from-bracket"></i>
+        <h5>DEPOSIT</h5>
+      </div></a>
+      
+      <a href="reward.html"><div>
+        <i class="fi fi-rr-trophy-star"></i>
+        <h5>REWARD</h5>
+      </div></a>
+      
+      <a href="profile.html"><div>
+        <i class="fi fi-rr-circle-user"></i>
+        <h5>PROFILE</h5>
+      </div></a>
+      
+    </section>
+      
+      <div class="entice-modal">
+        <div class="entice-content">
+          <h4>Welcome to Primetek🎉</h4>
+          
+          <div class="sub-content">
+            <h6 id="title">Primetek was Officially launched on March 31st, 2024🚀🚀</h6>
+          
+          
+            <h6>Kindly follow our WhatsApp and Telegram channels for hints & updates here👇👇</h6>
+            
+            <h6></h6>
+            <h6></h6>
+          </div>
+          <img onclick="location.href='https://whatsapp.com/channel/0029VaKllEqCXC3BBa7gUN37'" src="whatsapp.png" alt="">
+          
+          <img onclick="location.href='https://t.me/+5896aBwIzm45ZThk'" id="tg" src="telegram.png" alt="">
+        </div>
+        
+        <div class="entice-close" onclick="closeMd()">
+          <span class="material-icons">
+            close
+          </span>
+        </div>
+      </div>
+ 
+    
+      <script>
+        function closeMd(){
+          const homeModal = document.querySelector('.entice-modal')
+          
+          homeModal.classList.add('active');
+        }
+      </script>
+      
+      <div class="card card-3">
+        <h5>Login first!</h5>
+        <div class="loader"></div>
+      </div>
+      
+   <!-- <script>
+       if (sessionStorage.getItem("userName") === null) {
+      
+         function prompt() {
+           thirdModal.style.display = 'block';
+           body.classList.add("active");
+         }
+      
+         function redirectUser() {
+           window.location.href = 'signup.html'
+         }
+      
+         let a = setTimeout(prompt, 3000);
+      
+         let b = setTimeout(redirectUser, 3500);
+       };
+    </script>-->
+    
+    <script src="main.js"></script>
+
+</body>
+
+</html>
