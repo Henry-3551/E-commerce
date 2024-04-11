@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signup - Primetek</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("index-bg.jpg");
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(28,28,28);
+      color: whitesmoke;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      padding: 30px;
+    }
+    header{
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h3 {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    h1{
+      position: relative;
+    }
+    h1::after{
+      content: "";
+      position: absolute;
+      top: 1.4rem;
+      width: 20%;
+      height: 2px;
+      background: yellow;
+    }
+    form{
+      color: whitesmoke;
+      width: 100%;
+    }
+    label{
+      height: max-content;
+      width: 100%;
+      position: relative;
+    }
+    
+    label span {
+      font-size: 22px !important;
+      opacity: .6;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      padding-right: 5px;
+      /*border-right: 1px solid rgba(255, 255, 255, 0.7);*/
+    }
+    input{
+      display: block;
+      margin: 15px auto;
+      color: whitesmoke;
+      width: 480px;
+      max-width: 100%;
+      background: transparent;
+      padding: 10px 40px;
+      border: none;
+      border-bottom: 1px solid whitesmoke;
+      border-radius: 10px;
+      outline: none;
+    }
+    select{
+      display: block;
+      margin: 15px auto;
+      color: whitesmoke;
+      width: 480px;
+      max-width: 100%;
+      background: transparent;
+      padding: 10px 40px;
+      border: none;
+      border-bottom: 1px solid whitesmoke;
+      border-radius: 10px;
+      outline: none;
+    }
+    button{
+      background-image: linear-gradient(to left, purple, royalblue);
+      border: 1px solid whitesmoke;
+      border-radius: 30px;
+      color: whitesmoke;
+      outline: none;
+      padding: 10px;
+      width: 100%;
+      margin-top: 30px;
+      font-size: 1em;
+    }
+    button:active{
+      opacity: .6;
+    }
+    p{
+      margin-top: 10px;
+      text-align: center;
+      opacity: .8;
+    }
+    a{
+      color: royalblue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h3>Welcome!</h3>
+    <h1>Register</h1>
+  </header>
+  
+  <main>
+  <form action="login.html" onsubmit="storeMe()">
+    
+    <label for="name">
+      <span class="material-icons">
+        person_outline
+      </span>
+      <input id="firstName" type="text" autocomplete="off" placeholder="First name" required>
+    </label>
+    
+    <label for="phone">
+       <span class="material-icons">
+         phone
+       </span>
+      <input id="phone" type="tel" placeholder="Phone number" required>
+      
+      <div id="error"></div>
+    </label>
+    
+    <label for="password">
+       <span class="material-icons">
+         vpn_key
+       </span>
+      <input id="password" type="password" placeholder="Password" required>
+    </label>
+    
+    <label>
+      <span class="material-icons">
+        lock
+      </span>
+      <input id="cpassword" type="password" placeholder="Confirm password" required>
+    </label>
+    
+    <label for="invite">
+      <span class="material-icons">
+        verified_user
+      </span>
+      <input id="invite_code" type="number" placeholder="Invite Code" required>
+    </label>
+    
+    <label for="gender">
+      <span class="material-icons">
+        group
+      </span>
+        
+      <select name="gender" id="gender">
+        <option value="Select">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="I prefer not to say">I prefer not to say</option>
+      </select>
+    </label>
+    
+    <button id="signup" type="submit" value="submit">Sign up</button>
+  </form>
+  
+  <p> Already have account? <a href="login.html">Login.</a></p>
+  
+  </main>
+  
+  <footer>
+    
+  </footer>
+  
+  <script>
+  "use strict";
+    const url = new URLSearchParams(window.location.search);
+    
+    const id = url.get('id');
+      
+    const inviteCode = document.getElementById('invite_code');
+      
+      inviteCode.value = id;
+      inviteCode.readOnly = false;
+      /*localStorage.getItem('userphone');*/
+      
+    </script>
+    
+  
+  <script>
+    function storeMe() {
+      var name = document.getElementById('firstName').value;
+      
+      var phone = document.getElementById('phone').value;
+      
+      var password = document.getElementById('password').value;
+      
+      localStorage.setItem('username', name);
+      
+      localStorage.setItem('userphone', phone);
+      
+      localStorage.setItem('userpassword', password);
+      
+    }
+    
+  </script>
+  
+  <!--<script src="number-validator.js"></script>-->
+</body>
+
+</html>
