@@ -86,7 +86,7 @@ button:active{
      <section class="bank-details">
        <h5>Fill in your Bank Details below</h5>
        
-       <form onsubmit="checkInput()"  action="withdrawal.html" method="post">
+       <form id="form" method="post">
          <input type="text" name="" id="in1" placeholder="Account Name" required>
          
          <input type="number" min="10" name="" id="in2" placeholder="Account Number" required>
@@ -172,52 +172,38 @@ button:active{
                                                                                     <option value="SafeTrust">SafeTrust </option>
          </select>
          
-         <button type="submit">Save Details</button>
+         <button onclick="checkInput()" type="button">Save Details</button>
        </form>
        
        <script>
-     //  const inp1 = document.querySelector('#in1')
-       
-      // const inp2 = document.querySelector('#in2')
-       
-       
        
          function checkInput(){
+           const form = document.getElementById('form')
+           
             var input1 = document.querySelector('#in1').value;
            
             var input2 = document.querySelector('#in2').value;
             
             var selectBank= document.querySelector('#bank_name').value;
             
-          /* if(input1 == ''){
-             inp1.classList.add('active');
-           }
-           
-           if(input2 == ''){
-             inp2.classList.add('active');
-           }
-           else{
-             inp1.classList.remove('active');
-             
-             inp2.classList.remove('active');
-           }
-           
-           
-           inp1.addEventListener("keydown", 
-           function removeInp1active(){
-             inp1.classList.remove('active');
-           });
-           
-           inp2.addEventListener("keydown",
-             function removeInp2active() {
-               inp2.classList.remove('active');
-             });*/
+            function submitForm(){
+              form.submit();
+            }
              
              localStorage.setItem('accountname', input1);
              
              localStorage.setItem('accountnumber', input2);
              
              localStorage.setItem('bankname', selectBank);
+             
+             iziToast.success({
+               timeout: 2000,
+               title: 'Success!',
+               message: 'Login successful!',
+             });
+             
+             setTimeout(submitForm, 2000);
+             
          }
          
        </script>
