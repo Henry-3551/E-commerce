@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Profile Page</title>
+  <link rel="stylesheet" href="common-style.css">
+  <link rel="stylesheet" href="profile.css">
+  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body id="body" onmousedown="return false" onselectstart="return false">
+  <header id="header">
+    <nav>
+      <div class="nav current">
+        
+          <i id="fi" class="fi fi-rr-angle-small-left"></i>
+      
+        <h1>Profile</h1>
+  
+        <i id="fi-bell" class="fi fi-rr-bell"></i>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="profile">
+      <div class="profile-image">
+        <span id="span"></span>
+      </div>
+      <h2><span id="greet"> </span>! <span id="welcome"> </span></h2>
+      
+      <div class="cs-1"></div>
+    </div>
+    
+    <section class="balance-section">
+      <div class="balance-box">
+        <h4>Wallet Balance:</h4>
+        <p>₦ 200.00 </p>
+      </div>
+      
+      <div class="entice">
+        
+      </div>
+      
+      <div class="transact-box">
+        <a href="withdrawal.html"><button id="btn1">Withdraw</button></a>
+        
+        <a href="deposit.html"><button id="btn2">+ Add Money</button></a>
+      </div>
+    </section>
+    
+    <section class="quick-links">
+      <a href="deposit.html"><div class="ql1"></div>Deposit</a>
+      
+      <a href="withdrawal.html"><div class="ql2"></div>Withdraw</a>
+      
+      <a href="https://whatsapp.com/channel/0029VaKllEqCXC3BBa7gUN37"><div class="ql3"></div>Whatsapp</a>
+      
+      <a href="https://t.me/+5896aBwIzm45ZThk"><div class="ql4" ></div>Telegram</a>
+    </section>
+    
+    <div class="list">
+      <ul>
+        <li onclick="location.href='withdrawal-history.html'"><img class="dicons" src="record.png" alt="">
+        <p>Withdrawal History</p>
+        
+         <img class="darrows" src="right-arrow.png" alt="">
+         </li>
+        
+        <li onclick="location.href='total-investment.htm'"><img class="dicons" src="investment.png" alt=""> <p>Total Investment</p>
+         
+         <img class="darrows" src="right-arrow.png" alt="">
+         </li>
+        
+        <li onclick="location.href='bank.html'"><img class="dicons" src="bank.png" alt=""> <p>Bank & Card Details</p>
+    
+        <img class="darrows" src="right-arrow.png" alt="">
+        </li>
+        
+        <li onclick="window.location.href='https://t.me/primetek_cs'"><img class="dicons" src="cs2.png" alt=""> <p>Customer Support</p>
+    
+        <img class="darrows" src="right-arrow.png" alt="">
+        </li>
+        
+        
+        <li onclick="location.href='index.html#about'"><img class="dicons" src="about.png" alt=""> <p>About Us</p>
+      
+         <img class="darrows" src="right-arrow.png" alt="">
+         </li>
+        
+        <a href="primetek.apk" download="primetek.apk"><li><img class="dicons" src="apk-download.png" alt=""> <p>Download App</p>
+      
+        <img class="darrows" src="right-arrow.png" alt="">
+        </li></a>
+        
+        <li onclick="location.href='reward.html#how-to-earn'"><img class="dicons" src="earn.png" alt=""><p>How to Earn</p>
+        
+        <img class="darrows" src="right-arrow.png" alt="">
+        </li>
+        
+        <li onclick="location.href='reward.html'location.href='reward.html'"><img class="dicons" src="settings.png" alt=""> <p>Settings</p>
+      
+        <img class="darrows" src="right-arrow.png" alt=""></li>
+      </ul>
+      
+    </div>
+    <button id="logout" onclick="logOut()"><img class="darrows" src="logout4.png" alt=""> Log Out</button>
+  </main>
+    
+    <section>
+      <div onclick="window.location.href='https://t.me/primetek_cs'" class="CS"></div>
+    </section>
+    
+   <section class="horizontal-nav">
+      <a href="index.html"><div>
+        <i class="fi fi-rr-home"></i>
+        <h5>HOME</h5>
+      </div></a>
+      
+      <a href="product.html"><div>
+        <i class="fi fi-rr-box-open"></i>
+        <h5>PRODUCT</h5>
+      </div></a>
+      
+      <a href="deposit.html"><div>
+        <i class="fi fi-rr-money-from-bracket"></i>
+        <h5>DEPOSIT</h5>
+      </div></a>
+      
+      <a href="reward.html"><div>
+        <i class="fi fi-rr-trophy-star"></i>
+        <h5>REWARD</h5>
+      </div></a>
+      
+      <a href="profile.html"><div class="current">
+        <i class="fi fi-rr-circle-user"></i>
+        <h5>PROFILE</h5>
+      </div></a>
+      
+    </section>
+   
+   <!-- Section for modals, popup & cover screen -->
+   
+     <div class="card card-3">
+       <h5>Login first!</h5>
+       <div class="loader"></div>
+     </div>
+     
+     <div class="settings-modal">
+       
+     </div>
+     
+   <script>
+     window.onload = function() {
+       document.getElementById('welcome').innerText = /*"Hello, " + */localStorage.getItem('username');
+     };
+     
+       
+      var statusInterval = setInterval(function() {
+        var dot = document.getElementById('span');
+        
+        
+        if (navigator.onLine) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      }, 1000);
+       
+   </script>
+   
+   <script> 
+        var today = new Date();
+        var curHr = today.getHours();
+        const greetUser = document.getElementById("greet");
+        
+    function greetMe(){
+         if (curHr >= 0 && curHr < 6) { 
+         greetUser.innerHTML = 'Good Morning'; 
+         } 
+         else if (curHr >= 6 && curHr < 12) { 
+         greetUser.innerHTML = 'Good Morning'; 
+         } 
+         else if (curHr >= 12 && curHr <= 15) { 
+           greetUser.innerHTML = 'Good Afternoon'; 
+         } 
+         else { 
+           greetUser.innerHTML = 'Good Evening'; 
+        }
+    }
+    setInterval(greetMe, 100);
+     </script>
+     
+     <script>
+     function logOut(){
+        sessionStorage.removeItem("userPhone");
+        location.replace("login.html");
+       }
+     </script>
+   
+    
+    <script src="main.js"></script>
+   <script src="app.js"></script>
+</body>
+
+</html>
