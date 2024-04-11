@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body id="body" onmousedown="return false" onselectstart="return false">
+  <header id="header">
+    <nav>
+      <div class="nav current">
+        <i id="fi" class="fi fi-rr-angle-small-left"></i>
+        
+        <h1><span>P</span>rimetek</h1>
+        
+        <i id="fi-bell" class="fi fi-rr-bell"></i>
+      </div>
+    </nav>
+    
+     <div class="swiper-container">
+    
+       <div class="swiper-wrapper">
+    
+         <div id="swiper1" class="swiper-slide">
+           
+         </div>
+    
+         <div id="swiper2" class="swiper-slide">
+          
+         </div>
+    
+         <div id="swiper3" class="swiper-slide">
+           
+         </div>
+         
+          <div id="swiper4" class="swiper-slide">
+         
+          </div>
+    
+         <!-- Add more slides as needed -->
+       </div>
+    
+       <!--<div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>-->
+       <div class="swiper-pagination"></div>
+     </div>
+    
+    
+     <script>
+       var swiper = new Swiper('.swiper-container', {
+         direction: 'horizontal',
+         loop: true,
+    
+         scrollbar: {
+           el: '.swiper-scrollbar',
+           draggable: true,
+         },
+    
+         effect: 'coverflow',
+    
+         autoplay: {
+           delay: 2500,
+         },
+    
+         /*navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },*/
+         pagination: {
+           el: '.swiper-pagination',
+           clickable: true,
+           /*type: 'bullet',*/
+         },
+         // Add more options as needed
+       });
+     </script>
+  </header>
+  
+  <main id="main">
+    <section class="container">
+      <h3 id="h3">PRODUCTS</h3>
+      <div id="cart">
+        <button>Owned: (<span>3</span>)</button>
+        <button>Expired: (<span>2</span>)</button>
+      </div>
+      
+    <div class="owned">
+      <h4>Owned</h4>
+      
+    </div>
+    
+    <div class="expired">
+      <h4>Expired</h4>
+      
+    </div>
+      
+    <section class="sub-container">
+      <div class="product-container">
+        <div id="productImg0" class="product"><span id="vip0"></span></div>
+     
+        <div class="productDetails">
+          <h4>Oraimo Cord (VIP 0)</h4>
+          
+          <h6>Price: <span>₦500</span></h6>
+          <h6>Daily Income: <span>₦340</span></h6>
+          <h6>Cycle: <span>7 days</span></h6>
+          <h6>Net Income: <span>₦2,380</span></h6>
+      
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+     <div class="product-container">
+       <div id="productImg01" class="product"><span id="vip1"></span></div>
+    
+       <div class="productDetails">
+         <h4>Oraimo Charger (VIP 1)</h4>
+         
+         <h6>Price: <span>₦2,500</span></h6>
+         <h6>Daily Income: <span>₦500</span></h6>
+         <h6>Cycle: <span>10 days</span></h6>
+         <h6>Net Income: <span>₦5,000</span></h6>
+     
+         <button onclick="showModal()" type="reset">Buy</button>
+       </div>
+     </div>
+     
+    <div class="product-container">
+        <div id="productImg1" class="product"><span id="vip2"></span></div>
+        
+      <div class="productDetails">
+        <h4>Oraimo Super Charger (VIP 2)</h4>
+        
+        <h6>Price: <span>₦5,000</span></h6>
+        <h6>Daily Income: <span>₦700</span></h6>
+        <h6>Cycle: <span>15 days</span></h6>
+        <h6>Net Income: <span>₦10,500</span></h6>
+     
+        <button onclick="showModal()" type="reset">Buy</button>
+      </div>
+    </div>
+    
+      <div class="product-container">
+        <div id="productImg2" class="product"><span id="vip3"></span></div>
+    
+        <div class="productDetails">
+          <h4>Oraimo Mini Powerbank (VIP 3)</h4>
+          
+          <h6>Price: <span>₦8,000</span></h6>
+          <h6>Daily Income: <span>₦800 </span></h6>
+          <h6>Cycle: <span>20 days</span></h6>
+          <h6>Net Income: <span>₦16,000</span></h6>
+   
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg3" class="product"><span id="vip4"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo 10Ah Powerbank (VIP 4)</h4>
+          
+          <h6>Price: <span>₦12,000</span></h6>
+          <h6>Daily Income: <span>₦900</span></h6>
+          <h6>Cycle: <span>25 days</span></h6>
+          <h6>Net Income: <span>₦22,500</span></h6>
+       
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg4" class="product"><span id="vip5"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo 20Ah Powerbank (VIP 5)</h4>
+          
+          <h6>Price: <span>₦15,000</span></h6>
+          <h6>Daily Income: <span>₦1,100</span></h6>
+          <h6>Cycle: <span>30 days</span></h6>
+          <h6>Net Income: <span>₦33,000</span></h6>
+   
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg5" class="product"><span id="vip6"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo 27Ah Powerbank(VIP 6)</h4>
+          
+          <h6>Price: <span>₦24,000</span></h6>
+          <h6>Daily Income: <span>₦2,200</span></h6>
+          <h6>Cycle: <span>35 days</span></h6>
+          <h6>Net Income: <span>₦77,000</span></h6>
+   
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg6" class="product"><span id="vip7"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo 30Ah Powerbank(VIP 7)</h4>
+          
+          <h6>Price: <span>₦30,000</span></h6>
+          <h6>Daily Income: <span>₦3,400</span></h6>
+          <h6>Cycle: <span>40 days</span></h6>
+          <h6>Net Income: <span>₦136,000</span></h6>
+ 
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg7" class="product"><span id="vip8"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo Powerbox 500 (VIP 8)</h4>
+          
+          <h6>Price: <span>₦51,000</span></h6>
+          <h6>Daily Income: <span>₦4,300</span></h6>
+          <h6>Cycle: <span>45 days</span></h6>
+          <h6>Net Income: <span>₦193,500</span></h6>
+ 
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+      
+      <div class="product-container">
+        <div id="productImg8" class="product"><span id="vip9"></span></div>
+      
+        <div class="productDetails">
+          <h4>Oraimo Powerbox 600 (VIP 9)</h4>
+          
+          <h6>Price: <span>₦68,000</span></h6>
+          <h6>Daily Income: <span>₦5,700</></h6>
+          <h6>Cycle: <span>50 days</span></h6>
+          <h6>Net Income: <span>₦285,000</span></h6>
+       
+          <button onclick="showModal()" type="reset">Buy</button>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  </main>
+  
+   <section class="horizontal-nav">
+      <a href="index.html"><div>
+        <i class="fi fi-rr-home"></i>
+        <h5>HOME</h5>
+      </div></a>
+      
+      <a href="product.html"><div class="current">
+        <i class="fi fi-rr-box-open"></i>
+        <h5>PRODUCT</h5>
+      </div></a>
+      
+      <a href="deposit.html"><div>
+        <i class="fi fi-rr-money-from-bracket"></i>
+        <h5>DEPOSIT</h5>
+      </div></a>
+      
+      <a href="reward.html"><div>
+        <i class="fi fi-rr-trophy-star"></i>
+        <h5>REWARD</h5>
+      </div></a>
+      
+      <a href="profile.html"><div>
+        <i class="fi fi-rr-circle-user"></i>
+        <h5>PROFILE</h5>
+      </div></a>
+      
+    </section>
+  
+  <!-- PRODUCT description -->
+  <!--<section>
+    <div class="pd" id="pd1">
+      <h3>VIP1</h3>
+      <h4>Oraimo Charger</h4>
+      
+      <pre>
+        Price      -      #2,500.00
+      </pre>
+      <pre>
+        Daily Income      -      #500
+      </pre>
+      <pre>
+        Period      -      10 days
+      </pre>
+      <pre>
+        Total Income      -      #7,500.00
+      </pre>
+    </div>
+    
+    <div class="pd">
+    
+    </div>
+    <div class="pd">
+    
+    </div>
+    <div class="pd">
+    
+    </div>
+    <div class="pd">
+    
+    </div>
+  </section>-->
+  
+    <!-- Modals and Popups -->
+    <div id="modal" class="card card-1">
+      <h3>Transaction Confirmed!</h3>
+      <i id=closebtn1 class="fi fi-rr-cross"></i>
+      <h5>Your balance will appear shortly.</h5>
+  
+      <span onclick="hideModal()">OK</span>
+    </div>
+  
+  <section id="overlap">
+    
+  </section>
+  
+    <div id="modal2" class="card card-2">
+      <h3>Are you sure you want to buy this product?</h3>
+      <i id=closebtn2 class="fi fi-rr-cross"></i>
+      <h5>You will be redirected to the deposit page</h5>
+  
+      <span id="decline" onclick="hideModal()">NO</span>
+  
+      <span id="approve" onclick="pay()">YES</span>
+    </div>
+  
+    <div id="card3" class="card card-3">
+      <h5>Login first...</h5>
+      <div class="loader"></div>
+    </div>
+    
+    <div id="card4" class="card card-3">
+      <div class="loader"></div>
+    </div>
+  
+  <script src="popup.js"></script>
+  <script src="app.js"></script>
+</body>
+
+
+</html>
