@@ -1,0 +1,288 @@
+body{
+  background: rgb(30,30,30);
+  min-height: 350vh;
+}
+main{
+  padding: 0 20px;
+}
+
+h3{
+  color: rgba(255,255,255,0.82);
+  font-size: 1.2rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+}
+h3::before{
+  position: absolute;
+  content: "";
+  background-color: royalblue;
+  border-radius: 20px;
+  height: 2px;
+  width: 15%;
+  top: 2rem;
+}
+h4{
+  color: rgba(255,255,255,0.7);
+}
+p{
+  color: rgba(255,255,255,0.7);
+  font-size: .9rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.swiper-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  height: 35vh;
+  border-radius: 0px;
+  z-index: 0;
+}
+
+.swiper-slide{
+  width: 100%;
+  margin: auto;
+  height: auto;
+  border-radius: 0px;
+  text-align: center;
+}
+
+#swiper1{
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),url(image5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#swiper2{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(image6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#swiper3{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url(image7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#mission {
+  background-image: url("about-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 30px;
+}
+#what-we-do {
+  background-image: url("image8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 30px;
+}
+#guarantee{
+    background-image: url("image9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* testimonials */
+#testimonial {
+  background-image: url("image10.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.testimonials{
+  margin-bottom: 90px;
+  padding: 25px;
+  max-width: 480px;
+  color: rgb(27,10,107);
+}
+.testimonials h3{
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-align: center;
+}
+.testimonials #h3-intro{
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+.testimonials p{
+  text-align: left;
+  font-size: .6rem;
+  margin-bottom: 0px;
+}
+.testimonials .name{
+  color: rgba(255,255,255,0.84);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.testimonials .avatar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid royalblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#av1{
+  background-image: url("a1.jpg");
+}
+#av2 {
+  background-image: url("a3.jpg");
+}
+#av3 {
+  background-image: url("no_avatar.png");
+}
+.testimonials #intro{
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  row-gap: 4px;
+}
+.testimonials #intro i.fi{
+  margin-right: 3px;
+  font-size: 14px;
+  color: goldenrod;
+}
+
+.owl-dot{
+  height: 6px;
+  width: 16px;
+  margin: 0 5px;
+  outline: none;
+  border-radius: 1px;
+  border: 1px solid #0072bc!important;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.owl-dot.active,
+.owl-dot:hover{
+  background: royalblue !important;
+}
+.contact p{
+  margin-bottom: 20px;
+}
+.contact a{
+  font-size: .8rem;
+  color: rgba(255,255,255,0.8);
+  text-decoration: royalblue underline;
+}
+footer{
+  margin-top: 10rem;
+  width: 100%;
+}
+/*.entice-modal{
+  position: fixed;
+  top: 80vh;
+  height: 50vh;
+  width: 45vw;
+  opacity: 1;
+  transition-duration: .4s;
+}*/
+
+.entice-modal{
+  position: fixed;
+  min-height: 50vh;
+  width: 45vw;
+  color: rgba(0,0,0,0.2);
+  padding: 0;
+  border: none;
+  border-radius: 15px;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  overflow: hidden;
+  transform: translate(-50%,-50%);
+  z-index: 100;
+}
+.entice-modal.active{
+  opacity: 0;
+  transform: translate(-50%,-100%);
+  transition-duration: .3s;
+  transition-timing-function: ease-in;
+}
+.entice-content{
+  /*background-image: url("reward-pic.jpg");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1em;
+  min-height: 45vh;
+  text-align: center;
+  background-image: linear-gradient(to left, purple, royalblue);
+}
+.entice-content h4{
+  opacity: 1;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 1000;
+}
+.entice-content h6{
+  opacity: 1;
+  color: rgb(0,0,0);
+}
+.entice-content img{
+  width: 30px;
+  height: auto;
+  display: inline;
+  margin-right: 20px;
+}
+.entice-content #tg{
+  border-radius: 50%;
+  width: 26px;
+  margin-right: 0;
+}
+
+.sub-content{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: floralwhite;
+}
+.sub-content #title{
+  margin-bottom: 10px;
+}
+.entice-close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 10vh;
+  background: rgba(0,0,0,0.2);
+}
+.entice-close span{
+  width: 26px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
