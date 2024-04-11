@@ -1,0 +1,132 @@
+body{
+  padding-top: 2.4rem;
+}
+main{
+  padding: 16px;
+}
+h4{
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+}
+h5{
+  margin-bottom: 5px;
+}
+.container{
+    position: relative;
+    padding: 16px;
+    min-height: 20vh;
+    margin-bottom: 35px;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(60deg,
+      orangered,
+      orange);
+}
+.container h4{
+  color: orange;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.balance-box{
+  width: 100%;
+  text-align: left;
+}
+.balance-box p{
+  font-size: 14px;
+  font-weight: bold;
+  color: antiquewhite;
+}
+#reward-balance{
+  margin-bottom: 10px;
+}
+
+.entice{
+  background-image: url("reward.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  border-radius: 10px;
+}
+
+.invite-friends{
+  position: relative;
+  padding: 10px;
+  margin-bottom: 30px;
+  min-height: 15vh;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(60deg,
+    orangered,
+    orange);
+}
+.invite-friends h3{
+  text-align: center;
+  color: antiquewhite;
+  margin-bottom: 9px;
+}
+#invite-box{
+  position: relative;
+  padding-right: 0px;
+  background: rgb(0,17,48);
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  text-align: center;
+}
+#invite-box input{
+  background: none;
+  font-size: .7rem;
+  color: rgba(255,255,255,0.8);
+  display: inline-block;
+  width: 80%;
+  height: 25px;
+  padding: 8px;
+  border-radius: 7px;
+  border: 1px solid white;
+  outline: none;
+  margin-bottom: 10px;
+}
+#invite-box button{
+  display: inline;
+  background: rgb(0,17,48);
+  color: antiquewhite;
+  font-size: .7rem;
+  padding: 3px;
+  border-radius: 7px;
+  border: 2px solid orangered;
+}
+#invite-box #copy-link.active{
+  background: antiquewhite;
+  color: orangered;
+  border: none;
+}
+#invite-box #copy-code.active {
+  background: antiquewhite;
+  color: orangered;
+  border: none;
+}
+
+#daily-checkin{
+  position: relative;
+  padding: 10px;
+  margin-bottom: 30px;
+  min-height: 15vh;
+  text-align: left;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(60deg,
+    orangered,
+    orange);
+}
+
+#how-to-earn{
+  margin-top: 0vh;
+}
