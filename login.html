@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - Primetek</title>
+  <noscript>
+     Enable javascript
+        <style>html{display:none;}</style>
+    </noscript>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-image: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("index-bg.jpg");
+      background-size: cover !important;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(28,28,28);
+      color: whitesmoke;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      padding: 30px;
+    }
+    header{
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    header h3{
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    h1{
+      position: relative;
+    }
+    h1::after{
+      content: "";
+      position: absolute;
+      top: 1.4rem;
+      width: 20%;
+      height: 2px;
+      background: yellow;
+    }
+    form{
+      color: whitesmoke;
+      width: 100%;
+    }
+    label{
+      height: max-content;
+      width: 100%;
+      position: relative;
+    }
+    label span{
+      font-size: 22px !important;
+      opacity: .6;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+    }
+    input{
+      display: block;
+      margin: 15px auto;
+      color: whitesmoke;
+      width: 480px;
+      max-width: 100%;
+      background: transparent;
+      padding: 10px 40px;
+      border: none;
+      border-bottom: 1px solid whitesmoke;
+      border-radius: 10px;
+      outline: none;
+      transition-duration: .25s;
+    }
+    input:focus{
+      background: transparent;
+    }
+    input:active {
+      background: transparent;
+    }
+    input:hover{
+      border-bottom: 1px solid royalblue;
+    }
+    #phone.active, #password.active{
+      border-bottom: 1px solid red;
+    }
+    button{
+      position: relative;
+      background-image: linear-gradient(to left, purple, royalblue);
+      border: 1px solid whitesmoke;
+      border-radius: 30px;
+      color: whitesmoke;
+      font-size: 1em;
+      outline: none;
+      padding: 10px;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      transition-duration: .25s;
+    }
+    button:active{
+      opacity: .6;
+    }
+    img {
+      position: absolute;
+      top: 20%;
+      left: 30%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 25px;
+      height: 25px;
+    }
+    p{
+      margin-top: 10px;
+      text-align: center;
+      opacity: .8;
+    }
+    .backup{
+      position:relative;
+      max-width: 480px;
+    }
+    #pLeft{
+      position: absolute;
+      left: 30px;
+      margin-top: 50px;
+    }
+    #pLeft input{
+      position: absolute;
+      left: 0;
+      margin-top: 20px;
+    }
+    #pRight {
+      position: absolute;
+      right: 30px;
+      margin-top: 50px;
+    }
+    a{
+      color: royalblue;
+      text-decoration: none;
+    }
+    
+  </style>
+</head>
+
+<body>
+  
+ 
+  
+  <header>
+    <h3 id="user-wb">Welcome back! <span id="user"></span></h3>
+    <h1>Login</h1>
+  </header>
+  
+  <main>
+  <form id="form" method="POST">
+    
+    <label for="phone number">
+      <span class="material-icons">
+        phone
+      </span>
+      <input id="reg_phone" type="tel" placeholder="Enter phone number" required>
+    </label>
+    
+    <label for="password">
+      <span class="material-icons">
+        vpn_key
+      </span>
+      <input id="password" type="password" placeholder="Enter password" required>
+    </label>
+    
+    <button onclick="callme()" id="sign-in" type="button" <img class="darrows" src="signin1.png" alt="">Login</button>
+    
+    
+    
+  </form>
+  
+  <p> Don't have account yet? <a href="signup.html">Register.</a></p>
+  
+  
+    <p id="pLeft" onclick="save()">
+      <input type="checkbox" name="checkbox" id="box">Remember me</p>
+    
+    <p id="pRight" onclick="passwordReset()">Forgot password?</p>
+
+  
+  </main>
+  
+  <footer>
+    
+  </footer>
+  
+  <script>
+    window.onload = function() {
+      document.getElementById('user').innerText = localStorage.getItem('username');
+    };
+  </script>
+  
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+				let checked = $("#box").is(":checked");
+				if (checked) {
+				  
+				  localStorage.setItem("checked", checked);
+				
+				}
+				//localStorage.setItem("checked", checked);
+				else {
+				  localStorage.removeItem("checked");
+				  
+				 // $('#user-wb').hide();
+				  //localStorage.removeItem("username");
+				}
+			}
+			function onReady() {
+				
+				let checked="true==localStorage.getItem("checked");
+				$("#box").prop('checked', checked);
+				$("#box").click(onClickBox);
+			}
+			$(document).ready(onReady);
+  </script>-->
+  
+  <script>
+    function save() {
+      var checkbox = document.getElementById('box');
+      localStorage.setItem('box', checkbox.checked);
+    }
+    
+    window.addEventListener('load', function() {
+      var checked = JSON.parse(localStorage.getItem('box'));
+      document.getElementById("box").checked = checked;
+    });
+    
+  </script>
+  
+  <script>
+  iziToast.settings({
+    timeout: 3000,
+    resetOnHover: true,
+    transitionIn: 'flipInX',
+    transitionOut: 'flipOutX',
+    position: 'topRight',
+    onOpening: function() {
+      console.log('callback abriu!');
+    },
+    onClosing: function() {
+      console.log("callback fechou!");
+    }
+  });
+  
+  
+    function callme() {
+      const form = document.getElementById('form');
+      
+      var phone = document.querySelector('#reg_phone').value;
+      
+      var password = document.getElementById('password').value;
+      
+      function submitForm() {
+        form.submit();
+        window.location.replace("index.html");
+      }
+      
+      if(localStorage.getItem('userphone') === phone && localStorage.getItem('userpassword') === password){
+        //alert('Valid credentials!');
+        
+        iziToast.success({
+          title: 'Success!',
+          message: 'Login successful!',
+        });
+      
+        setTimeout(submitForm, 3000);
+      }
+      
+      else if(phone === '' && password === ''){
+        iziToast.info({ 
+          title: 'Hello!', 
+          message: 'Please enter login detials!'
+        });
+    
+        //alert('Please enter your detials!');
+      }
+      
+      else{
+        iziToast.error({
+          title: 'Error',
+          message: 'Invalid Credentials!',
+        });
+        //alert('Invalid Credentials!');
+       // window.location.replace('login.html')
+      }
+      
+      sessionStorage.setItem('userPhone', phone);
+      
+      sessionStorage.setItem('userPassword', password);
+    
+  }
+  
+  function passwordReset(){
+    window.location.href = 'settings.html'
+  }
+
+  </script>
+
+</body>
+
+</html>
