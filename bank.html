@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank account details</title>
+  <link rel="stylesheet" href="common-style.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <style>
+  main{
+    padding: 20px;
+  }
+.bank-details{
+  position: relative;
+  width: 100%;
+  background: rgb(38, 38, 38);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 45vh;
+  margin-top: 4rem;
+  margin-bottom: 30px;
+}
+.bank-details h5{
+  margin-bottom: 20px;
+}
+#in1.active{
+  border: 1px solid red;
+}
+#in2.active {
+  border: 1px solid red;
+}
+.bank-details input:hover{
+  border: 1px solid royalblue;
+}
+
+.bank-details input, select{
+  background: rgb(38, 38, 38);
+  color: rgba(255,255,255,0.7);
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: 1px dotted rgba(255,255,255,0.3);
+}
+button{
+  background: royalblue;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 11px;
+  width: 100%;
+  transition-duration: .2s;
+}
+button:active{
+  opacity: .7;
+}
+  </style>
+  
+</head>
+
+<body id="body">
+  <header id="header">
+    <nav>
+      <div class="nav current">
+        <i id="fi" class="fi fi-rr-angle-small-left"></i>
+
+        <h1>Bank Details</h1>
+
+        <i id="fi-bell" class="fi fi-rr-bell"></i>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+     <section class="bank-details">
+       <h5>Fill in your Bank Details below</h5>
+       
+       <form onsubmit="checkInput()"  action="withdrawal.html" method="post">
+         <input type="text" name="" id="in1" placeholder="Account Name" required>
+         
+         <input type="number" min="10" name="" id="in2" placeholder="Account Number" required>
+         
+         
+         <select
+                                            name="bank_code" id="bank_name"
+                                            class="form-control">
+                                        <option value="">Select Bank</option>
+                                                                                    <option value="Access Bank">Access Bank</option>
+                                                                                    <option value="Citi Bank">Citi Bank</option>
+                                                                                    <option value="EcoBank PLC">EcoBank PLC</option>
+                                                                                    <option value="First Bank PLC">First Bank PLC</option>
+                                                                                    <option value="First City Monument Bank">First City Monument Bank</option>
+                                                                                    <option value="Fidelity Bank">Fidelity Bank</option>
+                                                                                    <option value="Guaranty Trust Bank">Guaranty Trust Bank</option>
+                                                                                    <option value="Polaris Bank">Polaris bank</option>
+                                                                                    <option value="Stanbic IBTC Bank">Stanbic IBTC Bank</option>
+                                                                                    <option value="Standard Chaterted Bank PLC">Standard Chaterted bank PLC</option>
+                                                                                    <option value="Sterling Bank PLC">Sterling Bank PLC</option>
+                                                                                    <option value="United Bank for Africa PLC">United Bank for Africa PLC</option>
+                                                                                    <option value="Union Bank PLC">Union Bank PLC</option>
+                                                                                    <option value="Wema Bank PLC">Wema Bank PLC</option>
+                                                                                    <option value="Zenith Bank PLC">Zenith bank PLC</option>
+                                                                                    <option value="Unity Bank PLC">Unity Bank PLC</option>
+                                                                                    <option value="ProvidusBank PLC">ProvidusBank PLC</option>
+                                                                                    <option value="Keystone Bank">Keystone Bank</option>
+                                                                                    <option value="Jaiz Bank">Jaiz Bank</option>
+                                                                                    <option value="Heritage Bank">Heritage Bank</option>
+                                                                                    <option value="Suntrust Bank">Suntrust Bank</option>
+                                                                                    <option value="FINATRUST MICROFINANCE BANK">FINATRUST MICROFINANCE BANK</option>
+                                                                                    <option value="Rubies Microfinance Bank">Rubies Microfinance Bank</option>
+                             
+                             
+                             
+                 <option value="Palmpay">Palmpay</option>                                                                   <option value="Kuda Bank">Kuda bank</option>
+                                 
+                                 
+                                    <option value="Moniepoint microfinance bank">Moniepoint microfinance bank </option>   
+                                    
+                                    
+                  
+                  <option value="Opay">Opay </option>
+                  
+                  
+                  
+                                    <option value="TCF MFB">TCF MFB</option>
+                                                                                    <option value="FSDH Merchant Bank">FSDH Merchant Bank</option>
+                                                                                    <option value="Rand Merchant Bank">Rand merchant Bank</option>
+                                                                                    <option value="Globus Bank">Globus Bank</option>
+                                                                                    <option value="Paga">Paga</option>
+                                                                                    <option value="Taj Bank Limited">Taj Bank Limited</option>
+                                                                                    <option value="GoMoney">GoMoney</option>
+                                                                                    <option value="AMJU Microfinance Bank">AMJU Unique Microfinance Bank</option>
+                                                                                    <option value="BRIDGEWAY MICROFINANCE BANK">BRIDGEWAY MICROFINANCE BANK</option>
+                                                                                    <option value="Eyowo MFB">Eyowo MFB</option>
+                                                                                    <option value="Mint-Finex MICROFINANCE BANK">Mint-Finex MICROFINANCE BANK</option>
+                                                                                    <option value="Covenant Microfinance Bank">Covenant Microfinance Bank</option>
+                                                                                    <option value="VFD Microfinance Bank">VFD Micro Finance Bank</option>
+                                                                                    <option value="PatrickGold Microfinance Bank">PatrickGold Microfinance Bank</option>
+                                                                                    <option value="Sparkle">Sparkle</option>
+                                                                                    <option value="Paycom">Paycom</option>
+                                                                                    <option value="NPF MicroFinance Bank">NPF MicroFinance Bank</option>
+                                                                                    <option value="PayAttitude Online">PayAttitude Online</option>
+                                                                                    <option value="Intellifin">Intellifin</option>
+                                                                                    <option value="Contec Global INATRUST Limited">Contec Global Infotech Limited (NowNow)</option>
+                                                                                    <option value="FCMB">FCMB Easy Account</option>
+                                                                                    <option value="EcoMobile">EcoMobile</option>
+                                                                                    <option value="Innovectives Kesh">Innovectives Kesh</option>
+                                                                                    <option value="One Finance">One Finance</option>
+                                                                                    <option value="Zinternet Nigera Limited">Zinternet Nigera Limited</option>
+                                                                                    <option value="TagPay">TagPay</option>
+                                                                                    <option value="Eartholeum">Eartholeum</option>
+                                                                                    <option value="MoneyBox">MoneyBox</option>
+                                                                                    <option value="Fidelity Mobile">Fidelity Mobile</option>
+                                                                                    <option value="Enterprise Bank">Enterprise Bank</option>
+                                                                                    <option value="Coronation Merchant Bank">Coronation Merchant Bank</option>
+                                                                                    <option value="FBNQUEST Merchant Bank">FBNQUEST Merchant Bank</option>
+                                                                                    <option value="Nova Merchant Bank">Nova Merchant Bank</option>
+                                                                                    <option value="Omoluabi Savings amd Loans">Omoluabi savings and loans</option>
+                                                                                    <option value="ASOSavings & Loans">ASOSavings &amp; Loans</option>
+                                                                                    <option value="Trustbond Mortgage Bank">Trustbond Mortgage Bank</option>
+                                                                                    <option value="SafeTrust">SafeTrust </option>
+         </select>
+         
+         <button type="submit">Save Details</button>
+       </form>
+       
+       <script>
+     //  const inp1 = document.querySelector('#in1')
+       
+      // const inp2 = document.querySelector('#in2')
+       
+       
+       
+         function checkInput(){
+            var input1 = document.querySelector('#in1').value;
+           
+            var input2 = document.querySelector('#in2').value;
+            
+            var selectBank= document.querySelector('#bank_name').value;
+            
+          /* if(input1 == ''){
+             inp1.classList.add('active');
+           }
+           
+           if(input2 == ''){
+             inp2.classList.add('active');
+           }
+           else{
+             inp1.classList.remove('active');
+             
+             inp2.classList.remove('active');
+           }
+           
+           
+           inp1.addEventListener("keydown", 
+           function removeInp1active(){
+             inp1.classList.remove('active');
+           });
+           
+           inp2.addEventListener("keydown",
+             function removeInp2active() {
+               inp2.classList.remove('active');
+             });*/
+             
+             localStorage.setItem('accountname', input1);
+             
+             localStorage.setItem('accountnumber', input2);
+             
+             localStorage.setItem('bankname', selectBank);
+         }
+         
+       </script>
+       
+      <!-- <script>
+       window.onload = function() {
+         document.getElementById('in1').innerText =  localStorage.getItem('accountname');
+         
+         document.getElementById('in2').innerText = localStorage.getItem('accountnumber');
+         
+         document.getElementById('bank_name').innerText = localStorage.getItem('bankname');
+       }
+       </script>-->
+      
+     </section>
+  </main>
+  
+  <section>
+    <div onclick="window.location.href='https://t.me/primetek_cs'" class="CS"></div>
+  </section>
+  
+   <section class="horizontal-nav">
+      <a href="index.html"><div>
+        <i class="fi fi-rr-home"></i>
+        <h5>HOME</h5>
+      </div></a>
+      
+      <a href="product.html"><div>
+        <i class="fi fi-rr-box-open"></i>
+        <h5>PRODUCT</h5>
+      </div></a>
+      
+      <a href="deposit.html"><div>
+        <i class="fi fi-rr-money-from-bracket"></i>
+        <h5>DEPOSIT</h5>
+      </div></a>
+      
+      <a href="reward.html"><div>
+        <i class="fi fi-rr-trophy-star"></i>
+        <h5>REWARD</h5>
+      </div></a>
+      
+      <a href="profile.html"><div>
+        <i class="fi fi-rr-circle-user"></i>
+        <h5>PROFILE</h5>
+      </div></a>
+      
+    </section>
+    
+      <div class="card card-3">
+        <h5>Login first!</h5>
+        <div class="loader"></div>
+      </div>
+    
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
