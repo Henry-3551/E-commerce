@@ -1,0 +1,44 @@
+#fi-bell{
+  color: royalblue;
+}
+main{
+  padding: 20px;
+}
+.container{
+  text-align: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 100vh;
+  border-left: 4px solid rgba(255,255,255,0.2);
+}
+h4{
+  text-align: center;
+  border-bottom: .5px solid rgba(255,255,255,0.2);
+}
+h5{
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+}
+h6{
+  color: rgba(255,255,255,0.7);
+  font-size: 8px;
+  font-weight: 300;
+}
+.container .mesg{
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(5px);
+  padding: 12px;
+  min-height: 15vh;
+  width: 100%;
+  margin-bottom: 45px;
+}
+.mesg::after{
+  content: " ";
+  position: absolute;
+  top: 18%;
+  right: 100%;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-right-color: rgba(255,255,255,0.12);
+}
