@@ -187,7 +187,7 @@ button:active{
             var selectBank= document.querySelector('#bank_name').value;
             
             function submitForm(){
-              form.submit();
+              window.location.replace('withdrawal.html');
             }
              
              localStorage.setItem('accountname', input1);
@@ -199,7 +199,7 @@ button:active{
              iziToast.success({
                timeout: 2000,
                title: 'Success!',
-               message: 'Login successful!',
+               message: 'Bank details saved!',
              });
              
              setTimeout(submitForm, 2000);
