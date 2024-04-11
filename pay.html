@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Checkout</title>
+  <link rel="stylesheet" href="style.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <style>
+    body{
+      background-color: floralwhite;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <p>Deposit <span id="price"></span>  NGN Here</p><br>
+  <h2 id="time-left"></h2>
+  <h3 id="elementId"></h3>
+  
+ <script>
+    window.onload = function(){
+      if(localStorage.getItem('a')){
+         localStorage.removeItem('b');
+         
+        document.getElementById('price').innerHTML = localStorage.getItem('a');
+      }
+      
+      if (localStorage.getItem('b')) {
+        
+        document.getElementById('price').innerHTML = localStorage.getItem('b');
+      }
+      
+     if (localStorage.getItem('c')) {
+       
+       document.getElementById('price').innerHTML = localStorage.getItem('c');
+     }
+     
+     if (localStorage.getItem('d')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('d');
+     }
+     
+     if (localStorage.getItem('e')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('e');
+     }
+     
+     if (localStorage.getItem('f')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('f');
+     }
+     
+     if (localStorage.getItem('g')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('g');
+     }
+     
+     if (localStorage.getItem('h')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('h');
+     }
+     
+     if (localStorage.getItem('i')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('i');
+     }
+     
+     if (localStorage.getItem('j')) {
+     
+       document.getElementById('price').innerHTML = localStorage.getItem('j');
+     }
+    }
+  </script>
+  <script>
+  //localStorage.clear();
+    if (localStorage.getItem("total_seconds")) {
+      var total_seconds = localStorage.getItem("total_seconds");
+    }
+
+    else {
+      var total_seconds = 30 * 60 * 1;
+    }
+    var minutes = parseInt(total_seconds / 60);
+    var seconds = parseInt(total_seconds % 60);
+    
+    function countDownTimer() {
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      document.getElementById("time-left").innerHTML = "Time Left :" + minutes + "min " + seconds + "sec";
+      if (total_seconds <= 0) {
+        setTimeout("document.quiz.submit()", 1);
+        document.getElementById("time-left").innerHTML = "Time Up!!";
+        localStorage.clear();
+    
+      } else {
+        total_seconds = total_seconds - 1;
+        minutes = parseInt(total_seconds / 60);
+        seconds = parseInt(total_seconds % 60);
+        localStorage.setItem("total_seconds", total_seconds)
+        setTimeout("countDownTimer()", 1000);
+      }
+    }
+    setTimeout("countDownTimer()", 500);
+    
+  </script>
+  
+  
+   <!-- <script>
+        "use strict"
+
+        function createCountDown(elementId, sec) {
+            var tms = sec;
+            var x = setInterval(function () {
+                var distance = tms * 1000;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById('elementId').innerHTML = days + "d: " + hours + "h " + minutes + "m " + seconds + "s ";
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById('elementId').innerHTML = "COMPLETE";
+                }
+                tms--;
+            }, 1000);
+        }
+    </script>-->
+  
+</body>
+
+</html>
