@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdrawal Page</title>
+  <link rel="stylesheet" href="common-style.css">
+  <link rel="stylesheet" href="profile.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <style>
+    body{
+  padding-top: 3.4rem;
+}
+main{
+  padding: 20px;
+}
+.wallet{
+    position: relative;
+    margin-bottom: 60px;
+    padding: 20px;
+    min-height: 25vh;
+    width: 100%;
+    border-radius: .5rem;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+}
+h4{
+  color: white;
+  font-size: .7rem;
+  font-weight: normal;
+}
+h5{
+  font-weight: 400;
+}
+
+.balance-box{
+  width: 100%;
+  text-align: left;
+}
+.balance-box p{
+  font-size: .8rem;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.payment-method{
+  width: 100%;
+  background: rgb(38,38,38,.7);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 15vh;
+  margin-bottom: 25px;
+}
+.payment-method input[type="checkbox"] {
+         display: none;
+         color: rgba(255,255,255,0.6);
+      }
+      label {
+         display: block;
+         width: 100%;
+         color: rgba(255,255,255,0.6);
+         padding: 10px;
+         border: 1px solid #0076ff;
+         margin-bottom: 10px;
+         border-radius: 10px;
+         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+      }
+    
+      label > span {
+         display: inline-block;
+         width: 15px;
+         height: 15px;
+         border: 3px solid #0076ff;
+         border-radius: 50%;
+         margin-right: 30px;
+      }
+      
+      input[type="checkbox"]:checked + label{
+         background: #173459;
+         color: white;
+      }
+      
+      input[type="checkbox"]:checked + label > span, input[type="radio"]:checked + label > span {
+         background: #0076ff;
+      }
+
+
+form{
+  position: relative;
+  width: 100%;
+  background: rgb(38, 38, 38, .7);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 15vh;
+  margin-bottom: 5rem;
+}
+
+input{
+  color: rgba(255,255,255,0.6);
+  background: transparent;
+  outline: none;
+  border: 2px dotted rgba(255,255,255,0.2);
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+input:hover{
+  border: 2px dotted royalblue;
+  box-shadow: 3px 7px 21px 0 rgba(0, 0, 0, 0.20);
+}
+textarea{
+  background: none;
+  border: none;
+}
+.cover{
+  position: absolute;
+  height: 9.375rem;
+  width: 100%;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#bank-details{
+  margin-top: 40px;
+}
+
+ #acc-no, #bank-name, #acc-name{
+  background: transition;
+  color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  margin-bottom: -25px;
+  border: none;
+  /*border-top: 1px solid rgba(255,255,255,0.2);*/
+  font-weight: 600;
+  font-size: .65rem;
+}
+/*#bank-name{
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}*/
+
+.withdrawal-button{
+  margin-top: 30px;
+  margin-bottom: 0rem;
+}
+.withdrawal-button button{
+  background: royalblue;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 11px;
+  width: 100%;
+  transition-duration: .2s;
+}
+.withdrawal-button button:active{
+  opacity: .7;
+}
+  </style>
+  
+</head>
+
+<body id="body">
+  <header id="header">
+    <nav>
+      <div class="nav current">
+        <i id="fi" class="fi fi-rr-angle-small-left"></i>
+
+        <h1>Withdrawal</h1>
+
+        <i id="fi-bell" class="fi fi-rr-bell"></i>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <!--<div class="wallet">
+      <div class="balance-box">
+        <h4>Available Balance:</h4>
+        <p>₦ 72,000.00 </p>
+      </div>-->
+  
+    </div>
+  
+    <section class="payment-method">
+      <h5>Payment Method</h5>
+  
+      <input type="checkbox" name="payment" value="Transfer" id="payment" />
+      <label for="payment"><span></span> Bank Transfer </label>
+      
+      <!--<input type="checkbox" name="payment" value="Transfer" id="payment-card" />
+      <label for="payment"><span></span> Debit Card </label>-->
+    </section>
+    
+    
+  <form id="form" method="post">
+    
+      <h5>Enter Amount</h5>
+      
+     
+        <input id="w-amount" type="number" placeholder="minimum withdrawal 3000NGN" contenteditable="yes" />
+      
+    <div class="cover"></div>
+    
+      <h5 id="bank-details">Bank Details</h5>
+      <textarea placeholder="Account number" id="acc-no"></textarea>
+      
+      <textarea placeholder="Bank" id="bank-name"></textarea>
+      
+      <textarea placeholder="Account name" id="acc-name"></textarea>
+      
+ 
+    
+    <div class="withdrawal-button"><button onclick="validateAmount()" type="button">Withdraw Income</button></div>
+    
+    </form>
+        <script>
+        function validateAmount(){
+          const form = document.getElementById('form');
+          
+          var withdrawalAmount = document.getElementById('w-amount').value;
+          var textArea = document.getElementById('acc-no').value;
+          
+          function submitForm() {
+            form.submit();
+            window.location.href = 'withdrawal-history.html';
+          }
+        
+        if (withdrawalAmount === '') {
+           iziToast.error({
+             timeout: 5000,
+             title: 'Error!',
+             message: 'Please enter withdrawal amount!',
+           });
+          //alert('Amount field cannot be empty!');
+        }
+     
+        else if(withdrawalAmount < 3000){
+           iziToast.error({
+             timeout: 5000,
+             title: 'Error!',
+             message: 'Minimum withdrawal is 3000 NGN !',
+           });
+          //alert('Minimum withdrawal is 3000NGN!');
+        }
+        else if (withdrawalAmount >= 350000) {
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Insufficient wallet balance!',
+          });
+          //alert('Invalid withdrawal amount!');
+        }
+        
+        else if (textArea === '') {
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Add your bank details first!',
+          });
+          //alert('Add your account details first!');
+          window.location.href='bank.html';
+        }
+        else if (textArea !== localStorage.getItem('accountnumber')) {
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Make sure your bank details provided are correct!',
+          });
+          //alert('Make sure your bank details provided are correct!');
+        }
+        else{
+          iziToast.success({
+            //icon: 'check_circle',
+            title: 'Hurray!!🎉',
+            message: 'Withdraw order sent successfully!',
+          });
+          setTimeout(submitForm, 4000);
+        }
+        }
+        
+        </script>
+        
+        <script>
+          window.onload = function() {
+            document.getElementById('acc-no').innerText = localStorage.getItem('accountnumber');
+    
+            document.getElementById('bank-name').innerText = localStorage.getItem('bankname');
+    
+            document.getElementById('acc-name').innerText = localStorage.getItem('accountname');
+          };
+    
+          /* if(localStorage.getItem('accountnumber') == ''){
+             alert('no account number in DB')
+           }*/
+        </script>
+  </main>
+  
+  <section>
+    <div onclick="window.location.href='https://t.me/primetek_cs'" class="CS"></div>
+  </section>
+  
+   <section class="horizontal-nav">
+      <a href="index.html"><div>
+        <i class="fi fi-rr-home"></i>
+        <h5>HOME</h5>
+      </div></a>
+      
+      <a href="product.html"><div>
+        <i class="fi fi-rr-box-open"></i>
+        <h5>PRODUCT</h5>
+      </div></a>
+      
+      <a href="deposit.html"><div>
+        <i class="fi fi-rr-money-from-bracket"></i>
+        <h5>DEPOSIT</h5>
+      </div></a>
+      
+      <a href="reward.html"><div>
+        <i class="fi fi-rr-trophy-star"></i>
+        <h5>REWARD</h5>
+      </div></a>
+      
+      <a href="profile.html"><div>
+        <i class="fi fi-rr-circle-user"></i>
+        <h5>PROFILE</h5>
+      </div></a>
+      
+    </section>
+    
+      <div class="card card-3">
+        <h5>Login first!</h5>
+        <div class="loader"></div>
+      </div>
+    
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
