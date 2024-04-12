@@ -13,20 +13,156 @@
   
   <style>
     body{
-      background-color: floralwhite;
+      background-color: antiquewhite;
       color: black;
+      padding: 16px;
+      padding-top: 4rem;
+    }
+    .container{
+      position: relative;
+      background: linear-gradient(to bottom, royalblue, skyblue);
+      padding-top: 35px;
       text-align: center;
-      padding: 20px;
+      min-height: 25vh;
+      margin: auto;
+      border-radius: 10px 10px;
+    }
+    .container #timer-bg{
+      background: url("timer.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
     }
     
+    .container p{
+      color: white;
+    }
+  .container #span{
+    position: absolute;
+    text-align: left;
+    color: rgba(255,255,255,0.8);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    width: 100%;
+    background: rgba(20,20,100,0.5);
+    border-radius: 0 0 10px 10px;
+  }
+  form{
+    padding-top: 16px;
+    color: black;
+  }
+  input{
+    margin: auto;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+  }
+  #details{
+    background: linear-gradient(to top, royalblue, deepskyblue);
+    min-height: auto;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  #details h5{
+    color: white;
+    line-height: 1.7;
+  }
+  #details h5 span{
+    font-size: 13px;
+    color: antiquewhite;
+    float: right;
+  }
+  button{
+    background: linear-gradient(to top, royalblue, skyblue);
+    color: whitesmoke;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    transition-duration: .2s;
+  }
+  button:active{
+    opacity: .8;
+  }
+  h4{
+    color: black;
+    margin-bottom: 10px;
+    font-size: smaller;
+  }
+  h4 span{
+    color: red;
+  }
+  #copy{
+    display: inline;
+    width: 40px;
+    background: antiquewhite;
+    color: black;
+    font-size: .7rem;
+    padding: 3px;
+    border-radius: 3px;
+    border: 2px solid orangered;
+  }
+  #copy:active{
+    padding: 0;
+    opacity: .8;
+  }
   </style>
 </head>
 
 <body>
-  <p>Deposit <span id="price"></span>  NGN Here</p><br>
-  <h2 id="time-left"></h2>
-  <h3 id="elementId"></h3>
+  <div class="container">
+    <span id="timer-bg"></span>
+    <p>Deposit <span id="price"></span>.00  NGN</p><br>
+    <h2 id="time-left"></h2>
+    <h3 id="elementId"></h3>
+    <span id="span"></span>
+  </div>
   
+  <form action="" method="post">
+    <h4>Step 1: <span>Required*</span></h4>
+    <input type="text" name="" id="" placeholder="Enter sender name" required>
+    
+    
+    <h4>Step 2: Copy the account number & make payment <span>*</span></h4>
+    <div id="details">
+      <input type="hidden" id="text" value="6840823069">
+      <h5>Account number <span value="6840823069">6840823069 <button type="button" id="copy">Copy</button></span></h5>
+      <h5>Bank name <span>Moniepoint</span></h5>
+      <h5>Recepient name <span>Primetek Ventures</span></h5>
+    </div>
+    
+    <h4>Step 2: Upload proof of successful payment <span>*</span></h4>
+    <input type="file" name="" id="" placeholder="Upload proof of payment">
+    
+    <button type="button">I Have Paid</button>
+  </form>
+  
+  <script>
+    const copyBtn = document.getElementById('copy')
+    const copyText = document.getElementById('text')
+    
+    copyBtn.addEventListener('click', function copyNo(){
+      copyText.select();
+      navigator.clipboard.writeText(copyText.value);
+      alert('Copied to Clipboard.')
+    })
+  </script>
  <script>
     window.onload = function(){
       if(localStorage.getItem('a')){
@@ -88,7 +224,7 @@
     }
 
     else {
-      var total_seconds = 30 * 60 * 1;
+      var total_seconds = 15 * 60 * 1;
     }
     var minutes = parseInt(total_seconds / 60);
     var seconds = parseInt(total_seconds % 60);
@@ -100,11 +236,11 @@
       if (minutes < 10) {
         minutes = "0" + minutes;
       }
-      document.getElementById("time-left").innerHTML = "Time Left :" + minutes + "min " + seconds + "sec";
+      document.getElementById("time-left").innerHTML = minutes + "min " + seconds + "sec";
       if (total_seconds <= 0) {
         setTimeout("document.quiz.submit()", 1);
         document.getElementById("time-left").innerHTML = "Time Up!!";
-        localStorage.clear();
+        //localStorage.clear();
     
       } else {
         total_seconds = total_seconds - 1;
