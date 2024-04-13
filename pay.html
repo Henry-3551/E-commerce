@@ -3,8 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>Payment Checkout</title>
+  
+  <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="style.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -134,9 +138,9 @@
     <span id="span"></span>
   </div>
   
-  <form action="" method="post">
+  <form id="form" action="" method="post">
     <h4>Step 1: <span>Required*</span></h4>
-    <input type="text" name="" id="" placeholder="Enter sender name" required>
+    <input type="text" name="" id="sender" placeholder="Enter sender name" required>
     
     
     <h4>Step 2: Copy the account number & make payment <span>*</span></h4>
@@ -148,21 +152,41 @@
     </div>
     
     <h4>Step 2: Upload proof of successful payment <span>*</span></h4>
-    <input type="file" name="" id="" placeholder="Upload proof of payment">
+    <input type="file" name="" id="proof" required>
     
-    <button type="button">I Have Paid</button>
+    <button id="subBtn" type="button">I Have Paid</button>
   </form>
   
   <script>
+    const form = document.getElementById('form')
+    const submitBtn = document.getElementById('subBtn')
     const copyBtn = document.getElementById('copy')
     const copyText = document.getElementById('text')
+    const sender = document.getElementById('sender')
+    const proof = document.getElementById('proof')
+    
+    function delay(){
+      location.replace('deposit-history.html');
+    }
     
     copyBtn.addEventListener('click', function copyNo(){
       copyText.select();
       navigator.clipboard.writeText(copyText.value);
       alert('Copied to Clipboard.')
     })
+    
+    submitBtn.addEventListener('click', function submitForm(){
+      if(sender.value === '' || proof.value === ''){
+        alert("Input sender's name and upload proof")
+      }
+      else{
+        form.submit();
+        location.replace('deposit-history.html');
+        //setTimeout(delay, 1000);
+      }
+    })
   </script>
+  
  <script>
     window.onload = function(){
       if(localStorage.getItem('a')){
