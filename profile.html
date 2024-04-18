@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard</title>
+  <title>User Profile Page</title>
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="common-style.css">
   <link rel="stylesheet" href="profile.css">
@@ -44,7 +44,7 @@
     <section class="balance-section">
       <div class="balance-box">
         <h4>Wallet Balance:</h4>
-        <p>₦ 200.00 </p>
+        <p>₦<input type="number" id="accountBal" value=""></p>
       </div>
       
       <div class="entice">
@@ -57,6 +57,242 @@
         <a href="deposit.html"><button id="btn2">+ Add Money</button></a>
       </div>
     </section>
+    
+    
+    
+    
+    <script>
+    
+      var accBal = document.getElementById('accountBal');
+      accBal.readOnly = true;
+      accBal.value = JSON.parse(localStorage.getItem('currentAccBal'));
+      
+      let initialBal = 200;
+      
+      
+      var depo = localStorage.getItem('a');
+      var depo1 = localStorage.getItem('b');
+      var depo2 = localStorage.getItem('c');
+      var depo3 = localStorage.getItem('d');
+      var depo4 = localStorage.getItem('e');
+      var depo5 = localStorage.getItem('f');
+      var depo6 = localStorage.getItem('g');
+      var depo7 = localStorage.getItem('h');
+      var depo8 = localStorage.getItem('i');
+      var depo9 = localStorage.getItem('j');
+      
+      
+      //var curBal = localStorage.setItem('currentAccBal', accBal.value);
+      
+      
+      var storedCurBal = localStorage.getItem('currentAccBal');
+      
+      
+ 
+     // accBal.value = JSON.parse(localStorage.getItem('currentAccBal'));
+      
+      
+      
+      var withdrawAmount = localStorage.getItem('withdrawalAmount');
+      
+      
+      if(depo && storedCurBal == ''){
+        var curAccBal = (JSON.parse(depo) + initialBal);
+        
+        accBal.value = curAccBal;
+        
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo1 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo1) + initialBal);
+      
+        accBal.value = curAccBal;
+        
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo2 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo2) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo3 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo3) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo4 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo4) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo5 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo5) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo6 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo6) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo7 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo7) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo8 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo8) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      else if (depo9 && storedCurBal == '') {
+        var curAccBal = (JSON.parse(depo9) + initialBal);
+      
+        accBal.value = curAccBal;
+      
+        localStorage.setItem('currentAccBal', accBal.value);
+      }
+      
+      
+      
+      // if the client has deposited before and wants to deposit again but hasn't withdrawn, add the new deposited amount to the old wallet balance
+      
+      else if (depo && storedCurBal) {
+        
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+        
+        localStorage.removeItem('a');
+    
+      }
+      
+      else if (depo1 && storedCurBal) {
+        
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo1);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+        
+        localStorage.removeItem('b');
+      }
+      
+      else if (depo2 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo2);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('c');
+      }
+      
+      else if (depo3 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo3);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('d');
+      }
+      
+      else if (depo4 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo4);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('e');
+      }
+      
+      else if (depo5 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo5);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('f');
+      }
+      
+      else if (depo6 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo6);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('g');
+      }
+      
+      else if (depo7 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo7);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('h');
+      }
+      
+      else if (depo8 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo8);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('i');
+      }
+      
+      else if (depo9 && storedCurBal) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) + JSON.parse(depo9);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('j');
+      }
+      
+      else if (withdrawAmount) {
+      
+        accBalvalue = JSON.parse(localStorage.getItem('currentAccBal')) - JSON.parse(withdrawAmount);
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      
+        localStorage.removeItem('withdrawalAmount');
+      }
+      
+      else {
+        accBalvalue = initialBal;
+      
+        localStorage.setItem('currentAccBal', accBalvalue);
+      }
+      
+      
+      
+    </script>
+    
+    
+    
+    
     
     <section class="quick-links">
       <a href="deposit.html"><div class="ql1"></div>Deposit</a>
