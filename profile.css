@@ -125,9 +125,18 @@ h4{
   margin-bottom: 5px;
 }
 .balance-box p{
+  display: inline;
   font-size: 1.3rem;
   font-weight: bold;
   color: purple;
+}
+.balance-box input{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: purple;
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .entice{
