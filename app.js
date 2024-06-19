@@ -1,3 +1,30 @@
+// code to change background and text color
+/*let light = document.getElementById('light');
+let dark = document.getElementById('dark');
+
+const body = document.querySelector("body"),
+  toggle = document.querySelector(".toggle");
+  
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "light") {
+  light.classList.add("active");
+  dark.classList.add("active");
+  body.classList.add("light");
+  toggle.classList.add("active");
+}
+toggle.addEventListener("click", () => {
+  light.classList.toggle("active");
+  dark.classList.toggle("active");
+  body.classList.toggle("light");
+  if (!body.classList.contains("light")) {
+    return localStorage.setItem("mode", "dark");
+  }
+  localStorage.setItem("mode", "light");
+});
+toggle.addEventListener("click", () => toggle.classList.toggle("active"));
+*/
+
+
 const backBtn = document.querySelector("#fi");
 
 const notifyBtn = document.querySelector("#fi-bell");
@@ -30,7 +57,7 @@ iziToast.settings({
 // addingAmount
 
 
-const vip0 = document.getElementById('500').value;
+const vip0 = document.getElementById('1500').value;
 const vip1 = document.getElementById('2500').value;
 const vip2 = document.getElementById('5000').value;
 const vip3 = document.getElementById('8000').value;
@@ -52,7 +79,7 @@ const recharge = document.getElementById('recharge');
 function addfH() {
   "use strict";
   
-  inputField.value = 500;
+  inputField.value = 1500;
   inputField.readOnly = true;
 }
 
@@ -138,7 +165,7 @@ function addCustom() {
 
 amountMatch = () => {
   
-  if(inputField.value == 500){
+  if(inputField.value == 1500){
     //redirect to checkout page
     localStorage.removeItem('b');
     localStorage.removeItem('c');
@@ -311,17 +338,17 @@ amountMatch = () => {
    // alert('Please enter recharge amount!');
   }
   
-  else if(inputField.value < 500){
+  else if(inputField.value < 1500){
     iziToast.error({
       title: 'Error!',
-      message: 'Minimum Recharge amount is 500 NGN!',
+      message: 'Minimum Recharge amount is 1500 NGN!',
     });
     //alert('Minimum Recharge amount is 500 NGN!');
   }
-  else if (inputField.value !== 500 || inputField.value !== 2500 || inputField.value !== 5000 || inputField.value !== 8000 || inputField.value !== 12000 || inputField.value !== 15000 || inputField.value !== 24000 || inputField.value !== 30000 || inputField.value !== 51000 || inputField.value !== 68000) {
+  else if (inputField.value !== 1500 || inputField.value !== 2500 || inputField.value !== 5000 || inputField.value !== 8000 || inputField.value !== 12000 || inputField.value !== 15000 || inputField.value !== 24000 || inputField.value !== 30000 || inputField.value !== 51000 || inputField.value !== 68000) {
   
     iziToast.info({
-      message: 'Please choose an amount below',
+      message: 'Please select recharge amount below',
     });
   }
   
