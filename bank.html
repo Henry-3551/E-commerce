@@ -75,7 +75,7 @@ button:active{
     <nav>
       <div class="nav current">
         <i id="fi" class="fi fi-rr-angle-small-left"></i>
-
+        
         <h1>Bank Details</h1>
 
         <i id="fi-bell" class="fi fi-rr-bell"></i>
@@ -88,9 +88,9 @@ button:active{
        <h5>Fill in your Bank Details below</h5>
        
        <form id="form" method="post">
-         <input type="text" name="" id="in1" placeholder="Account Name" required>
+         <input type="text" name="" id="in1" placeholder="Account Name (full name)" required>
          
-         <input type="number" min="10" name="" id="in2" placeholder="Account Number" required>
+         <input type="number" min="10" name="" id="in2" placeholder="Account Number (10 digits)" required>
          
          
          <select
@@ -190,23 +190,52 @@ button:active{
             function submitForm(){
               window.location.replace('withdrawal.html');
             }
-             
-             localStorage.setItem('accountname', input1);
-             
-             localStorage.setItem('accountnumber', input2);
-             
-             localStorage.setItem('bankname', selectBank);
-             
-             iziToast.success({
-               timeout: 2000,
-               title: 'Success!',
-               message: 'Bank details saved!',
-             });
-             
-             setTimeout(submitForm, 2000);
-             
+            
+            if (input1 === '') {
+              iziToast.error({
+                timeout: 3000,
+                title: 'Success!',
+                message: 'Please enter your full account name!',
+              });
+            }
+            else if (input2 === '') {
+              iziToast.error({
+                timeout: 3000,
+                title: 'Success!',
+                message: 'Please enter your 10 digit account number!',
+              });
+            }
+            else if (input2.length !== 10) {
+              iziToast.error({
+                timeout: 3000,
+                title: 'Success!',
+                message: 'Account number must be 10 digits!',
+              });
+            }
+            else if (selectBank === '') {
+              iziToast.error({
+                timeout: 3000,
+                title: 'Success!',
+                message: 'Please select your bank!',
+              });
+            }
+            else {
+            
+              localStorage.setItem('accountname', input1);
+            
+              localStorage.setItem('accountnumber', input2);
+            
+              localStorage.setItem('bankname', selectBank);
+            
+              iziToast.success({
+                timeout: 2000,
+                title: 'Success!',
+                message: 'Bank details saved!',
+              });
+            
+              setTimeout(submitForm, 2000);
+            }
          }
-         
        </script>
        
       <!-- <script>
@@ -261,6 +290,7 @@ button:active{
     
     <script src="main.js"></script>
     <script src="app.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
