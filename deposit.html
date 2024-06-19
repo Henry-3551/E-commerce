@@ -17,8 +17,6 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body id="body" onselectstart="return false">
@@ -26,7 +24,7 @@
     <nav>
       <div class="nav current">
         <i id="fi" class="fi fi-rr-angle-small-left"></i>
-
+        
         <h1>Deposit</h1>
 
         <i id="fi-bell" class="fi fi-rr-bell"></i>
@@ -37,10 +35,8 @@
   <main>
     <div class="wallet">
       <div class="balance-box">
-        <h4>Balance:</h4>
-        <p>₦200.00 </p>
+ 
       </div>
-     
       
       <div class="widgets">
         <button onclick="location.href = 'deposit-history.html'">Deposit History</button>
@@ -54,7 +50,7 @@
       <h5>Enter Amount</h5>
       
       <form>
-        <input id="amount" type="number" autocomplete="off" placeholder="minimum deposit 500NGN">
+        <input id="amount" type="number" autocomplete="off" placeholder="minimum deposit 1500NGN">
         
       </form>
     </section>
@@ -62,25 +58,25 @@
     <section class="payment-amount">
       <h5>Recharge Amount (NGN)</h5>
             
-      <button onclick="addfH()" id="500" class="pay-amount" value="500">500</button>
+      <button onclick="addfH()" id="1500" class="pay-amount" value="1500">₦1,500</button>
       
-      <button onclick="addtF()" id="2500" class="pay-amount" value="2500">2500</button>
+      <button onclick="addtF()" id="2500" class="pay-amount" value="2500">₦2,500</button>
       
-      <button onclick="addfK()" id="5000" class="pay-amount" value="5000">5000</button>
+      <button onclick="addfK()" id="5000" class="pay-amount" value="5000">₦5,000</button>
       
-      <button onclick="addeK()" id="8000" class="pay-amount" value="8000">8000</button>
+      <button onclick="addeK()" id="8000" class="pay-amount" value="8000">₦8,000</button>
       
-      <button onclick="addtwfK()" id="12000" class="pay-amount" value="12000">12000</button>
+      <button onclick="addtwfK()" id="12000" class="pay-amount" value="12000">₦12,000</button>
       
-      <button onclick="addftnK()" id="15000" class="pay-amount" value="15000">15000</button>
+      <button onclick="addftnK()" id="15000" class="pay-amount" value="15000">₦15,000</button>
       
-      <button onclick="addtfK()" id="24000" class="pay-amount" value="24000">24000</button>
+      <button onclick="addtfK()" id="24000" class="pay-amount" value="24000">₦24,000</button>
       
-      <button onclick="addthK()" id="30000" class="pay-amount" value="30000">30000</button>
+      <button onclick="addthK()" id="30000" class="pay-amount" value="30000">₦30,000</button>
       
-      <button onclick="addfoK()" id="51000" class="pay-amount" value="51000">51000</button>
+      <button onclick="addfoK()" id="51000" class="pay-amount" value="51000">₦51,000</button>
       
-      <button onclick="addseK()" id="68000" class="pay-amount" value="68000">68000</button>
+      <button onclick="addseK()" id="68000" class="pay-amount" value="68000">₦68,000</button>
       
       <button onclick="addCustom()" id="custom" class="pay-amount" value="custom">Custom</button>
     </section>
@@ -100,13 +96,13 @@
       <div class="title"><h3>Funding Rules - </h3></div>
     <ol>
         
-      <li>The minimum deposit amount is 500NGN. Minimum withdrawal 3000NGN.</li>
+      <li>The minimum deposit amount is 1500NGN. Minimum withdrawal 3000NGN.</li>
       
       <li>After making payment, you must upload your payment receipt on the upload interface, and your funds will arrive in your account from 0~30 minutes. Do not share your payment credentials with others.</li>
       
       <li>Recharge reflects on wallet varies from instantaneous to about half an hour. Therefore exercise paitence, while the system approves your transaction.</li>
       
-      <li>If the account has not been received within half an hour after the successful recharge, please refresh the page before you contact customer support assistance, and send us your phone number used in registration and proof of successful
+      <li>If the account has not been received within half an hour after a successful recharge, please refresh the page before you contact customer support assistance, and send us your phone number used in registration and proof of successful
         payment.</li>
         
       <li>Do not save the previous receiving account for transfer. The recharge receipt must match the
@@ -154,9 +150,10 @@
          <div class="loader"></div>
        </div>
        
-    
-    <script src="main.js"></script>
+       
     <script src="app.js"></script>
+    <!--<script src="main.js"></script>-->
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
