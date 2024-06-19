@@ -23,20 +23,22 @@ h2 #welcome{
   width: 100%;
   margin-bottom: 5px;
 }
-.profile-image{
-  position: relative;
-  display: inline-block;
-  background-color: skyblue;
-  background: url("a2.jpg");
+
+#profile-image {
+  background: url("a3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  display: inline-block;
+  background-color: skyblue;
   width: 45px;
   height: 45px;
   border: 4px double royalblue;
   border-radius: 50%;
   margin-right: 10px;
 }
+
  #span{
   position: absolute;
   top: -2px;
@@ -122,6 +124,7 @@ h4{
   text-align: left;
 }
 .balance-box h4{
+  color: rgba(0,0,0,0.7);
   margin-bottom: 5px;
 }
 .balance-box p{
