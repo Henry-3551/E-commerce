@@ -7,6 +7,7 @@
   <title>Products</title>
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
@@ -98,35 +99,30 @@
         <button>Owned: (<span>3</span>)</button>
         <button>Expired: (<span>2</span>)</button>
       </div>
-      
-    <div class="owned">
-      <h4>Owned</h4>
-      
-    </div>
-    
-    <div class="expired">
-      <h4>Expired</h4>
-      
-    </div>
+  
       
     <section class="sub-container">
       <div class="product-container">
         <div id="productImg0" class="product"><span id="vip0"></span></div>
-     
-        <div class="productDetails">
+        
+          <img class="prime-logo" src="prime-logo.png" alt="">
+          
+        <div class="productDetails" id="">
           <h4>Oraimo Cord (VIP 0)</h4>
           
-          <h6>Price: <span>₦500</span></h6>
+          <h6>Price: <span>₦1500</span></h6>
           <h6>Daily Income: <span>₦340</span></h6>
           <h6>Cycle: <span>7 days</span></h6>
           <h6>Net Income: <span>₦2,380</span></h6>
       
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip0()">Buy</button>
         </div>
       </div>
       
      <div class="product-container">
        <div id="productImg01" class="product"><span id="vip1"></span></div>
+       
+       <img class="prime-logo" src="prime-logo.png" alt="">
     
        <div class="productDetails">
          <h4>Oraimo Charger (VIP 1)</h4>
@@ -136,12 +132,14 @@
          <h6>Cycle: <span>10 days</span></h6>
          <h6>Net Income: <span>₦5,000</span></h6>
      
-         <button onclick="showModal()" type="reset">Buy</button>
+         <button onclick="showVip1()">Buy</button>
        </div>
      </div>
      
     <div class="product-container">
         <div id="productImg1" class="product"><span id="vip2"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
         
       <div class="productDetails">
         <h4>Oraimo Super Charger (VIP 2)</h4>
@@ -151,12 +149,14 @@
         <h6>Cycle: <span>15 days</span></h6>
         <h6>Net Income: <span>₦10,500</span></h6>
      
-        <button onclick="showModal()" type="reset">Buy</button>
+        <button onclick="showVip2()">Buy</button>
       </div>
     </div>
     
       <div class="product-container">
         <div id="productImg2" class="product"><span id="vip3"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
     
         <div class="productDetails">
           <h4>Oraimo Mini Powerbank (VIP 3)</h4>
@@ -166,12 +166,14 @@
           <h6>Cycle: <span>20 days</span></h6>
           <h6>Net Income: <span>₦16,000</span></h6>
    
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip3()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg3" class="product"><span id="vip4"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo 10Ah Powerbank (VIP 4)</h4>
@@ -181,12 +183,14 @@
           <h6>Cycle: <span>25 days</span></h6>
           <h6>Net Income: <span>₦22,500</span></h6>
        
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip4()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg4" class="product"><span id="vip5"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo 20Ah Powerbank (VIP 5)</h4>
@@ -196,12 +200,14 @@
           <h6>Cycle: <span>30 days</span></h6>
           <h6>Net Income: <span>₦33,000</span></h6>
    
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip5()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg5" class="product"><span id="vip6"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo 27Ah Powerbank(VIP 6)</h4>
@@ -211,12 +217,14 @@
           <h6>Cycle: <span>35 days</span></h6>
           <h6>Net Income: <span>₦77,000</span></h6>
    
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip6()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg6" class="product"><span id="vip7"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo 30Ah Powerbank(VIP 7)</h4>
@@ -226,12 +234,14 @@
           <h6>Cycle: <span>40 days</span></h6>
           <h6>Net Income: <span>₦136,000</span></h6>
  
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip7()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg7" class="product"><span id="vip8"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo Powerbox 500 (VIP 8)</h4>
@@ -241,12 +251,14 @@
           <h6>Cycle: <span>45 days</span></h6>
           <h6>Net Income: <span>₦193,500</span></h6>
  
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip8()" type="reset">Buy</button>
         </div>
       </div>
       
       <div class="product-container">
         <div id="productImg8" class="product"><span id="vip9"></span></div>
+        
+        <img class="prime-logo" src="prime-logo.png" alt="">
       
         <div class="productDetails">
           <h4>Oraimo Powerbox 600 (VIP 9)</h4>
@@ -256,7 +268,7 @@
           <h6>Cycle: <span>50 days</span></h6>
           <h6>Net Income: <span>₦285,000</span></h6>
        
-          <button onclick="showModal()" type="reset">Buy</button>
+          <button onclick="showVip9()" type="reset">Buy</button>
         </div>
       </div>
     </section>
@@ -293,38 +305,167 @@
     </section>
   
   <!-- PRODUCT description -->
-  <!--<section>
-    <div class="pd" id="pd1">
-      <h3>VIP1</h3>
-      <h4>Oraimo Charger</h4>
+  <div class="detail-container">
+    <div class="section">
+      <h4>Oraimo Cord - VIP 0</h4>
       
-      <pre>
-        Price      -      #2,500.00
-      </pre>
-      <pre>
-        Daily Income      -      #500
-      </pre>
-      <pre>
-        Period      -      10 days
-      </pre>
-      <pre>
-        Total Income      -      #7,500.00
-      </pre>
+       <img src="oraimo-cord.jpg" alt="">
+      <h6 id="testh6">Price: <span>₦1500.00</span></h6>
+      <h6>Daily Income: <span>₦340</span></h6>
+      <h6>Cycle: <span>7 days</span></h6>
+      <h6>Net Income: <span>₦2,380.00</span></h6>
+     
     </div>
     
-    <div class="pd">
-    
+    <button id="buy" onclick="buyVip0()">Buy Product</button>
+    <button id="cancel" onclick="cancelVip0()">Cancel</button>
+  </div>
+  
+    <div class="detail-container1">
+      <div class="section">
+        <h4>Oraimo Charger - VIP 1</h4>
+  
+        <img src="oraimo-charger.jpg" alt="">
+        <h6>Price: <span>₦2500.00</span></h6>
+        <h6>Daily Income: <span>₦500</span></h6>
+        <h6>Cycle: <span>10 days</span></h6>
+        <h6>Net Income: <span>₦5,000.00</span></h6>
+  
+      </div>
+  
+      <button id="buy1" onclick="buyVip1()">Buy Product</button>
+      <button id="cancel1" onclick="cancelVip1()">Cancel</button>
     </div>
-    <div class="pd">
     
-    </div>
-    <div class="pd">
+    <div class="detail-container2">
+      <div class="section">
+        <h4>Oraimo Super Charger - VIP 2</h4>
     
-    </div>
-    <div class="pd">
+        <img src="oraimo-super-charger.jpg" alt="">
+        <h6>Price: <span>₦5000.00</span></h6>
+        <h6>Daily Income: <span>₦700</span></h6>
+        <h6>Cycle: <span>15 days</span></h6>
+        <h6>Net Income: <span>₦10,500.00</span></h6>
     
+      </div>
+    
+      <button id="buy2" onclick="buyVip2()">Buy Product</button>
+      <button id="cancel2" onclick="cancelVip2()">Cancel</button>
     </div>
-  </section>-->
+    
+    <div class="detail-container3">
+      <div class="section">
+        <h4>Oraimo Mini Powerbank - VIP 3</h4>
+    
+        <img src="oraimo-mini-powerbank.jpg" alt="">
+        <h6>Price: <span>₦8000.00</span></h6>
+        <h6>Daily Income: <span>₦800</span></h6>
+        <h6>Cycle: <span>20 days</span></h6>
+        <h6>Net Income: <span>₦16,000.00</span></h6>
+    
+      </div>
+    
+      <button id="buy3" onclick="buyVip3()">Buy Product</button>
+      <button id="cancel3" onclick="cancelVip3()">Cancel</button>
+    </div>
+    
+    <div class="detail-container4">
+      <div class="section">
+        <h4>Oraimo 10Ah Powerbank - VIP 4</h4>
+    
+        <img src="oraimo-10Ah.jpg" alt="">
+        <h6>Price: <span>₦12000.00</span></h6>
+        <h6>Daily Income: <span>₦900</span></h6>
+        <h6>Cycle: <span>25 days</span></h6>
+        <h6>Net Income: <span>₦22,500.00</span></h6>
+    
+      </div>
+    
+      <button id="buy4" onclick="buyVip4()">Buy Product</button>
+      <button id="cancel4" onclick="cancelVip4()">Cancel</button>
+    </div>
+    
+    <div class="detail-container5">
+      <div class="section">
+        <h4>Oraimo 20Ah Powerbank - VIP 5</h4>
+    
+        <img src="oraimo-20Ah.png" alt="">
+        <h6>Price: <span>₦15000.00</span></h6>
+        <h6>Daily Income: <span>₦1,100</span></h6>
+        <h6>Cycle: <span>30 days</span></h6>
+        <h6>Net Income: <span>₦33,000.00</span></h6>
+    
+      </div>
+    
+      <button id="buy5" onclick="buyVip5()">Buy Product</button>
+      <button id="cancel5" onclick="cancelVip5()">Cancel</button>
+    </div>
+    
+    <div class="detail-container6">
+      <div class="section">
+        <h4>Oraimo 27Ah Powerbank - VIP 6</h4>
+    
+        <img src="oraimo-27Ah.jpg" alt="">
+        <h6>Price: <span>₦24000.00</span></h6>
+        <h6>Daily Income: <span>₦2,200</span></h6>
+        <h6>Cycle: <span>35 days</span></h6>
+        <h6>Net Income: <span>₦77,000.00</span></h6>
+    
+      </div>
+    
+      <button id="buy6" onclick="buyVip6()">Buy Product</button>
+      <button id="cancel6" onclick="cancelVip6()">Cancel</button>
+    </div>
+    
+    <div class="detail-container7">
+      <div class="section">
+        <h4>Oraimo 30Ah Powerbank - VIP 7</h4>
+    
+        <img src="oraimo-30Ah.jpg" alt="">
+        <h6>Price: <span>₦30000.00</span></h6>
+        <h6>Daily Income: <span>₦3,400</span></h6>
+        <h6>Cycle: <span>40 days</span></h6>
+        <h6>Net Income: <span>₦136,000.00</span></h6>
+    
+      </div>
+    
+      <button id="buy7" onclick="buyVip7()">Buy Product</button>
+      <button id="cancel7" onclick="cancelVip7()">Cancel</button>
+    </div>
+    
+    <div class="detail-container8">
+      <div class="section">
+        <h4>Oraimo Powerbox 500 - VIP 8</h4>
+    
+        <img src="oraimo-p500.jpg" alt="">
+        <h6>Price: <span>₦51000.00</span></h6>
+        <h6>Daily Income: <span>₦4,300</span></h6>
+        <h6>Cycle: <span>45 days</span></h6>
+        <h6>Net Income: <span>₦193,500.00</span></h6>
+    
+      </div>
+    
+      <button id="buy8" onclick="buyVip8()">Buy Product</button>
+      <button id="cancel8" onclick="cancelVip8()">Cancel</button>
+    </div>
+    
+    <div class="detail-container9">
+      <div class="section">
+        <h4>Oraimo Powerbox 600 - VIP 9</h4>
+    
+        <img src="oraimo-p600.png" alt="">
+        <h6>Price: <span>₦68000.00</span></h6>
+        <h6>Daily Income: <span>₦5,700</span></h6>
+        <h6>Cycle: <span>50 days</span></h6>
+        <h6>Net Income: <span>₦285,000.00</span></h6>
+    
+      </div>
+    
+      <button id="buy9" onclick="buyVip9()">Buy Product</button>
+      <button id="cancel9" onclick="cancelVip9()">Cancel</button>
+    </div>
+  
+  
   
     <!-- Modals and Popups -->
     <div id="modal" class="card card-1">
@@ -335,9 +476,6 @@
       <span onclick="hideModal()">OK</span>
     </div>
   
-  <section id="overlap">
-    
-  </section>
   
     <div id="modal2" class="card card-2">
       <h3>Are you sure you want to buy this product?</h3>
@@ -358,8 +496,10 @@
       <div class="loader"></div>
     </div>
   
+  <script src="main.js"></script>
   <script src="popup.js"></script>
   <script src="app.js"></script>
+  <script src="illegal-user.js"></script>
 </body>
 
 
