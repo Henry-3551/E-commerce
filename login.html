@@ -36,64 +36,66 @@
     }
     header{
       text-align: center;
-      margin-top: 40px;
       margin-bottom: 40px;
     }
     header h3{
       color: rgba(255,255,255,0.7);
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       font-weight: 300;
+    }
+    #user.active{
+      display: none;
+    }
+    #prime-logo {
+      width: 50px;
+      height: auto;
+      display: block;
+      margin: auto;
     }
     h1{
       position: relative;
     }
-    h1::after{
-      content: "";
-      position: absolute;
-      top: 1.4rem;
-      width: 20%;
-      height: 2px;
-      background: yellow;
+    p{
+      font-size: 90%;
+      opacity: .8;
     }
     form{
       color: whitesmoke;
       width: 100%;
     }
     label{
+      display: flex;
       height: max-content;
       width: 100%;
       position: relative;
+      margin: 15px 0;
+      border-bottom: 1px solid whitesmoke;
+      border-radius: 10px;
+      transition-duration: .25s;
+    }
+    label:hover {
+      border-bottom: 1px solid royalblue;
     }
     label span{
       font-size: 22px !important;
       opacity: .6;
-      position: absolute;
+     /* position: absolute;
       top: 5px;
-      left: 10px;
+      left: 10px;*/
+      min-width: 40px; /* set a minimum width for the icon */
+         padding: 10px; /* make sure the icon is centered vertically */
+         text-align: center; /* horizontally center the icon */
     }
-    input{
-      display: block;
-      margin: 15px auto;
+    label input{
       color: whitesmoke;
-      width: 480px;
-      max-width: 100%;
+      width: 100%;
       background: transparent;
-      padding: 10px 40px;
+      padding: 10px 20px;
       border: none;
-      border-bottom: 1px solid whitesmoke;
-      border-radius: 10px;
       outline: none;
       transition-duration: .25s;
     }
-    input:focus{
-      background: transparent;
-    }
-    input:active {
-      background: transparent;
-    }
-    input:hover{
-      border-bottom: 1px solid royalblue;
-    }
+    
     #phone.active, #password.active{
       border-bottom: 1px solid red;
     }
@@ -124,15 +126,36 @@
       width: 25px;
       height: 25px;
     }
-    p{
+   /* p{
       margin-top: 10px;
       text-align: center;
       opacity: .8;
+    }*/
+    .align-right{
+      text-align: right;
+      margin-bottom: 40px;
     }
     .backup{
       position:relative;
       max-width: 480px;
     }
+    .rmb{
+      position: relative;
+      width: 45%;
+      text-align: right;
+      padding: 0;
+    }
+    .rmb input{
+      position: absolute;
+      left: 0;
+      margin: 0;
+    }
+    .rmb p{
+      margin: 0;
+      font-size: 90%;
+    }
+    
+    /*
     #pLeft{
       position: absolute;
       left: 30px;
@@ -142,14 +165,18 @@
       position: absolute;
       left: 0;
       margin-top: 20px;
-    }
+    }*/
     #pRight {
       position: absolute;
       right: 30px;
-      margin-top: 50px;
+      margin-top: -20px;
+      color: deepskyblue;
+    }
+    #pRight:hover{
+      border-bottom: 1.5px solid deepskyblue;
     }
     a{
-      color: royalblue;
+      color: deepskyblue;
       text-decoration: none;
     }
     
@@ -162,6 +189,7 @@
   
   <header>
     <h3 id="user-wb">Welcome back! <span id="user"></span></h3>
+    <!--<img id="prime-logo" src="prime-logo.png" alt="">-->
     <h1>Login</h1>
   </header>
   
@@ -172,14 +200,14 @@
       <span class="material-icons">
         phone
       </span>
-      <input id="reg_phone" type="tel" placeholder="Enter phone number" required>
+      <input id="reg_phone" type="tel" placeholder="Please enter your phone number" required>
     </label>
     
     <label for="password">
       <span class="material-icons">
-        vpn_key
+        lock
       </span>
-      <input id="password" type="password" placeholder="Enter password" required>
+      <input id="password" type="password" placeholder="Please enter your password" required>
     </label>
     
     <button onclick="callme()" id="sign-in" type="button" <img class="darrows" src="signin1.png" alt="">Login</button>
@@ -188,14 +216,15 @@
     
   </form>
   
-  <p> Don't have account yet? <a href="signup.html">Register.</a></p>
+  <p class="align-right"> Not yet a member? <a href="signup.html">Register.</a></p>
   
   
-    <p id="pLeft" onclick="save()">
-      <input type="checkbox" name="checkbox" id="box">Remember me</p>
+    <div class="rmb">
+      <input onclick="save()" type="checkbox" name="checkbox" id="box">Remember me
+    </div>
     
     <p id="pRight" onclick="passwordReset()">Forgot password?</p>
-
+ 
   
   </main>
   
@@ -203,40 +232,25 @@
     
   </footer>
   
+  
   <script>
+  const welcomeBack = document.getElementById('user')
+  
     window.onload = function() {
-      document.getElementById('user').innerText = localStorage.getItem('username');
+      //welcomeBack.innerText = localStorage.getItem('username');
+       if (JSON.parse(localStorage.getItem('box')).checked = false) {
+         welcomeBack.classList.add('active');
+       }
+       else{
+         welcomeBack.classList.remove('active');
+         welcomeBack.innerText = localStorage.getItem('username');
+       }
+      
     };
-  </script>
-  
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script>
-				let checked = $("#box").is(":checked");
-				if (checked) {
-				  
-				  localStorage.setItem("checked", checked);
-				
-				}
-				//localStorage.setItem("checked", checked);
-				else {
-				  localStorage.removeItem("checked");
-				  
-				 // $('#user-wb').hide();
-				  //localStorage.removeItem("username");
-				}
-			}
-			function onReady() {
-				
-				let checked="true==localStorage.getItem("checked");
-				$("#box").prop('checked', checked);
-				$("#box").click(onClickBox);
-			}
-			$(document).ready(onReady);
-  </script>-->
-  
-  <script>
+    
     function save() {
       var checkbox = document.getElementById('box');
+      
       localStorage.setItem('box', checkbox.checked);
     }
     
@@ -248,21 +262,6 @@
   </script>
   
   <script>
-  iziToast.settings({
-    timeout: 3000,
-    resetOnHover: true,
-    transitionIn: 'flipInX',
-    transitionOut: 'flipOutX',
-    position: 'topRight',
-    onOpening: function() {
-      console.log('callback abriu!');
-    },
-    onClosing: function() {
-      console.log("callback fechou!");
-    }
-  });
-  
-  
     function callme() {
       const form = document.getElementById('form');
       
@@ -281,6 +280,7 @@
         iziToast.success({
           title: 'Success!',
           message: 'Login successful!',
+          position: 'topRight'
         });
       
         setTimeout(submitForm, 3000);
@@ -289,16 +289,26 @@
       else if(phone === '' && password === ''){
         iziToast.info({ 
           title: 'Hello!', 
-          message: 'Please enter login detials!'
+          message: 'Please enter login detials!',
+          position: 'topRight'
         });
     
         //alert('Please enter your detials!');
+      }
+      
+      else if (userphone == null && userpassword == null) {
+        iziToast.error({
+          title: 'Error',
+          message: 'Please sign up to continue',
+          position: 'topRight'
+        });
       }
       
       else{
         iziToast.error({
           title: 'Error',
           message: 'Invalid Credentials!',
+          position: 'topRight'
         });
         //alert('Invalid Credentials!');
        // window.location.replace('login.html')
