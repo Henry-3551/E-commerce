@@ -8,6 +8,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 body{
+  position: relative;
   min-height: 100vh;
   background-color: rgb(30,30,30);
 }
@@ -66,7 +67,7 @@ nav{
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
-  height: 25vh;
+  height: 20vh;
   border-radius: 20px;
   z-index: 0;
 }
@@ -157,21 +158,6 @@ nav{
   background-image: linear-gradient(to right, purple, royalblue);
 }
 
-.owned{
-  width: 100%;
-  background: papayawhip;
-  min-height: 20vh;
-  border-radius: 10px;
-}
-
-.expired{
-  width: 100%;
-  background: papayawhip;
-  min-height: 20vh;
-  border-radius: 10px;
-}
-
-
 .product-container{
   position: relative;
   padding: 5px;
@@ -183,6 +169,7 @@ nav{
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -190,6 +177,16 @@ nav{
   border: none;
 }*/
 
+.product-container .prime-logo{
+  width: 70px;
+  height: auto;
+  position: absolute;
+  right: 20%;
+  /*left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);*/
+  opacity: .1;
+}
 .product-container button{
   position: absolute;
   background-image: linear-gradient(to left, purple, royalblue);
@@ -435,14 +432,6 @@ h6{
   margin-bottom: 4px;
 }
 
-/*#overlap{
-  display: none;
-  background: rgba(255,255,255,0.6);
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  margin: 0 auto;
-}*/
 .card span{
   display: inline;
   position: absolute;
@@ -538,33 +527,4 @@ h6{
 .horizontal-nav div:hover i.fi{
   color: royalblue;
 }
-}
-
-.pd{
-  background: rgba(38,38,38,0.4);
-  padding: 20px;
-  position: relative;
-  z-index: 100;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-}
-.pd h3, h4{
-  text-align: center;
-  color: white;
-  margin-bottom: 20px;
-  opacity: 1;
-}
-.pd h3{
-  font-size: 1.3em;
-}
-.pd h4{
-  font-size: 1.2em;
-}
-.pd pre{
-  color: rgba(255,255,255,0.6);
-  font-size: 1em;
 }
