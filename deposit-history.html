@@ -12,9 +12,10 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <style>
     main{
@@ -24,6 +25,7 @@
       padding-top: 4.5rem;
     }
     .no_event {
+      display: block;
       background-image: url("nodata.png");
       background-repeat: no-repeat;
       background-size: cover;
@@ -54,6 +56,40 @@
       padding: 10px;
       margin-bottom: 10px;
     }
+    
+    .history-container{
+      position: relative;
+      width: 100%;
+    }
+    .history-container div{
+      background: linear-gradient(to left, royalblue, purple);
+      border-radius: 5px;
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+      min-height: 3.5rem;
+    }
+    .history-container div h5{
+      text-align: left;
+      font-size: .74rem;
+      color: yellow;
+      opacity: 1;
+    }
+    .history-container div p {
+      position: absolute;
+      bottom: 10px;
+      opacity: .7;
+      text-align: right;
+      font-size: .7rem;
+    }
+    .history-container div h6 {
+      position: absolute;
+      font-weight: 600;
+      right: 10px;
+      bottom: 10px;
+      color: greenyellow;
+      font-size: .7rem;
+    }
   </style>
 </head>
 
@@ -74,6 +110,10 @@
     <div class="no_event">
       <span>No deposit yet</span>
     </div>
+    
+    <section class="history-container">
+      
+    </section>
   </main>
   
    <section class="horizontal-nav">
@@ -109,8 +149,10 @@
         <div class="loader"></div>
       </div>
     
-    <script src="main.js"></script>
+    <!--<script src="main.js"></script>-->
+    <script src="history.js"></script>
     <script src="app.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
