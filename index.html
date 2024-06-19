@@ -22,6 +22,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <style>
+        .mgm {
+            border-radius: 7px;
+            position: fixed;
+            z-index: 101;
+            line-height: 1.3;
+            text-align: left;
+            bottom: 45%;
+            right: 50px;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, .3);
+        }
+
+        .mgm a {
+            font-weight: 700;
+            display: block;
+            color: #13af4d;
+        }
+
+        .mgm a,
+        .mgm a:active {
+            transition: all .2s ease;
+            color: #13af4d;
+        }
+
+    </style>
+    
 </head>
 
 <body id="body" onmousedown="return false" onselectstart="return false">
@@ -32,7 +65,7 @@
       <div class="nav current">
         <!--<i class="fi fi-rr-home"></i>-->
 
-        <a href="index.html"><h1><span>P</span>rimetek</h1></a>
+        <a href="index.html"><img src="prime-logo.png" alt=""><h1><span>P</span>rimetek</h1></a>
 
         <a href="notification.html">
         <i id="fi-bell" class="fi fi-rr-bell"></i></a>
@@ -74,10 +107,10 @@
            draggable: true,
          },
     
-         effect: 'flip',
+         effect: 'swipe',
     
          autoplay: {
-           delay: 2500,
+           delay: 3000,
          },
     
          navigation: {
@@ -96,35 +129,48 @@
      <section class="deposit-slide">
        
      </section>
+     
+     <section class="quick-links">
+      <a href="deposit.html"><div class="ql1"></div>Recharge</a>
+      
+      <a href="withdrawal.html"><div class="ql2"></div>Withdraw</a>
+      
+      <a href="https://t.me/+5896aBwIzm45ZThk"><div class="ql3"></div>Support</a>
+      
+      <a href="reward.html"><div class="ql4" ></div>Check in</a>
+    </section>
+    
   </header>
   
   <main>
     <div id="about">
       
       <h3>About Us</h3>
-      <p>We are a tech startup company. Founded by top tech genuises from colleges all over Nigeria. </p>
+      <p>Primetek is a proprietary ecommerce platform in which customers, buyers and retailers purchase available products at cheaper rate and get profit after a due cycle or period.
+      
+        We are a tech startup company. Founded by a team of game changing analysts from top tech industries in Nigeria. </p>
     </div>
     
     <div>
       <div id="mission"></div>
       <h3>Our Mission</h3>
-      <p>The goal for building this amazing platform is to increase the standard of living in the society and also build a sustainable investment platform people can trust. We assure you that if you follow all the rules and instructions on this platform, you will earn a stable income for a long period of time. Isn't that great?!😚
+      <p>The aim for building this amazing platform is to increase the standard of living in the society and also build a sustainable investment platform people can trust. 
       </p>
     </div>
     
     <div>
       <div id="what-we-do"></div>
       <h3>What We Do</h3>
-      <p>Primetek is a proprietary ecommerce platform in which customers, buyers and retailers purchase available products at cheaper rate and get profit after a due cycle or period.
+      <p>We give our customers and traders the opportunity to make massive income by investing in products that runs in a daily cycle. 
     </div>
     
     <div>
       <div id="guarantee"></div>
       <h3>Our Guarantee</h3>
-      <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption.</p>
+      <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption. You.may wonder how we make our own earnings... We earn by 6% withdrawal commissions. </p>
     </div>
     
-     <section class="testimonials hiddenTop">
+     <section class="testimonials">
         <div id="testimonial"></div>
        <h3 id="h3-intro">Testimonials</h3>
     
@@ -139,7 +185,7 @@
             
             <p class="name">Abbie Salamatu</p>
             
-            <p>Awesome program. Professional and very punctual with payments. Really trusted platform with a special value for users. Thanks Primetek ventures for the good experience.</p>
+            <p>Awesome platform. Professional and very punctual with payments. Really transparent platform with a special value for users. Thanks Primetek ventures for the good experience.</p>
           </div>
           
           <div>
@@ -148,7 +194,7 @@
             
             <p class="name">Donald Ubong</p>
             
-            <p>Primetek is a reliable platform to earn income just by investing in affordable products.  It's not my frst time of using Primetek and it won't be my last.</p>
+            <p>Primetek is a reliable platform to earn income just by investing in affordable products.  It's my frst time using Primetek and it won't be my last.</p>
           </div>
           
           <div>
@@ -165,9 +211,9 @@
         $(".carousel").owlCarousel({
           margin: 20,
           loop: true,
-          autoplay: false,
-          //autoplayTimeout: 2500,
-          //autoplayHoverPause: true,
+          autoplay: true,
+          autoplayTimeout: 2500,
+          autoplayHoverPause: true,
           responsive: {
             0: {
               items: 1,
@@ -228,14 +274,19 @@
     </section>
       
       <div class="entice-modal">
+        <img id="top-img" src="announce.png" alt="">
         <div class="entice-content">
           <h4>Welcome to Primetek🎉</h4>
           
           <div class="sub-content">
             <h6 id="title">Primetek was Officially launched on March 31st, 2024🚀🚀</h6>
-          
-          
-            <h6>Kindly follow our WhatsApp and Telegram channels for hints & updates here👇👇</h6>
+            
+           <h6> 1. Register and get ₦200 Sign up bonus.</h6>
+            <h6>2. Daily check-in reward: ₦30.</h6>
+            <h6 id="last-h6">3. Invite friends to register and get ₦100</h6>
+
+
+            <h6>Kindly follow our WhatsApp and Telegram channels for hints & updates below👇👇</h6>
             
             <h6></h6>
             <h6></h6>
@@ -266,6 +317,52 @@
         <div class="loader"></div>
       </div>
       
+     
+    <div class="mgm" style="display: none;">
+        <div class="txt" style="color:black;"></div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      var listStates = ['Enugu', 'Abia', 'Kaduna', 'Lagos', 'Kogi', 'Sokoto', 'Calabar', 'Kano', 'Delta', 'Rivers', 'Taraba', 'Nasarawa', 'Niger', 'Plateau', 'Imo', 'Anambra', 'Katsina', 'Kebbi', 'Adamawa', 'Ogun',  'Oyo', 'Osun', 'Ebonyi', 'Bauchi', 'Borno', 'Akwa-ibom', 'Bayelsa', 'Abuja', 'Edo', 'Benue'];
+        
+        var listPlans = ['₦2,500', '₦15,000', '₦8,000', '₦1,500', '₦5,000', '₦30,000', '₦24,000', '₦12,000', '₦51,000', '₦68,000'];
+        
+        var transarray = ['just <b>invested</b>', 'just <b>deposited</b>'/*, 'has <b>withdrawn</b>'*/];
+        
+        var listPhones = ['0813279****', '0904613****', '080****7389', '0703241****', '070****9793', '0802379****', '091****2276', '090****1127', '080****3158', '070****1027', '080****4689', '0704241****', '070****9796', '0802367****', '091****6776', '090****1153', '081****3255', '070****1662'];
+        
+        //interval = 6000;
+        interval = Math.floor(Math.random() * (8000 + 1) + 3000);
+        
+        var run = setInterval(request, interval);
+
+        function request() {
+            clearInterval(run);
+            //interval = 6000;
+            interval = Math.floor(Math.random() * (8000 + 1) + 3000);
+            
+            var states = listStates[Math.floor(Math.random() * listStates.length)];
+            
+            var transtype = transarray[Math.floor(Math.random() * transarray.length)];
+            
+            var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+            
+            var phones = listPhones[Math.floor(Math.random() * listPhones.length)];
+            
+        var msg = phones + ' from <b>' + states + '</b> ' + transtype + ' <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + '</a>';
+            $(".mgm .txt").html(msg);
+            $(".mgm").stop(true).fadeIn(400);
+            window.setTimeout(function() {
+                $(".mgm").stop(true).fadeOut(400);
+            }, 4000);
+            run = setInterval(request, interval);
+        }
+
+    </script>
+    
+      
    <!-- <script>
        if (sessionStorage.getItem("userName") === null) {
       
@@ -285,7 +382,7 @@
     </script>-->
     
     <script src="main.js"></script>
-
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
