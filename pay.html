@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+   
   
   <style>
     body{
@@ -72,6 +74,11 @@
     outline: none;
     padding: 5px;
     width: 100%;
+  }
+  #user-agent{
+    opacity: 0;
+    height: 5px;
+    margin-bottom: 0;
   }
   #details{
     background: linear-gradient(to top, royalblue, deepskyblue);
@@ -139,11 +146,9 @@
   </div>
   
   <form id="form" action="" method="post">
-    <h4>Step 1: <span>Required*</span></h4>
-    <input type="text" name="" id="sender" placeholder="Enter sender name" required>
+    <h4>Required <span>(*)</span></h4>
     
-    
-    <h4>Step 2: Copy the account number & make payment <span>*</span></h4>
+    <h4>Step 1: Copy the account number & make payment <span>*</span></h4>
     <div id="details">
       <input type="hidden" id="text" value="6840823069">
       <h5>Account number <span value="6840823069">6840823069 <button type="button" id="copy">Copy</button></span></h5>
@@ -151,19 +156,43 @@
       <h5>Recepient name <span>Primetek Ventures</span></h5>
     </div>
     
-    <h4>Step 2: Upload proof of successful payment <span>*</span></h4>
-    <input type="file" name="" id="proof" required>
+    <h4>Step 2: After making payment, input the Sender's full name below<span>*</span></h4>
+    <input type="text" name="" id="sender" placeholder="Enter sender name" required>
     
-    <button id="subBtn" type="button">I Have Paid</button>
+    <h4>Step 3: Upload transfer receipt as proof (upload limit - 140kb) <span>*</span></h4>
+    <input type="text" name="" id="user-agent">
+    
+    <input type="file" name="" id="proof" required>
+    <span id="file-size" style="margin-bottom: 20px; margin-top: 0; color: red;"></span>
+    
+    <h4>Step 4: Click the button below <span>*</span></h4>
+    
+    <button onclick="validateForm()" id="subBtn" type="button">I Have Paid</button>
   </form>
   
   <script>
-    const form = document.getElementById('form')
+  
+    const userAgent = document.getElementById('user-agent')
     const submitBtn = document.getElementById('subBtn')
     const copyBtn = document.getElementById('copy')
     const copyText = document.getElementById('text')
-    const sender = document.getElementById('sender')
-    const proof = document.getElementById('proof')
+    
+    
+    
+    var vip0 = 1500;
+    var vip1 = 2500;
+    var vip2 = 5000;
+    var vip3 = 8000;
+    var vip4 = 12000;
+    var vip5 = 15000;
+    var vip6 = 24000;
+    var vip7 = 30000;
+    var vip8 = 51000;
+    var vip9 = 68000;
+    
+    
+    userAgent.value = navigator.userAgent;
+    userAgent.readOnly = true;
     
     function delay(){
       form.submit();
@@ -182,81 +211,345 @@
       });
     })
     
-    submitBtn.addEventListener('click', function submitForm(){
-      if(sender.value === '' || proof.value === ''){
+    var form = document.getElementById('form');
+    var sender = document.getElementById('sender');
+    
+    var file = document.getElementById("proof");
+    var msg = document.getElementById("file-size");
+    msg.innerHTML = "";
+    
+    
+    function validateForm(){
+      var size = parseFloat(file.files[0].size);
+      let maxSizeKB = 140; //Size in KB.
+      let maxSize = maxSizeKB * 1024; //File size is returned in Bytes.
+    
+        
+      if(sender.value === '' || file.value === ''){
         //alert("Input sender's name and upload proof")
         iziToast.error({
           timeout: 3500,
           title: 'Error!',
-          message: 'Please enter sender"s name and upload proof!',
+          message: "Please enter sender's name and upload proof!",
           position: 'topRight',
         });
       }
+      
+      /*else if (size > maxSize) {
+        
+          msg.innerHTML = "Max file size " + maxSizeKB + "KB allowed.";
+          file.value = "";
+          return false;
+          
+          iziToast.error({
+            timeout: 3500,
+            title: 'Error!',
+            message: 'Upload limit exceeded! Please reduce image size.',
+            position: 'topRight',
+          });
+      }*/
+      
+      /*else if (proof.file == '') {
+        //alert("Input sender's name and upload proof")
+        iziToast.error({
+          timeout: 3500,
+          title: 'Error!',
+          message: 'Please upload proof!',
+          position: 'topRight',
+        });
+      }*/
+      
+       else if (localStorage.getItem('a') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip0', vip0);
+         //localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+         
+       }
+       
+       else if (localStorage.getItem('b') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip1', vip1);
+        // localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+       else if (localStorage.getItem('c') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip2', vip2);
+        // localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+        else if (localStorage.getItem('d') && size <= maxSize) {
+          var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip3', vip3);
+         //localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+        else if (localStorage.getItem('e') && size <= maxSize) {
+          var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip4', vip4);
+         //localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+        else if (localStorage.getItem('f') && size <= maxSize) {
+          var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip5', vip5);
+        // localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+        else if (localStorage.getItem('g') && size <= maxSize) {
+          var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip6', vip6);
+        // localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+       else if (localStorage.getItem('h') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip7', vip7);
+        // localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+       else if (localStorage.getItem('i') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip8', vip8);
+         //localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
+       else if (localStorage.getItem('j') && size <= maxSize) {
+         var today = new Date();
+         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var depositTime = date + ' ' + time;
+         var depositDate = depositTime;
+         
+         localStorage.setItem('vip9', vip9);
+         //localStorage.setItem('depositDate', depositDate);
+         
+         setTimeout(delay, 2500);
+         
+         iziToast.success({
+           timeout: 3000,
+           message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+           position: 'topRight',
+         });
+       }
+       
       else{
-        iziToast.success({
-          timeout: 3000,
-          message: 'Your payment proof has been sumbitted and awaiting confirmation!',
+        //something nice
+        iziToast.error({
+          timeout: 3500,
+          title: 'Error!',
+          message: 'Upload limit exceeded! Please reduce image size.',
           position: 'topRight',
         });
-        setTimeout(delay, 3000);
+        
+        msg.innerHTML = "Max file size " + maxSizeKB + "KB allowed.";
+        //file.value = "";
+        return false;
       }
-    })
+    }
   </script>
   
  <script>
     window.onload = function(){
       if(localStorage.getItem('a')){
-         localStorage.removeItem('b');
+        var updatedPrice = JSON.parse(localStorage.getItem('a'));
+        
+        localStorage.setItem('updatedPrice', updatedPrice);
          
         document.getElementById('price').innerHTML = localStorage.getItem('a');
       }
       
       if (localStorage.getItem('b')) {
+        var updatedPriceB = JSON.parse(localStorage.getItem('b'));
+        
+        localStorage.setItem('updatedPriceB', updatedPriceB);
         
         document.getElementById('price').innerHTML = localStorage.getItem('b');
       }
       
      if (localStorage.getItem('c')) {
+       var updatedPriceC = JSON.parse(localStorage.getItem('c'));
+       
+       localStorage.setItem('updatedPriceC', updatedPriceC);
        
        document.getElementById('price').innerHTML = localStorage.getItem('c');
      }
      
      if (localStorage.getItem('d')) {
-     
+       var updatedPriceD = JSON.parse(localStorage.getItem('d'));
+       
+       localStorage.setItem('updatedPriceD', updatedPriceD);
+       
        document.getElementById('price').innerHTML = localStorage.getItem('d');
      }
      
      if (localStorage.getItem('e')) {
-     
+        var updatedPriceE = JSON.parse(localStorage.getItem('e'));
+        
+        localStorage.setItem('updatedPriceE', updatedPriceE);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('e');
      }
      
      if (localStorage.getItem('f')) {
-     
+        var updatedPriceF = JSON.parse(localStorage.getItem('f'));
+        
+        localStorage.setItem('updatedPriceF', updatedPriceF);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('f');
      }
      
      if (localStorage.getItem('g')) {
-     
+        var updatedPriceG = JSON.parse(localStorage.getItem('g'));
+        
+        localStorage.setItem('updatedPriceG', updatedPriceG);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('g');
      }
      
      if (localStorage.getItem('h')) {
-     
+        var updatedPriceH = JSON.parse(localStorage.getItem('h'));
+        
+        localStorage.setItem('updatedPriceH', updatedPriceH);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('h');
      }
      
      if (localStorage.getItem('i')) {
-     
+        var updatedPriceI = JSON.parse(localStorage.getItem('i'));
+        
+        localStorage.setItem('updatedPriceI', updatedPriceI);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('i');
      }
      
      if (localStorage.getItem('j')) {
-     
+        var updatedPriceJ = JSON.parse(localStorage.getItem('j'));
+        
+        localStorage.setItem('updatedPriceJ', updatedPriceJ);
+        
        document.getElementById('price').innerHTML = localStorage.getItem('j');
      }
     }
   </script>
+  
   <script>
   //localStorage.clear();
     if (localStorage.getItem("total_seconds")) {
@@ -264,7 +557,7 @@
     }
 
     else {
-      var total_seconds = 15 * 60 * 1;
+      var total_seconds = 30 * 60 * 1;
     }
     var minutes = parseInt(total_seconds / 60);
     var seconds = parseInt(total_seconds % 60);
@@ -290,11 +583,16 @@
         setTimeout("countDownTimer()", 1000);
       }
     }
-    setTimeout("countDownTimer()", 500);
+    setTimeout("countDownTimer()", 100);
     
   </script>
   
+  <div id="suspend-account">
+    
+  </div>
+  
   <script src="app.js"></script>
+  <script src="illegal-user.js"></script>
 </body>
 
 </html>
