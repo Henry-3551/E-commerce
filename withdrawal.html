@@ -16,9 +16,6 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   
   <style>
     body{
@@ -31,10 +28,14 @@ main{
     position: relative;
     margin-bottom: 60px;
     padding: 20px;
-    min-height: 25vh;
+    min-height: 10vh;
     width: 100%;
     border-radius: .5rem;
-    background: rgba(255,255,255,0.6);
+    background-image: url("withdraw.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255,255,255,0.6);
     backdrop-filter: blur(4px);
 }
 h4{
@@ -51,9 +52,9 @@ h5{
   text-align: left;
 }
 .balance-box p{
-  font-size: .8rem;
+  font-size: .96rem;
   font-weight: bold;
-  color: whitesmoke;
+  color: royalblue;
 }
 
 .payment-method{
@@ -141,14 +142,13 @@ textarea{
 }
 
  #acc-no, #bank-name, #acc-name{
-  background: transition;
+  background: none;
   color: rgba(255, 255, 255, 0.7);
   width: 100%;
   padding: 5px;
   outline: none;
   margin-bottom: -25px;
-  border: none;
-  /*border-top: 1px solid rgba(255,255,255,0.2);*/
+  border: transparent;
   font-weight: 600;
   font-size: .65rem;
 }
@@ -173,6 +173,109 @@ textarea{
 .withdrawal-button button:active{
   opacity: .7;
 }
+
+.withdrawal-rules{
+  width: 100%;
+  background: rgb(38, 38, 38);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 15vh;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.6);
+}
+.withdrawal-rules h3{
+  font-size: .65rem;
+  margin-bottom: 20px;
+}
+.withdrawal-rules ol{
+  margin: 0;
+  padding-left: 20px;
+}
+.withdrawal-rules ol li{
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.withdrawal-detail{
+  position: fixed;
+  color: rgba(255,255,255,0.8);
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.withdrawal-detail.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.withdrawal-detail #buy{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy:active{
+  opacity: .7;
+}
+.withdrawal-detail #cancel {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel:active{
+  background: rgba(255,255,255,.51);
+}
+
+.section{
+  width: 85%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.section h4{
+  color: white;
+  opacity: .8;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.section h6{
+  text-align: left;
+  opacity: .9;
+  font-size: .9em;
+  font-family: 400;
+  margin-bottom: 10px;
+}
+.section h6 span{
+  margin-left: 0px;
+  color: red;
+  float: right;
+}
+.section img{
+  display: block;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 80px;
+}
   </style>
   
 </head>
@@ -182,7 +285,7 @@ textarea{
     <nav>
       <div class="nav current">
         <i id="fi" class="fi fi-rr-angle-small-left"></i>
-
+        
         <h1>Withdrawal</h1>
 
         <i id="fi-bell" class="fi fi-rr-bell"></i>
@@ -191,11 +294,11 @@ textarea{
   </header>
   
   <main>
-    <!--<div class="wallet">
+    <div class="wallet">
       <div class="balance-box">
         <h4>Available Balance:</h4>
-        <p>₦ 72,000.00 </p>
-      </div>-->
+        <p>₦<span id="balance"></span></p>
+      </div>
   
     </div>
   
@@ -215,7 +318,7 @@ textarea{
       <h5>Enter Amount</h5>
       
      
-        <input id="w-amount" type="number" placeholder="minimum withdrawal 3000NGN" contenteditable="yes" />
+        <input id="w-amount" type="number" placeholder="minimum withdrawal 2000NGN" contenteditable="yes" />
       
     <div class="cover"></div>
     
@@ -231,17 +334,77 @@ textarea{
     <div class="withdrawal-button"><button onclick="validateAmount()" type="button">Withdraw Income</button></div>
     
     </form>
+    
+     <!-- PRODUCT description -->
+  <div class="withdrawal-detail">
+    <div class="section">
+      <h4>Withdrawal Details</h4>
+      
+       <img src="withdraw.png" alt="">
+       
+      <h6 id="testh6"> Amount(NGN): <span id="withdrawal-amount"></span></h6>
+      
+      <h6>Withdrawal fee(6%)(NGN): <span id="fee"></span></h6>
+      
+      <h6>Withdrawable(NGN): <span id="subcharge-amount"></span></h6>
+     
+    </div>
+    
+    <button id="buy" onclick="withdraw()">Withdraw</button>
+    <button id="cancel" onclick="cancel()">Cancel</button>
+  </div>
+  
+  
         <script>
-        function validateAmount(){
-          const form = document.getElementById('form');
+        const withdrawalDetail = document.querySelector('.withdrawal-detail')
+        const form = document.getElementById('form');
+        
+    function validateAmount(){
           
           var withdrawalAmount = document.getElementById('w-amount').value;
           var textArea = document.getElementById('acc-no').value;
           
-          function submitForm() {
-            form.submit();
-            window.location.href = 'withdrawal-history.html';
+          const accNo = document.getElementById('acc-no')
+          accNo.readOnly = true;
+          
+           const bankName = document.getElementById('bank-name')
+           bankName.readOnly = true;
+           
+           const accName = document.getElementById('acc-name')
+           accName.readOnly = true;
+           
+           var withdrawAmount = document.querySelector('#withdrawal-amount');
+           
+           withdrawAmount.innerHTML = withdrawalAmount;
+           
+           var withdrawalFee = document.querySelector('#fee');
+           
+           withdrawalFee.innerHTML = (withdrawalAmount * (6/100));
+           
+           var actualAmount = document.querySelector('#subcharge-amount');
+           
+           actualAmount.innerHTML = (withdrawalAmount - (withdrawalAmount * (6/100)));
+         
+          
+          function bankDetails(){
+            window.location.href='bank.html';
           }
+          function products() {
+            window.location.href = 'product.html';
+          }
+        
+        
+        var curAccBalValue = localStorage.getItem('currentAccBal');
+        
+        
+        /*if (sessionStorage.getItem('userPhone')) {
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Withdrawal system is deactivated, please contact Customer Support',
+          });
+          
+        }*/
         
         if (withdrawalAmount === '') {
            iziToast.error({
@@ -252,14 +415,25 @@ textarea{
           //alert('Amount field cannot be empty!');
         }
      
-        else if(withdrawalAmount < 3000){
+        else if(withdrawalAmount < 2000){
            iziToast.error({
              timeout: 5000,
              title: 'Error!',
-             message: 'Minimum withdrawal is 3000 NGN !',
+             message: 'Minimum withdrawal is 2000 NGN !',
            });
-          //alert('Minimum withdrawal is 3000NGN!');
+          //alert('Minimum withdrawal is 2000NGN!');
         }
+        
+        else if (withdrawalAmount > JSON.parse(curAccBalValue)) {
+          
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Insufficient wallet balance!',
+          });
+          //alert('Insufficient wallet balance')
+        }
+        
         else if (withdrawalAmount >= 350000) {
           iziToast.error({
             timeout: 5000,
@@ -273,33 +447,66 @@ textarea{
           iziToast.error({
             timeout: 5000,
             title: 'Error!',
-            message: 'Add your bank details first!',
+            message: 'Please add your bank account details first!',
           });
           //alert('Add your account details first!');
-          window.location.href='bank.html';
+          setTimeout(bankDetails, 4500);
         }
+        
         else if (textArea !== localStorage.getItem('accountnumber')) {
           iziToast.error({
             timeout: 5000,
             title: 'Error!',
             message: 'Make sure your bank details provided are correct!',
           });
+          setTimeout(bankDetails, 4500);
           //alert('Make sure your bank details provided are correct!');
         }
-        else{
-          iziToast.success({
-            //icon: 'check_circle',
-            title: 'Hurray!!🎉',
-            message: 'Withdraw order sent successfully!',
+        
+       /* else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Purchase at least one product before making withdrawals!',
           });
-          setTimeout(submitForm, 4000);
-        }
+          setTimeout(products, 4500);
+     
+        }*/
+        
+        else{
+          localStorage.setItem('withdrawalAmount', withdrawalAmount);
+      
+          withdrawalDetail.classList.add('active');
         }
         
+      }
+        
+        function submitForm() {
+          form.submit();
+          window.location.href = 'profile.html';
+        }
+        
+        
+        function withdraw() {
+        
+          iziToast.success({
+            title: 'Hurray!!🎉',
+            message: 'Your withdrawal order has been submitted successfully!',
+          });
+          withdrawalDetail.classList.remove('active');
+          setTimeout(submitForm, 4000);
+          
+        }
+        
+        function cancel() {
+          withdrawalDetail.classList.remove('active');
+        }
         </script>
         
         <script>
           window.onload = function() {
+            document.getElementById('balance').innerText = localStorage.getItem('currentAccBal');
+            
             document.getElementById('acc-no').innerText = localStorage.getItem('accountnumber');
     
             document.getElementById('bank-name').innerText = localStorage.getItem('bankname');
@@ -311,6 +518,23 @@ textarea{
              alert('no account number in DB')
            }*/
         </script>
+        
+             <section class="withdrawal-rules">
+      <div class="title"><h3>Withdrawal Rules - </h3></div>
+    <ol>
+      <li>Withdrawal period: From Monday-Friday, 9am-5pm.</li>
+      
+      <li>Minimum withdrawal 2000 NGN.</li>
+      
+      <li>Withdrawal will arrive in designated account within 30mins-2hours. It might take 24hours during  bank delays.</li>
+      
+      <li>Multiple withdrawals is acceptable.</li>
+      
+      <li>Purchase at least one VIP product before making withdrawal.</li>
+      
+      <li>6% withdrawal fee will be added during withdrawal.</li>
+    </ol>
+    </section>
   </main>
   
   <section>
@@ -350,8 +574,10 @@ textarea{
         <div class="loader"></div>
       </div>
     
-    <script src="main.js"></script>
+    <!--<script src="main.js"></script>-->
     <script src="app.js"></script>
+    <script src="wallet.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
