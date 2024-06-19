@@ -1,0 +1,487 @@
+
+.detail-container{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container #buy{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy:active{
+  opacity: .7;
+}
+.detail-container #cancel {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel:active{
+  background: rgba(255,255,255,.51);
+}
+
+.section{
+  width: 85%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.section h4{
+  color: white;
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.section h6{
+  font-size: 1em;
+}
+.section h6 span{
+  margin-left: 0px;
+  float: right;
+}
+.section img{
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 80px;
+}
+
+
+/***VIP1 PRODUCT***/
+.detail-container1{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container1.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container1 #buy1{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy1:active{
+  opacity: .7;
+}
+.detail-container1 #cancel1 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel1:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP2 PRODUCT***/
+.detail-container2{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container2.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container2 #buy2{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy2:active{
+  opacity: .7;
+}
+.detail-container2 #cancel2 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel2:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP3 PRODUCT***/
+.detail-container3{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container3.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container3 #buy3{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy3:active{
+  opacity: .7;
+}
+.detail-container3 #cancel3 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel3:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP4 PRODUCT***/
+.detail-container4{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container4.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container4 #buy4{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy4:active{
+  opacity: .7;
+}
+.detail-container4 #cancel4 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel4:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP5 PRODUCT***/
+.detail-container5{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container5.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container5 #buy5{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy5:active{
+  opacity: .7;
+}
+.detail-container5 #cancel5 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel5:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP6 PRODUCT***/
+.detail-container6{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container6.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container6 #buy6{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy6:active{
+  opacity: .7;
+}
+.detail-container6 #cancel6 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel6:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP7 PRODUCT***/
+.detail-container7{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container7.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container7 #buy7{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy7:active{
+  opacity: .7;
+}
+.detail-container7 #cancel7 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel7:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP8 PRODUCT***/
+.detail-container8{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container8.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container8 #buy8{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy8:active{
+  opacity: .7;
+}
+.detail-container8 #cancel8 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel8:active{
+  background: rgba(255,255,255,.51);
+}
+
+/***VIP9 PRODUCT***/
+.detail-container9{
+  position: fixed;
+  top: 25em;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: rgb(3,30,30);
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .43s;
+}
+.detail-container9.active{
+  z-index: 1000;
+  opacity: 1;
+  top: 0;
+  transition-duration: .5s;
+}
+
+.detail-container9 #buy9{
+  display: block;
+  background: royalblue;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+#buy9:active{
+  opacity: .7;
+}
+.detail-container9 #cancel9 {
+  display: block;
+  background: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+}
+#cancel9:active{
+  background: rgba(255,255,255,.51);
+}
