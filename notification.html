@@ -14,8 +14,9 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     <nav>
       <div class="nav current">
         <i id="fi" class="fi fi-rr-angle-small-left"></i>
-
+    
         <h1>Notification</h1>
 
         <i id="fi-bell" class="fi fi-rr-bell"></i>
@@ -35,20 +36,20 @@
     <h4>All notifications</h4>
     <div class="container">
       <div class="mesg">
-        <h5>Congratulations, <span></span></h5>
+        <h5>Congratulations: <span></span></h5>
         <h6>You've received 200 NGN as sign up bonus.✨</h6>
+        <span class="mesg-date" id="mesg-date"></span>
       </div>
       <div class="mesg">
-        <h5>Season Notice:</h5>
-        <h6>Happy Easter to the Primetek family.🎉🎉</h6>
-      </div> 
-      <div class="mesg">
         <h5>General Notice:</h5>
-        <h6>Primetek will be launched on the 21st of February, 2024. New and old members are welcome. Stay tuned. Also join our Telegram and WhatsApp channels for regular updates.</h6>
+        <h6>Primetek was launched on the 21st of June, 2024. New and old members are Highly welcome. Stay tuned. Also join our Telegram and WhatsApp channels for regular updates.</h6>
+        <span class="mesg-date">2024-6-21 9:02:28</span>
       </div>
       <div class="mesg">
         <h5>Notice:</h5>
         <h6>For any enquiry or technical difficulty, feel free to contact our Customer Service. They are available 24/7.</h6>
+        
+        <span class="mesg-date">2024-6-21 9:00:45</span>
       </div>
     </div>
   </main>
@@ -90,8 +91,17 @@
       <div class="loader"></div>
     </div>
     
+    <script>
+      const signUpdate = document.querySelector('#mesg-date')
+      
+      var signUpDate = localStorage.getItem('signUpDate');
+      
+      signUpdate.innerHTML = signUpDate;
+    </script>
+    
     <script src="main.js"></script>
     <script src="app.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
