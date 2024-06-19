@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Signup - Primetek</title>
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-   
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   
   <style>
     *{
@@ -38,8 +38,14 @@
     }
     header h3 {
       color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       font-weight: 300;
+    }
+    #prime-logo{
+      width: 50px;
+      height: auto;
+      display: block;
+      margin: auto;
     }
     h1{
       position: relative;
@@ -47,7 +53,9 @@
     h1::after{
       content: "";
       position: absolute;
-      top: 1.4rem;
+      top: 110%;
+      left: 50%;
+      transform: translate(-50%);
       width: 20%;
       height: 2px;
       background: yellow;
@@ -57,32 +65,36 @@
       width: 100%;
     }
     label{
+      display: flex;
       height: max-content;
       width: 100%;
       position: relative;
-    }
-    
-    label span {
-      font-size: 22px !important;
-      opacity: .6;
-      position: absolute;
-      top: 5px;
-      left: 10px;
-      padding-right: 5px;
-      /*border-right: 1px solid rgba(255, 255, 255, 0.7);*/
-    }
-    input{
-      display: block;
-      margin: 15px auto;
-      color: whitesmoke;
-      width: 480px;
-      max-width: 100%;
-      background: transparent;
-      padding: 10px 40px;
-      border: none;
+      margin: 15px 0;
       border-bottom: 1px solid whitesmoke;
       border-radius: 10px;
+      transition-duration: .25s;
+    }
+    label:hover {
+      border-bottom: 1px solid royalblue;
+    }
+    label span{
+      font-size: 22px !important;
+      opacity: .6;
+     /* position: absolute;
+      top: 5px;
+      left: 10px;*/
+      min-width: 40px; /* set a minimum width for the icon */
+         padding: 10px; /* make sure the icon is centered vertically */
+         text-align: center; /* horizontally center the icon */
+    }
+    label input{
+      color: whitesmoke;
+      width: 100%;
+      background: transparent;
+      padding: 10px 15px;
+      border: none;
       outline: none;
+      transition-duration: .25s;
     }
     select{
       display: block;
@@ -112,7 +124,7 @@
       opacity: .6;
     }
     p{
-      margin-top: 10px;
+      margin-top: 16px;
       text-align: center;
       opacity: .8;
     }
@@ -125,32 +137,33 @@
 
 <body>
   <header>
-    <h3>Welcome!</h3>
+    <h3>Welcome to Primetek!</h3>
+    <img id="prime-logo" src="prime-logo.png" alt="">
     <h1>Register</h1>
   </header>
   
   <main>
-  <form action="login.html" onsubmit="storeMe()">
+  <form id="form" method="POST">
     
     <label for="name">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="firstName" type="text" autocomplete="off" placeholder="First name" required>
+      <input id="firstName" type="text" autocomplete="off" placeholder="First Name" required>
     </label>
     
     <label for="phone">
        <span class="material-icons">
          phone
        </span>
-      <input id="phone" type="tel" placeholder="Phone number" required>
+      <input id="phone" type="tel" placeholder="Phone Number" required>
       
       <div id="error"></div>
     </label>
     
     <label for="password">
        <span class="material-icons">
-         vpn_key
+         lock
        </span>
       <input id="password" type="password" placeholder="Password" required>
     </label>
@@ -159,30 +172,17 @@
       <span class="material-icons">
         lock
       </span>
-      <input id="cpassword" type="password" placeholder="Confirm password" required>
+      <input id="cpassword" type="password" placeholder="Confirm Password" required>
     </label>
     
     <label for="invite">
       <span class="material-icons">
         verified_user
       </span>
-      <input id="invite_code" type="number" placeholder="Invite Code" required>
+      <input id="invite_code" type="number" placeholder="Invitation Code">
     </label>
     
-    <label for="gender">
-      <span class="material-icons">
-        group
-      </span>
-        
-      <select name="gender" id="gender">
-        <option value="Select">Select</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="I prefer not to say">I prefer not to say</option>
-      </select>
-    </label>
-    
-    <button id="signup" type="submit" value="submit">Sign up</button>
+    <button onclick="storeMe()" id="signup" type="button">Sign up</button>
   </form>
   
   <p> Already have account? <a href="login.html">Login.</a></p>
@@ -202,25 +202,123 @@
     const inviteCode = document.getElementById('invite_code');
       
       inviteCode.value = id;
-      inviteCode.readOnly = false;
-      /*localStorage.getItem('userphone');*/
       
-    </script>
-    
+      if(inviteCode.value == ""){
+        inviteCode.readOnly = false;
+      }
+      else{
+        inviteCode.readOnly = true;
+      }
+  </script>
   
   <script>
+  iziToast.settings({
+    timeout: 3000,
+    resetOnHover: true,
+    transitionIn: 'flipInX',
+    transitionOut: 'flipOutX',
+    position: 'topRight',
+    onOpening: function() {
+      console.log('callback abriu!');
+    },
+    onClosing: function() {
+      console.log("callback fechou!");
+    }
+  });
+  
     function storeMe() {
+      const form = document.getElementById('form');
+      
       var name = document.getElementById('firstName').value;
       
       var phone = document.getElementById('phone').value;
       
       var password = document.getElementById('password').value;
       
-      localStorage.setItem('username', name);
+       var confirmPassword = document.getElementById('cpassword').value;
+        
+        function submitForm() {
+          form.submit();
+          window.location.replace("login.html");
+        }
+        
+       /* if (localStorage.getItem('userphone') || localStorage.getItem('userpassword')) {
+         
+          iziToast.error({
+            title: 'Error!',
+            message: 'You are already a member! Creating multiple accounts is discouraged!',
+          });
+        
+        }
+        
+        else*/ if (name === "") {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Please enter your first name!'
+          });
+        
+        }
+        
+        else if (phone === "") {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Please enter your phone number!'
+          });
+        
+        }
+        
+        else if (password === "") {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Please enter a strong password!'
+          });
+        
+        }
+        
+        else if (password.length < 8) {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Your password must be at least characters!'
+          });
+        
+        }
+        
+        else if (confirmPassword === "") {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Please enter your password again to confirm!'
+          });
+        
+        }
+        
+        else if (confirmPassword !== password) {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Password does not match!'
+          });
       
-      localStorage.setItem('userphone', phone);
-      
-      localStorage.setItem('userpassword', password);
+        }
+        
+        else {
+          localStorage.setItem('username', name);
+          localStorage.setItem('userphone', phone);
+          localStorage.setItem('userpassword', password);
+          
+          var today = new Date();
+          var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+          var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          var dateTime = date + ' ' + time;
+          
+          var signUpDate = dateTime;
+          
+          localStorage.setItem('signUpDate', signUpDate);
+
+          iziToast.success({
+            title: 'Congrats',
+            message: 'Registration completed!',
+          });
+          setTimeout(submitForm, 2500);
+        }
       
     }
     
