@@ -19,9 +19,11 @@ h5{
     margin-bottom: 35px;
     width: 100%;
     border-radius: 10px;
-    background: linear-gradient(60deg,
-      orangered,
-      orange);
+    background-image: url("reward-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: darkgray;
 }
 .container h4{
   color: orange;
@@ -37,6 +39,14 @@ h5{
   font-size: 14px;
   font-weight: bold;
   color: antiquewhite;
+}
+.balance-box input {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: antiquewhite;
+  background: none;
+  outline: none;
+  border: none;
 }
 #reward-balance{
   margin-bottom: 10px;
@@ -63,9 +73,11 @@ h5{
   text-align: center;
   width: 100%;
   border-radius: 10px;
-  background: linear-gradient(60deg,
-    orangered,
-    orange);
+  background-image: url("invite-bg.jpg");
+  background-color: darkgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .invite-friends h3{
   text-align: center;
@@ -75,7 +87,7 @@ h5{
 #invite-box{
   position: relative;
   padding-right: 0px;
-  background: rgb(0,17,48);
+  background: rgba(0,17,48,0.7);
   height: auto;
   overflow: hidden;
   border-radius: 15px;
@@ -122,11 +134,61 @@ h5{
   text-align: left;
   width: 100%;
   border-radius: 10px;
-  background: linear-gradient(60deg,
-    orangered,
-    orange);
+  background-image: url("checkin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#daily-checkin h3{
+  color: black;
+}
+#daily-checkin img{
+  width: 40px;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+#daily-checkin input{
+  background: antiquewhite;
+  border-radius: 6px;
+}
+#claim-reward{
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  background: linear-gradient(to top, royalblue, purple);
+  color: white;
+  display: inline;
+  float: right;
+}
+#claim-reward.active{
+  opacity: .5;
 }
 
 #how-to-earn{
   margin-top: 0vh;
+}
+
+
+.reward-rules{
+  width: 100%;
+  background: rgb(38, 38, 38);
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 15vh;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.6);
+}
+.reward-rules h3{
+  font-size: .65rem;
+  margin-bottom: 20px;
+}
+.reward-rules ol{
+  margin: 0;
+  padding-left: 20px;
+}
+.reward-rules ol li{
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 300;
 }
