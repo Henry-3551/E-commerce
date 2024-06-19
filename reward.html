@@ -8,6 +8,11 @@
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="common-style.css">
   <link rel="stylesheet" href="reward.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
@@ -22,7 +27,7 @@
     <nav>
       <div class="nav current">
         <i id="fi" class="fi fi-rr-angle-small-left"></i>
-
+    
         <h1>Reward</h1>
 
         <i id="fi-bell" class="fi fi-rr-bell"></i>
@@ -34,10 +39,10 @@
     <div class="container">
       <div class="balance-box">
         <h4>Reward Balance:</h4>
-        <p id="reward-balance">₦ 1,500.00 </p>
+        <p id="reward-balance">₦ <input type="number" id="rewardBal" value=""></p>
         
         <h4>Total Invites:</h4>
-        <p id="total-invite">0</p>
+        <p id="total-invite"><input type="number" name="" id="invites"></p>
       </div>
   
       <div class="entice"></div>
@@ -60,61 +65,46 @@
       </div>
     </div>
     
-    <script>
-      const inviteLink = document.getElementById('invite-link');
-      
-      const inviteCode = document.getElementById('invite-code');
-      
-      const copyLink = document.getElementById('copy-link');
-      
-      const copyCode = document.getElementById('copy-code');
-      
-      
-      inviteLink.value = 'https://primetek.com/signup.html?id=' + localStorage.getItem('userphone');
-      inviteLink.readOnly = true;
-      
-      inviteCode.value = localStorage.getItem('userphone');
-      inviteCode.readOnly = true;
-      
-      function remCopy1() {
-        copyLink.classList.remove('active');
-        copyLink.innerHTML = 'Copy';
-      }
-      function remCopy2() {
-        copyCode.classList.remove('active');
-        copyCode.innerHTML = 'Copy';
-      }
-      
-      copyLink.addEventListener('click', function(){
-        copyLink.classList.add('active');
-        inviteLink.select();
-        navigator.clipboard.writeText(inviteLink.value);
-        copyLink.innerHTML = 'Copied!';
-        setTimeout(remCopy1, 1000);
-      });
-      
-      copyCode.addEventListener('click', function(){
-        copyCode.classList.add('active');
-        inviteCode.select();
-        navigator.clipboard.writeText(inviteCode.value);
-        copyCode.innerHTML = 'Copied!';
-        setTimeout(remCopy2, 1000);
-      });
-   
-    </script>
     
     <div id="daily-checkin">
-      <h3>Check-in</h3>
+      <h3>Check in</h3>
+      <img src="check-in.png" alt="">
+      <code id="date"></code>
+      <button id="claim-reward" value="active">Claim</button>
     </div>
     
     <div id="how-to-earn">
       
     </div>
+    
+     <section class="reward-rules">
+      <div class="title"><h3>How to Perform Tasks - </h3></div>
+    <ol>
+      <li>
+        Sign up to get 200 NGN.
+      </li>
+      <li>Check in daily to receive 30 NGN.</li>
+      
+      <li>Invite friends to Sign up and receive 100 NGN per successful registration of invitees.</li>
+      
+      <li>Earn 15,000 NGN per 10 persons who purchases VIP1 product through your referral link. Contact our Customer support for more details.<!--Send screenshot of each persons product history to the Online Customer Service for verification. Once verified, you'll be asked to provide your phone number used in Registration. --></li>
+      
+      <li>Promote and advertise our platform and your Daily checkin reward will be increased to 100 NGN. </li>
+        
+      <li>Check-in daily for 14 consecutive days to Activate VIP3 product for free. </li>
+      
+      <li>Earn 15,000 NGN Weekly salary when you become our top Promoter. To be eligible, you must at least own VIP3 product; you must have posted 3 successful withdrawl receipt on the Official members group; you must have invited at least 10 people to sign up. </li>
+      
+      <li>If you're eligible, reach our customer support team to shortlist you for your weekly income.</li>
+      
+      <li>To avoid suspension/termination of your account, please don't indulge in any malicious act.</li>
+    </ol>
+    </section>
   </main>
   
-  <section>
+  <!--<section>
     <div onclick="window.location.href='https://t.me/primetek_cs'" class="CS"></div>
-  </section>
+  </section>-->
   
    <section class="horizontal-nav">
       <a href="index.html"><div>
@@ -148,9 +138,12 @@
         <h5>Login first!</h5>
         <div class="loader"></div>
       </div>
+      
     
-    <script src="main.js"></script>
+   <script src="reward.js"></script>
+   <!-- <script src="main.js"></script>-->
     <script src="app.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
