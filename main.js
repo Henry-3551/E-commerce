@@ -29,17 +29,3 @@ const setBg = document.querySelector('.settings-modal');
    
    setBg.style.display = 'block';
  }
- 
- /*window.onscroll = function() {
-   displayEntice();
- }
- 
- function displayEntice() {
-   
- 
-   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-     homeModal.classList.add("active");
-   } else {
-     homeModal.classList.remove("active");
-   }
- }*/
