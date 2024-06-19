@@ -16,7 +16,7 @@ main{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(255,255,255,0.6);
+    background-color: transparent;
     backdrop-filter: blur(4px);
 }
 h4{
@@ -35,12 +35,22 @@ h5{
   text-align: left;
 }
 .balance-box h4{
-  color: rgba(32,32,32,0.4);
+  color: rgba(32,32,32,0.7);
 }
 .balance-box p{
-  font-size: .72rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: royalblue;
+}
+.balance-box input {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: auto;
+  overflow: visible;
+  color: royalblue;
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .widgets{
@@ -100,7 +110,7 @@ h5{
   outline: none;
   border: none;
   border-radius: 15px;
-  padding: 6px 20px;
+  padding: 6px 18px;
   margin-bottom: 10px;
   margin-right: 6px;
   -webkit-transition-duration: .2s;
