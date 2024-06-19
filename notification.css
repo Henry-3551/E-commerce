@@ -17,11 +17,11 @@ h4{
 }
 h5{
   color: rgba(255,255,255,0.85);
-  font-size: 11px;
+  font-size: .7em;
 }
 h6{
   color: rgba(255,255,255,0.7);
-  font-size: 8px;
+  font-size: .65em;
   font-weight: 300;
 }
 .container .mesg{
@@ -41,4 +41,10 @@ h6{
   margin-top: -10px;
   border: 10px solid transparent;
   border-right-color: rgba(255,255,255,0.12);
+}
+#mesg-date{
+  font-size: .56em;
+}
+.mesg-date{
+  font-size: .56em;
 }
