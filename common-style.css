@@ -16,6 +16,10 @@ body{
   min-height: 100vh;
   background-color: rgb(30,30,30);
 }
+body.light{
+  background-color: floralwhite;
+  color: rgba(30,30,30,0.8);
+}
 #body.active{
   overflow: hidden !important;
 }
@@ -55,6 +59,14 @@ i.fi:hover{
 
 nav{
   max-width: 100%;
+}
+nav img{
+  width: 20px;
+  height: auto;
+  margin-right: 0px;
+}
+nav h1{
+  display: inline;
 }
 .nav{
   background-color: rgb(30,30,30);
