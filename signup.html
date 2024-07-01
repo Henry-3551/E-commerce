@@ -118,6 +118,7 @@
       padding: 10px;
       width: 100%;
       margin-top: 30px;
+      margin-bottom: 30px;
       font-size: 1em;
     }
     button:active{
@@ -127,11 +128,15 @@
       margin-top: 16px;
       text-align: center;
       opacity: .8;
+      font-size: 10px;
+    }
+    #p-login{
+      font-size: 12px;
     }
     a{
       color: royalblue;
-      text-decoration: none;
     }
+
   </style>
 </head>
 
@@ -143,20 +148,27 @@
   </header>
   
   <main>
-  <form id="form" method="POST">
+  <form id="form" name="signupForm" data-netlify="true" method="POST">
     
-    <label for="name">
+    <label for="firstname">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="firstName" type="text" autocomplete="off" placeholder="First Name" required>
+      <input id="firstName" name="firstName" type="text" autocomplete="off" placeholder="First Name" required>
+    </label>
+    
+    <label for="lastname">
+      <span class="material-icons">
+        person_outline
+      </span>
+      <input id="lastName" name="lastName" type="text" autocomplete="off" placeholder="Last Name" required>
     </label>
     
     <label for="phone">
        <span class="material-icons">
          phone
        </span>
-      <input id="phone" type="tel" placeholder="Phone Number" required>
+      <input id="phone" name="phone-number" type="number" placeholder="Phone Number" required>
       
       <div id="error"></div>
     </label>
@@ -165,28 +177,31 @@
        <span class="material-icons">
          lock
        </span>
-      <input id="password" type="password" placeholder="Password" required>
+      <input id="password" name="password" type="password" placeholder="Password" required>
     </label>
     
     <label>
       <span class="material-icons">
         lock
       </span>
-      <input id="cpassword" type="password" placeholder="Confirm Password" required>
+      <input id="cpassword" name="confirm-password" type="password" placeholder="Confirm Password" required>
     </label>
     
     <label for="invite">
       <span class="material-icons">
         verified_user
       </span>
-      <input id="invite_code" type="number" placeholder="Invitation Code">
+      <input id="invite_code" name="invite_code" type="number" placeholder="Invitation Code">
     </label>
     
     <button onclick="storeMe()" id="signup" type="button">Sign up</button>
   </form>
   
-  <p> Already have account? <a href="login.html">Login.</a></p>
-  
+  <p id="p-login"> Already have account? <a href="login.html">Login.</a></p>
+        <p>
+          By signing up to this website, you agree to our <a href="terms">Terms & Conditions</a>
+        </p>
+
   </main>
   
   <footer>
@@ -227,9 +242,11 @@
   });
   
     function storeMe() {
-      const form = document.getElementById('form');
+      const form = document.getElementById('form')
       
-      var name = document.getElementById('firstName').value;
+      var firstname = document.getElementById('firstName').value;
+      
+      var lastname = document.getElementById('lastName').value;
       
       var phone = document.getElementById('phone').value;
       
@@ -251,10 +268,18 @@
         
         }
         
-        else*/ if (name === "") {
+        else*/ if (firstname === "") {
           iziToast.error({
             title: 'Error!',
             message: 'Please enter your first name!'
+          });
+        
+        }
+        
+        if (lastname === "") {
+          iziToast.error({
+            title: 'Error!',
+            message: 'Please enter your last name!'
           });
         
         }
@@ -275,10 +300,10 @@
         
         }
         
-        else if (password.length < 8) {
+        else if (password.length !== 8) {
           iziToast.error({
             title: 'Error!',
-            message: 'Your password must be at least characters!'
+            message: 'Your password must be 8 characters long!'
           });
         
         }
@@ -312,7 +337,7 @@
           var signUpDate = dateTime;
           
           localStorage.setItem('signUpDate', signUpDate);
-
+          
           iziToast.success({
             title: 'Congrats',
             message: 'Registration completed!',
