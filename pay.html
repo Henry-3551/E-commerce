@@ -145,7 +145,7 @@
     <span id="span"></span>
   </div>
   
-  <form id="form" action="" method="post">
+  <form id="form" action="deposit-history.html" method="POST" netlify>
     <h4>Required <span>(*)</span></h4>
     
     <h4>Step 1: Copy the account number & make payment <span>*</span></h4>
@@ -196,7 +196,7 @@
     
     function delay(){
       form.submit();
-      location.replace('deposit-history.html');
+      //location.replace('deposit-history.html');
     }
     
     copyBtn.addEventListener('click', function copyNo(){
