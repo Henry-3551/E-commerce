@@ -179,7 +179,8 @@
       color: deepskyblue;
       text-decoration: none;
     }
-    
+}
+
   </style>
 </head>
 
@@ -194,7 +195,7 @@
   </header>
   
   <main>
-  <form id="form" method="POST">
+  <form id="form" name="loginForm" action="profile.html" method="POST" netlify>
     
     <label for="phone number">
       <span class="material-icons">
@@ -265,13 +266,15 @@
     function callme() {
       const form = document.getElementById('form');
       
+      var failedAttempts = 0;
+      
       var phone = document.querySelector('#reg_phone').value;
       
       var password = document.getElementById('password').value;
       
       function submitForm() {
         form.submit();
-        window.location.replace("index.html");
+        //window.location.replace("index.html");
       }
       
       if(localStorage.getItem('userphone') === phone && localStorage.getItem('userpassword') === password){
@@ -282,14 +285,18 @@
           message: 'Login successful!',
           position: 'topRight'
         });
-      
+       
+       sessionStorage.setItem('userPhone', phone);
+       
+       sessionStorage.setItem('userPassword', password);
+       
         setTimeout(submitForm, 3000);
       }
       
       else if(phone === '' && password === ''){
         iziToast.info({ 
           title: 'Hello!', 
-          message: 'Please enter login detials!',
+          message: 'Please enter your login detials!',
           position: 'topRight'
         });
     
@@ -304,7 +311,19 @@
         });
       }
       
+      else if (failedAttempts >= 3) {
+        // User has exceeded maximum number of attempts
+        iziToast.error({
+          title: 'Error',
+          message: 'User has exceeded maximum number of attempts',
+          position: 'topRight'
+        });
+      }
+      
       else{
+        failedAttempts++;
+        // Login unsuccessful
+        
         iziToast.error({
           title: 'Error',
           message: 'Invalid Credentials!',
@@ -313,12 +332,18 @@
         //alert('Invalid Credentials!');
        // window.location.replace('login.html')
       }
-      
-      sessionStorage.setItem('userPhone', phone);
-      
-      sessionStorage.setItem('userPassword', password);
     
   }
+  
+  /*function checkAttempts() {
+    if (failedAttempts >= 3) {
+      // User has exceeded maximum number of attempts
+      iziToast.error({
+        title: 'Error',
+        message: 'User has exceeded maximum number of attempts',
+        position: 'topRight'
+      });
+    }*/
   
   function passwordReset(){
     window.location.href = 'settings.html'
