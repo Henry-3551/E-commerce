@@ -148,27 +148,27 @@
   </header>
   
   <main>
-  <form id="form" name="signupForm" data-netlify="true" method="POST">
+  <form id="form" action="index.html" name="signupForm" data-netlify="true" method="POST">
     
     <label for="firstname">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="firstName" name="firstName" type="text" autocomplete="off" placeholder="First Name" required>
+      <input id="firstName" name="firstName" type="text" placeholder="First Name">
     </label>
     
     <label for="lastname">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="lastName" name="lastName" type="text" autocomplete="off" placeholder="Last Name" required>
+      <input id="lastName" name="lastName" type="text" placeholder="Last Name">
     </label>
     
     <label for="phone">
        <span class="material-icons">
          phone
        </span>
-      <input id="phone" name="phone-number" type="number" placeholder="Phone Number" required>
+      <input id="phone" name="phone-number" type="number" placeholder="Phone Number">
       
       <div id="error"></div>
     </label>
@@ -177,14 +177,14 @@
        <span class="material-icons">
          lock
        </span>
-      <input id="password" name="password" type="password" placeholder="Password" required>
+      <input id="password" name="password" type="password" placeholder="Password">
     </label>
     
     <label>
       <span class="material-icons">
         lock
       </span>
-      <input id="cpassword" name="confirm-password" type="password" placeholder="Confirm Password" required>
+      <input id="cpassword" name="confirm-password" type="password" placeholder="Confirm Password">
     </label>
     
     <label for="invite">
@@ -256,7 +256,7 @@
         
         function submitForm() {
           form.submit();
-          window.location.replace("login.html");
+          //window.location.replace("login.html");
         }
         
        /* if (localStorage.getItem('userphone') || localStorage.getItem('userpassword')) {
@@ -273,10 +273,10 @@
             title: 'Error!',
             message: 'Please enter your first name!'
           });
-        
+        }
         }
         
-        if (lastname === "") {
+        else if (lastname === "") {
           iziToast.error({
             title: 'Error!',
             message: 'Please enter your last name!'
