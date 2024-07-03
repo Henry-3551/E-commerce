@@ -145,7 +145,7 @@
     <span id="span"></span>
   </div>
   
-  <form id="form" action="deposit-history.html" method="POST" netlify>
+  <form id="form" action="deposit-history.html" name="deposit-proof-form" enctype="multipart/form-data" data-netlify="true" method="POST">
     <h4>Required <span>(*)</span></h4>
     
     <h4>Step 1: Copy the account number & make payment <span>*</span></h4>
@@ -160,15 +160,16 @@
     <input type="text" name="" id="sender" placeholder="Enter sender name" required>
     
     <h4>Step 3: Upload transfer receipt as proof (upload limit - 140kb) <span>*</span></h4>
-    <input type="text" name="" id="user-agent">
+    <input type="text" name="userAgent" id="user-agent">
     
-    <input type="file" name="" id="proof" required>
+    <input type="file" name="payment-proof" id="proof" required>
     <span id="file-size" style="margin-bottom: 20px; margin-top: 0; color: red;"></span>
     
     <h4>Step 4: Click the button below <span>*</span></h4>
     
     <button onclick="validateForm()" id="subBtn" type="button">I Have Paid</button>
   </form>
+  <p class="result"></p>
   
   <script>
   
