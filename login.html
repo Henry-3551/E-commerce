@@ -211,7 +211,7 @@
       <input id="password" type="password" placeholder="Please enter your password" required>
     </label>
     
-    <button id="sign-in" type="submit" <img class="darrows" src="signin1.png" alt="">Login</button>
+    <button id="sign-in" onclick="callme()" type="button" <img class="darrows" src="signin1.png" alt="">Login</button>
     
     
     
@@ -263,11 +263,11 @@
     
   </script>
   
-  <!--<script>
+  <script>
     function callme() {
       const form = document.getElementById('form');
       
-      var failedAttempts = 0;
+     // var failedAttempts = 0;
       
       var phone = document.querySelector('#reg_phone').value;
       
@@ -312,16 +312,16 @@
         });
       }
       
-      else if (failedAttempts >= 3) {
+     /* else if (failedAttempts >= 3) {
         // User has exceeded maximum number of attempts
         iziToast.error({
           title: 'Error',
           message: 'User has exceeded maximum number of attempts',
           position: 'topRight'
         });
-      }
+      }*/
       else{
-        failedAttempts++;
+        //failedAttempts++;
         // Login unsuccessful
         
         iziToast.error({
@@ -349,7 +349,7 @@
     window.location.href = 'settings.html'
   }
 
-  </script>-->
+  </script>
 
 </body>
 
