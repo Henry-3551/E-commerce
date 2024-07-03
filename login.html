@@ -211,7 +211,7 @@
       <input id="password" type="password" placeholder="Please enter your password" required>
     </label>
     
-    <button onclick="callme()" id="sign-in" type="button" <img class="darrows" src="signin1.png" alt="">Login</button>
+    <button id="sign-in" type="submit" <img class="darrows" src="signin1.png" alt="">Login</button>
     
     
     
@@ -238,14 +238,15 @@
   const welcomeBack = document.getElementById('user')
   
     window.onload = function() {
-      //welcomeBack.innerText = localStorage.getItem('username');
-       if (JSON.parse(localStorage.getItem('box')).checked = false) {
+      welcomeBack.innerText = localStorage.getItem('username');
+      
+       /*if (JSON.parse(localStorage.getItem('box')).checked = false) {
          welcomeBack.classList.add('active');
        }
        else{
          welcomeBack.classList.remove('active');
          welcomeBack.innerText = localStorage.getItem('username');
-       }
+       }*/
       
     };
     
@@ -262,7 +263,7 @@
     
   </script>
   
-  <script>
+  <!--<script>
     function callme() {
       const form = document.getElementById('form');
       
@@ -319,7 +320,6 @@
           position: 'topRight'
         });
       }
-      
       else{
         failedAttempts++;
         // Login unsuccessful
@@ -349,7 +349,7 @@
     window.location.href = 'settings.html'
   }
 
-  </script>
+  </script>-->
 
 </body>
 
