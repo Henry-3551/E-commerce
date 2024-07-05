@@ -148,20 +148,20 @@
   </header>
   
   <main>
-  <form id="form" action="index.html" name="signupForm" data-netlify="true" method="POST">
+  <form id="form" action="login.html" name="signupForm" method="POST" netlify>
     
     <label for="firstname">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="firstName" name="firstName" type="text" placeholder="First Name">
+      <input id="firstName" name="firstname" type="text" placeholder="First Name">
     </label>
     
     <label for="lastname">
       <span class="material-icons">
         person_outline
       </span>
-      <input id="lastName" name="lastName" type="text" placeholder="Last Name">
+      <input id="lastName" name="lastname" type="text" placeholder="Last Name">
     </label>
     
     <label for="phone">
@@ -240,9 +240,10 @@
       console.log("callback fechou!");
     }
   });
-  
+    
+    const form = document.getElementById('form')
+    
     function storeMe() {
-      const form = document.getElementById('form')
       
       var firstname = document.getElementById('firstName').value;
       
@@ -254,10 +255,6 @@
       
        var confirmPassword = document.getElementById('cpassword').value;
         
-        function submitForm() {
-          form.submit();
-          //window.location.replace("login.html");
-        }
         
        /* if (localStorage.getItem('userphone') || localStorage.getItem('userpassword')) {
          
@@ -273,7 +270,7 @@
             title: 'Error!',
             message: 'Please enter your first name!'
           });
-        }
+          //alert('Please enter your first name')
         }
         
         else if (lastname === "") {
@@ -281,7 +278,7 @@
             title: 'Error!',
             message: 'Please enter your last name!'
           });
-        
+          //alert('Please enter your last name!')
         }
         
         else if (phone === "") {
@@ -289,7 +286,15 @@
             title: 'Error!',
             message: 'Please enter your phone number!'
           });
+         // alert('Please enter your phone number!')
+        }
         
+        else if (phone.length < 10 || phone.length > 11) {
+           iziToast.error({
+             title: 'Error!',
+             message: 'Your phone number must be 10 or 11 characters long!'
+           });
+          //alert('Your phone number is not correct!')
         }
         
         else if (password === "") {
@@ -297,7 +302,7 @@
             title: 'Error!',
             message: 'Please enter a strong password!'
           });
-        
+          //alert('Please enter your password!')
         }
         
         else if (password.length !== 8) {
@@ -305,7 +310,7 @@
             title: 'Error!',
             message: 'Your password must be 8 characters long!'
           });
-        
+         // alert('Your password must be 8 characters long!')
         }
         
         else if (confirmPassword === "") {
@@ -313,7 +318,7 @@
             title: 'Error!',
             message: 'Please enter your password again to confirm!'
           });
-        
+          //alert('Please enter your password again to confirm!')
         }
         
         else if (confirmPassword !== password) {
@@ -321,12 +326,16 @@
             title: 'Error!',
             message: 'Password does not match!'
           });
-      
+          //alert('Password does not match!')
         }
         
         else {
-          localStorage.setItem('username', name);
+          localStorage.setItem('username', firstname);
+          
+          localStorage.setItem('userlastname', lastname);
+          
           localStorage.setItem('userphone', phone);
+          
           localStorage.setItem('userpassword', password);
           
           var today = new Date();
@@ -342,9 +351,15 @@
             title: 'Congrats',
             message: 'Registration completed!',
           });
+          //alert('Registration completed!');
           setTimeout(submitForm, 2500);
         }
       
+    }
+    
+    function submitForm() {
+      form.submit();
+      //window.location.replace("login.html");
     }
     
   </script>
