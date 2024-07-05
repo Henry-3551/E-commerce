@@ -257,6 +257,10 @@
   
   <script>
   const form = document.getElementById('form')
+  function submitForm() {
+    form.submit();
+    //window.location.replace("index.html");
+  }
   
     function callme() {
       
@@ -313,11 +317,6 @@
        
       }
     
-  }
-  
-  function submitForm() {
-    form.submit();
-    //window.location.replace("index.html");
   }
   
   function passwordReset(){
