@@ -313,21 +313,21 @@ textarea{
     </section>
     
     
-  <form id="form" method="post">
+  <form id="form" name="withdrawalForm" method="POST" netlify>
     
       <h5>Enter Amount</h5>
       
      
-        <input id="w-amount" type="number" placeholder="minimum withdrawal 2000NGN" contenteditable="yes" />
+        <input id="w-amount" name="amount" type="number" placeholder="minimum withdrawal 2000NGN"/>
       
     <div class="cover"></div>
     
       <h5 id="bank-details">Bank Details</h5>
-      <textarea placeholder="Account number" id="acc-no"></textarea>
+      <textarea name="accountnumber" placeholder="Account number" id="acc-no"></textarea>
       
-      <textarea placeholder="Bank" id="bank-name"></textarea>
+      <textarea name="bankName" placeholder="Bank" id="bank-name"></textarea>
       
-      <textarea placeholder="Account name" id="acc-name"></textarea>
+      <textarea name="accountname" placeholder="Account name" id="acc-name"></textarea>
       
  
     
@@ -483,7 +483,7 @@ textarea{
         
         function submitForm() {
           form.submit();
-          window.location.href = 'profile.html';
+         // window.location.href = 'profile.html';
         }
         
         
@@ -576,7 +576,6 @@ textarea{
     
     <script src="main.js"></script>
     <script src="app.js"></script>
-    <script src="wallet.js"></script>
     <script src="illegal-user.js"></script>
 </body>
 
