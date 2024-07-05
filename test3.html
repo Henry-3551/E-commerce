@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+  <form name="contact" method="POST" data-netlify="true">
+    <p>
+      <label>Your Name: <input type="text" name="name" /></label>
+    </p>
+    <p>
+      <label>Your Email: <input type="email" name="email" /></label>
+    </p>
+    <p>
+      <label>Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select></label>
+    </p>
+    <p>
+      <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>
+  
+  <input type="number" name="" id="depo">
+  <input type="button" value="Deposit" id="btn">
+  
+  <script>
+    var depo = document.getElementById('depo');
+    var btnn = document.getElementById('btn');
+    
+    btnn.addEventListener('click', function(){
+      localStorage.setItem('depos', depo.value);
+      alert('Deposit successful!');
+      location.replace('test2.html');
+    })
+    
+  </script>
+  
+</body>
+
+</html>
