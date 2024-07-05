@@ -290,7 +290,31 @@
         // window.location.replace('login.html')
       }
       
-      else if (localStorage.getItem('userphone') == null && localStorage.getItem('userpassword') == null) {
+      else if (localStorage.getItem('userphone') !== phone) {
+        // Login unsuccessful
+      
+        iziToast.error({
+          title: 'Error',
+          message: 'Incorrect phone number',
+          position: 'topRight'
+        });
+        //alert('Incorrect phone number');
+        // window.location.replace('login.html')
+      }
+      
+      else if (localStorage.getItem('userpassword') !== password) {
+        // Login unsuccessful
+      
+        iziToast.error({
+          title: 'Error',
+          message: 'Incorrect password',
+          position: 'topRight'
+        });
+        //alert('Incorrect password!');
+        // window.location.replace('login.html')
+      }
+      
+      else if (localStorage.getItem('userphone') == null || localStorage.getItem('userpassword') == null) {
         iziToast.error({
           title: 'Error',
           message: 'Please sign up to continue',
