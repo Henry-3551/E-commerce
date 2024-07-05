@@ -145,24 +145,24 @@
     <span id="span"></span>
   </div>
   
-  <form id="form" action="deposit-history.html" name="deposit-proof-form" enctype="multipart/form-data" data-netlify="true" method="POST">
+  <form id="form" action="deposit-history.html" name="depositProof" enctype="multipart/form-data" method="POST" netlify>
     <h4>Required <span>(*)</span></h4>
     
     <h4>Step 1: Copy the account number & make payment <span>*</span></h4>
     <div id="details">
-      <input type="hidden" id="text" value="6840823069">
+      <input type="hidden" name="myaccountnumber" id="text" value="6840823069">
       <h5>Account number <span value="6840823069">6840823069 <button type="button" id="copy">Copy</button></span></h5>
       <h5>Bank name <span>Moniepoint</span></h5>
       <h5>Recepient name <span>Primetek Ventures</span></h5>
     </div>
     
     <h4>Step 2: After making payment, input the Sender's full name below<span>*</span></h4>
-    <input type="text" name="" id="sender" placeholder="Enter sender name" required>
+    <input type="text" name="sender-name" id="sender" placeholder="Enter sender name">
     
     <h4>Step 3: Upload transfer receipt as proof (upload limit - 140kb) <span>*</span></h4>
     <input type="text" name="userAgent" id="user-agent">
     
-    <input type="file" name="payment-proof" id="proof" required>
+    <input type="file" name="payment-proof" id="proof">
     <span id="file-size" style="margin-bottom: 20px; margin-top: 0; color: red;"></span>
     
     <h4>Step 4: Click the button below <span>*</span></h4>
@@ -195,11 +195,6 @@
     userAgent.value = navigator.userAgent;
     userAgent.readOnly = true;
     
-    function delay(){
-      form.submit();
-      //location.replace('deposit-history.html');
-    }
-    
     copyBtn.addEventListener('click', function copyNo(){
       copyText.select();
       navigator.clipboard.writeText(copyText.value);
@@ -212,12 +207,17 @@
       });
     })
     
-    var form = document.getElementById('form');
+    const form = document.getElementById('form');
     var sender = document.getElementById('sender');
     
     var file = document.getElementById("proof");
     var msg = document.getElementById("file-size");
     msg.innerHTML = "";
+    
+    function delay() {
+      form.submit();
+      //location.replace('deposit-history.html');
+    }
     
     
     function validateForm(){
@@ -268,7 +268,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip0', vip0);
-         //localStorage.setItem('depositDate', depositDate);
+         
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -288,7 +289,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip1', vip1);
-        // localStorage.setItem('depositDate', depositDate);
+        
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -307,7 +309,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip2', vip2);
-        // localStorage.setItem('depositDate', depositDate);
+         
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -326,7 +329,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip3', vip3);
-         //localStorage.setItem('depositDate', depositDate);
+         
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -345,7 +349,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip4', vip4);
-         //localStorage.setItem('depositDate', depositDate);
+         
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -364,7 +369,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip5', vip5);
-        // localStorage.setItem('depositDate', depositDate);
+        
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -383,7 +389,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip6', vip6);
-        // localStorage.setItem('depositDate', depositDate);
+        
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -402,7 +409,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip7', vip7);
-        // localStorage.setItem('depositDate', depositDate);
+        
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -421,7 +429,8 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip8', vip8);
-         //localStorage.setItem('depositDate', depositDate);
+         
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
@@ -440,7 +449,7 @@
          var depositDate = depositTime;
          
          localStorage.setItem('vip9', vip9);
-         //localStorage.setItem('depositDate', depositDate);
+         localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
          
