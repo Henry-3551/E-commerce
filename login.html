@@ -256,18 +256,17 @@
   </script>
   
   <script>
-  const form = document.getElementById('form')
-  function submitForm() {
-    form.submit();
-    //window.location.replace("index.html");
-  }
   
     function callme() {
-      
+      const form = document.getElementById('form');
       var phone = document.querySelector('#reg_phone').value;
       
       var password = document.getElementById('password').value;
-   
+      
+      function submitForm() {
+        form.submit();
+        //window.location.replace("index.html");
+      }
       
       if(phone === '' && password === ''){
         iziToast.info({ 
@@ -291,7 +290,7 @@
         // window.location.replace('login.html')
       }
       
-      else if (userphone == null && userpassword == null) {
+      else if (localStorage.getItem('userphone') == null && localStorage.getItem('userpassword') == null) {
         iziToast.error({
           title: 'Error',
           message: 'Please sign up to continue',
