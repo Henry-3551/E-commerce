@@ -195,20 +195,20 @@
   </header>
   
   <main>
-  <form id="form" name="loginForm" action="profile.html" method="POST" netlify>
+  <form id="form" name="loginForm" action="index.html" method="POST" netlify>
     
     <label for="phone number">
       <span class="material-icons">
         phone
       </span>
-      <input id="reg_phone" type="tel" placeholder="Please enter your phone number" required>
+      <input id="reg_phone" name="phone" type="number" placeholder="Please enter your phone number">
     </label>
     
     <label for="password">
       <span class="material-icons">
         lock
       </span>
-      <input id="password" type="password" placeholder="Please enter your password" required>
+      <input id="password" name="password" type="password" placeholder="Please enter your password">
     </label>
     
     <button id="sign-in" onclick="callme()" type="button" <img class="darrows" src="signin1.png" alt="">Login</button>
@@ -240,14 +240,6 @@
     window.onload = function() {
       welcomeBack.innerText = localStorage.getItem('username');
       
-       /*if (JSON.parse(localStorage.getItem('box')).checked = false) {
-         welcomeBack.classList.add('active');
-       }
-       else{
-         welcomeBack.classList.remove('active');
-         welcomeBack.innerText = localStorage.getItem('username');
-       }*/
-      
     };
     
     function save() {
@@ -264,44 +256,35 @@
   </script>
   
   <script>
+  const form = document.getElementById('form')
+  
     function callme() {
-      const form = document.getElementById('form');
-      
-     // var failedAttempts = 0;
       
       var phone = document.querySelector('#reg_phone').value;
       
       var password = document.getElementById('password').value;
+   
       
-      function submitForm() {
-        form.submit();
-        //window.location.replace("index.html");
-      }
-      
-      if(localStorage.getItem('userphone') === phone && localStorage.getItem('userpassword') === password){
-        //alert('Valid credentials!');
-        
-        iziToast.success({
-          title: 'Success!',
-          message: 'Login successful!',
-          position: 'topRight'
-        });
-       
-       sessionStorage.setItem('userPhone', phone);
-       
-       sessionStorage.setItem('userPassword', password);
-       
-        setTimeout(submitForm, 3000);
-      }
-      
-      else if(phone === '' && password === ''){
+      if(phone === '' && password === ''){
         iziToast.info({ 
           title: 'Hello!', 
           message: 'Please enter your login detials!',
           position: 'topRight'
         });
     
-        //alert('Please enter your detials!');
+        //alert('Please enter your login detials!');
+      }
+      
+      else if (localStorage.getItem('userphone') !== phone && localStorage.getItem('userpassword') !== password) {
+        // Login unsuccessful
+      
+         iziToast.error({
+           title: 'Error',
+           message: 'Invalid Credentials!',
+           position: 'topRight'
+         });
+        //alert('Invalid Credentials!');
+        // window.location.replace('login.html')
       }
       
       else if (userphone == null && userpassword == null) {
@@ -310,40 +293,32 @@
           message: 'Please sign up to continue',
           position: 'topRight'
         });
+        //alert('Please sign up to continue');
       }
       
-     /* else if (failedAttempts >= 3) {
-        // User has exceeded maximum number of attempts
-        iziToast.error({
-          title: 'Error',
-          message: 'User has exceeded maximum number of attempts',
-          position: 'topRight'
-        });
-      }*/
       else{
-        //failedAttempts++;
-        // Login unsuccessful
+        //alert('Valid credentials!');
         
-        iziToast.error({
-          title: 'Error',
-          message: 'Invalid Credentials!',
+        iziToast.success({
+          title: 'Success!',
+          message: 'Login successful!',
           position: 'topRight'
         });
-        //alert('Invalid Credentials!');
-       // window.location.replace('login.html')
+        
+        sessionStorage.setItem('userPhone', phone);
+        
+        sessionStorage.setItem('userPassword', password);
+        
+        setTimeout(submitForm, 2500);
+       
       }
     
   }
   
-  /*function checkAttempts() {
-    if (failedAttempts >= 3) {
-      // User has exceeded maximum number of attempts
-      iziToast.error({
-        title: 'Error',
-        message: 'User has exceeded maximum number of attempts',
-        position: 'topRight'
-      });
-    }*/
+  function submitForm() {
+    form.submit();
+    //window.location.replace("index.html");
+  }
   
   function passwordReset(){
     window.location.href = 'settings.html'
