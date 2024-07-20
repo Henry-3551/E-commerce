@@ -4,376 +4,396 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="royalblue"/>
-  <title>User Profile Page</title>
+  <title>Home Page - Primetek</title>
+  <!--<meta name="monetag" content="80edf8c8a4af5c1d6886e9ccc145ed40">-->
   <!--<script src="https://alwingulla.com/88/tag.min.js" data-zone="80483" async data-cfasync="false"></script>-->
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="common-style.css">
-  <link rel="stylesheet" href="profile.css">
-  
+  <link rel="stylesheet" href="main.css">
+
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    
-   <script src="wallet.js" async></script>
+    <style>
+        .mgm {
+            border-radius: 7px;
+            position: fixed;
+            z-index: 101;
+            line-height: 1.3;
+            text-align: left;
+            bottom: 45%;
+            right: 50px;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, .3);
+        }
+
+        .mgm a {
+            font-weight: 700;
+            display: block;
+            color: #13af4d;
+        }
+
+        .mgm a,
+        .mgm a:active {
+            transition: all .2s ease;
+            color: #13af4d;
+        }
+
+    </style>
+    
 </head>
 
 <body id="body" onmousedown="return false" onselectstart="return false">
+  
+  
   <header id="header">
     <nav>
       <div class="nav current">
-        
-          <i id="fi" class="fi fi-rr-angle-small-left"></i>
-        
-        <h1>Profile</h1>
-  
-        <i id="fi-bell" class="fi fi-rr-bell"></i>
+        <!--<i class="fi fi-rr-home"></i>-->
+
+        <a href="index.html"><img src="prime-logo.png" alt=""><h1><span>P</span>rimetek</h1></a>
+
+        <a href="notification.html">
+        <i id="fi-bell" class="fi fi-rr-bell"></i></a>
       </div>
     </nav>
+    
+     <div class="swiper-container">
+    
+       <div class="swiper-wrapper">
+    
+         <div id="swiper1" class="swiper-slide">
+    
+         </div>
+    
+         <div id="swiper2" class="swiper-slide">
+    
+         </div>
+    
+         <div id="swiper3" class="swiper-slide">
+    
+         </div>
+    
+         <!-- Add more slides as needed -->
+       </div>
+    
+       <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+       <div class="swiper-pagination"></div>
+     </div>
+    
+    
+     <script>
+       var swiper = new Swiper('.swiper-container', {
+         direction: 'horizontal',
+         loop: true,
+    
+         scrollbar: {
+           el: '.swiper-scrollbar',
+           draggable: true,
+         },
+    
+         effect: 'swipe',
+    
+         autoplay: {
+           delay: 3000,
+         },
+    
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+         pagination: {
+           el: '.swiper-pagination',
+           clickable: true,
+           /*type: 'bullet',*/
+         },
+         // Add more options as needed
+       });
+     </script>
+     
+     <section class="deposit-slide">
+       
+     </section>
+     
+     <section class="quick-links">
+      <a href="deposit.html"><div class="ql1"></div>Recharge</a>
+      
+      <a href="withdrawal.html"><div onclick="location.href='withdrawal.html'" class="ql2"></div>Withdraw</a>
+      
+      <a href="https://t.me/+5896aBwIzm45ZThk"><div class="ql3"></div>Support</a>
+      
+      <a href="reward.html"><div class="ql4" ></div>Check in</a>
+    </section>
+    
   </header>
   
   <main>
-    <div class="profile">
-      <div id="profile-image" class="profile-image">
-        <span id="span"></span>
-        <img id="default" src="a3.jpg" alt="">
-        <span id="edit-img"></span>
-      </div>
+    <div id="about">
       
-      <h2><span id="greet"> </span>! <span id="welcome"> </span></h2>
+      <h3>About Us</h3>
+      <p>Primetek is a proprietary organization comprising different branches; such as building construction materials, electronics and phone accessories, ecommerce store, and more... 
       
-      <div class="edit-profile">
-        <h3>Edit Profile </h3>
+        We are a tech company with diverse sub-industries. Our organization is proudly founded by a team of game changing tech gurus & analysts from top tech companies across the globe. </p>
+    </div>
+    
+    <div>
+      <div id="mission"></div>
+      <h3>Our Mission</h3>
+      <p>The aim for building this platform is to increase awareness and reward our customers for their support. Thereby building a sustainable  platform people can trust. 
+      </p>
+    </div>
+    
+    <div>
+      <div id="what-we-do"></div>
+      <h3>What We Do</h3>
+      <p>We give our customers and investors the opportunity to make massive income by investing in products that runs in a daily cycle. 
+    </div>
+    
+    <div>
+      <div id="guarantee"></div>
+      <h3>Our Guarantee</h3>
+      <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption. </p>
+    </div>
+    
+    <div>
+        <div id="security"></div>
+        <h3>Security</h3>
+        <p>The security of our partners, investors, customers & affiliates is our topmost priority. We don't share any of your information with 3rd-party. "Compromising trust, is sure not the best way to earn trust".</p>
+    </div>
+    
+     <section class="testimonials">
+        <div id="testimonial"></div>
+       <h3 id="h3-intro">Testimonials</h3>
+    
+       <h4>What do customers & investors say about Primetek ?</h4>
         
-          <img id="img-from-local-storage">
-        
-        <div class="edit-info">
-          <input type="file" id="img-input" />
-        
-        
-          <!--<label for="fullname">Full name</label>
-          <input type="text" class="input" name="" id="fullname">
+      <div class="wrapper">
+        <div class="carousel owl-carousel">
+          <div>
+            <span id="av1" class="avatar"></span>
+            <span id="intro">
+              <i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Abbie Salamatu</p>
+            
+            <p>Awesome platform. Professional and very punctual with payments. Really transparent platform with a special value for members. Thanks Primetek ventures for the good experience.</p>
+          </div>
           
-          <label for="phone">Phone</label>
-          <input type="number" class="input" name="" id="phone">
+          <div>
+            <span id="av2" class="avatar"></span>
+            <span id="intro"><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Donald Ubong</p>
+            
+            <p>Primetek is a reliable platform to earn steady income just by investing in affordable products.  It's my frst time using Primetek and it won't be my last.</p>
+          </div>
           
-          <label for="password">Password</label>
-          <input type="password" class="input" name="" id="pass">-->
-  
-        <button id="add-btn" type="button">Save Changes</button>
+          <div>
+            <span id="av3" class="avatar"></span>
+            <span id="intro"><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i><i class="fi fi-rr-star"></i></span>
+            
+            <p class="name">Ahmed Bilal</p>
+            
+            <p>This startup is the best so far. Although more efforts has to be added to ensure its growth and scalability. Well done to the founders👍</p>
+          </div>
+        </div>
       </div>
       <script>
-        const saveBtn = document.getElementById('add-btn')
-        saveBtn.addEventListener('click', function(){
-          iziToast.success({
-            timeout: 2000,
-            title: 'Success!',
-            message: 'Profile picture saved!',
-          });
-        })
+        $(".carousel").owlCarousel({
+          margin: 20,
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 2500,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+              nav: false
+            },
+            600: {
+              items: 2,
+              nav: false
+            },
+            1000: {
+              items: 3,
+              nav: false
+            }
+          }
+        });
       </script>
-      </div>
-      
+    
+     </section>
      
-      <a href="https://t.me/primetek_cs" target="_blank"><div class="cs-1"></div></a>
-    </div>
-    
-    <section class="balance-section">
-      <div class="balance-box">
-        <h4>Wallet Balance:</h4>
-        <p>₦<input type="number" id="accountBal" value=""></p>
-      </div>
-      
-      <div class="entice">
-        
-      </div>
-      
-      <div class="transact-box">
-        <a href="withdrawal.html"><button id="btn1">Withdraw</button></a>
-        
-        <a href="deposit.html"><button id="btn2">+ Add Money</button></a>
-      </div>
-    </section>
-    
-    <section class="summary">
-      <div class="data">
-        <span>NGN</span>
-        <span id="today-income">0</span>
-        Today's earnings
-      </div>
-      
-      <div class="data">
-        <span>NGN</span>
-        <span id="asset-value">0</span>
-        Asset value
-      </div>
-      
-      <div class="data">
-        <span>NGN</span>
-        <span id="total-deposit">0</span>
-        Total deposit
-      </div>
-      
-      <div class="data">
-        <span>NGN</span>
-        <span id="withdrawable">200</span>
-        Withdrawable
-      </div>
-    </section>
-
-    <section class="quick-links">
-      <a href="deposit.html"><div class="ql1"></div>Deposit</a>
-      
-      <a href="withdrawal.html"><div class="ql2"></div>Withdraw</a>
-      
-      <a href="https://whatsapp.com/channel/0029VaKllEqCXC3BBa7gUN37"><div class="ql3"></div>Whatsapp</a>
-      
-      <a href="https://t.me/+5896aBwIzm45ZThk"><div class="ql4" ></div>Telegram</a>
-    </section>
-    
-    <div class="list">
-      <ul>
-        <li onclick="location.href='withdrawal-history.html'"><img class="dicons" src="record.png" alt="">
-        <p>Withdrawal History</p>
-        
-         <img class="darrows" src="right-arrow.png" alt="">
-         </li>
-        
-        <li onclick="location.href='my-investment.htm'"><img class="dicons" src="investment.png" alt=""> <p>My Investment</p>
-         
-         <img class="darrows" src="right-arrow.png" alt="">
-         </li>
-        
-        <li onclick="location.href='bank.html'"><img class="dicons" src="bank.png" alt=""> <p>Bank & Card Details</p>
-    
-        <img class="darrows" src="right-arrow.png" alt="">
-        </li>
-        
-        <li onclick="window.location.href='https://t.me/primetek_cs'"><img class="dicons" src="cs2.png" alt=""> <p>Customer Support</p>
-    
-        <img class="darrows" src="right-arrow.png" alt="">
-        </li>
-        
-        
-        <li onclick="displayRules()"><img class="dicons" src="about.png" alt=""> <p>Platform rules</p>
-      
-         <img class="darrows" src="right-arrow.png" alt="">
-         </li>
-        
-        <li onclick="iziToast.error({
-        timeout: 3000,
-        title: 'Sorry!',
-        message: 'The app version is still under review.',
-        });"><img class="dicons" src="apk-download.png" alt=""> <p>Download App</p>
-      
-        <img class="darrows" src="right-arrow.png" alt="">
-        </li>
-        
-        <li onclick="location.href='reward.html#how-to-earn'"><img class="dicons" src="earn.png" alt=""><p>How to Earn</p>
-        
-        <img class="darrows" src="right-arrow.png" alt="">
-        </li>
-        
-        <li onclick="location.href='settings.html'"><img class="dicons" src="settings.png" alt=""> <p>Settings</p>
-      
-        <img class="darrows" src="right-arrow.png" alt=""></li>
-      </ul>
-      
-    </div>
-    <button class="testing" id="logout" onclick="logOut()"><img class="darrows" src="logout4.png" alt=""> Log Out</button>
+     <div class="contact">
+       <h3>Contact</h3>
+       <p>Email:</p>
+       <a href="mailto:primetekventures@gmail.com">support@primetek.org</a>
+       
+       <a href="mailto:primetekventures@gmail.com">primetekventures@gmail.com</a>
+     </div>
+     
   </main>
-    
-    <section>
-      <a href="https://t.me/primetek_cs" target="_blank"><div class="CS"></div></a>
-    </section>
-    
-   <section class="horizontal-nav">
-      <div onclick="window.location.href='index.html'">
+  
+  <footer>
+    <p>©copyright 2024. All rights reserved</p>
+    <p><a href="terms.html">Terms & Conditions</a> | <a href="policy.html">Privacy Policy</a></p>
+  </footer>
+  
+    <section class="horizontal-nav">
+      <div onclick="window.location.href='index.html'" class="current">
         <i class="fi fi-rr-home"></i>
         <h5>HOME</h5>
       </div>
-      
+   
       <div onclick="window.location.href='product.html'">
         <i class="fi fi-rr-box-open"></i>
         <h5>PRODUCT</h5>
       </div>
-      
+   
       <div onclick="window.location.href='deposit.html'">
         <i class="fi fi-rr-money-from-bracket"></i>
         <h5>DEPOSIT</h5>
       </div>
-      
+   
       <div onclick="window.location.href='reward.html'">
         <i class="fi fi-rr-trophy-star"></i>
         <h5>REWARD</h5>
       </div>
-      
-      <div onclick="window.location.href='profile.html'" class="current">
+   
+      <div onclick="window.location.href='profile.html'">
         <i class="fi fi-rr-circle-user"></i>
         <h5>PROFILE</h5>
       </div>
-      
+   
     </section>
-   
-   <!-- Section for modals, popup & cover screen -->
-   
-    <section class="main">
       
-    </section>
-   
-     <div class="card card-3">
-       <h5>Login first!</h5>
-       <div class="loader"></div>
-     </div>
-     
-     <div class="platform-rules">
-       <ul>
-         <li></li>
-         <li></li>
-         <li></li>
-       </ul>
-       
-       <h3>Platform Rules</h3>
-       
-       <div class="rules">
-       <ol>
-         <li>Please follow the instructions on the "deposit page", "withdrawal page" and "reward page" strictly.</li>
-         <li>Ensure your account details binded to the system are valid, to avoid withdrawal failure.</li>
-         <li>Do not share your credentials with anyone, except to the customer support if necessary.</li>
-         <li>You can only register once. That's on one browser, because we don't accept creation of multiple accounts by one user.</li>
-         <li>Login is only possible on the same browser you registered with. Reason is above.</li>
-         <li>We shall suspend your account if you're traced to be a malicious user.</li>
-       </ol>
-       </div>
-       
-       <button id="got-it" type="button">Got it</button>
-     </div>
-     
-   <script>
-     window.onload = function() {
-       document.getElementById('welcome').innerText = /*"Hello, " + */localStorage.getItem('username');
-     };
-     
-       
-      var statusInterval = setInterval(function() {
-        var dot = document.getElementById('span');
+      <div class="entice-modal">
+        <img id="top-img" src="announce.png" alt="">
+        <div class="entice-content">
+          <h4>Welcome to Primetek🎉</h4>
+          
+          <div class="sub-content">
+            <h6 id="title">Primetek was Officially launched on March 31st, 2024🚀🚀</h6>
+            
+           <h6> 1. Register and get ₦200 Sign up bonus.</h6>
+            <h6>2. Daily check-in reward: ₦30.</h6>
+            <h6 id="last-h6">3. Invite friends to register and get ₦100</h6>
+
+
+            <h6>Kindly join our WhatsApp and Telegram channels for news & updates below👇👇</h6>
+            
+            <h6></h6>
+            <h6></h6>
+          </div>
+          <img onclick="location.href='https://whatsapp.com/channel/0029VaKllEqCXC3BBa7gUN37'" src="whatsapp.png" alt="">
+          
+          <img onclick="location.href='https://t.me/+5896aBwIzm45ZThk'" id="tg" src="telegram.png" alt="">
+        </div>
         
-        
-        if (navigator.onLine) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
+        <div class="entice-close" onclick="closeMd()">
+          <span class="material-icons">
+            close
+          </span>
+        </div>
+      </div>
+ 
+    
+      <script>
+        function closeMd(){
+          const homeModal = document.querySelector('.entice-modal')
+          
+          homeModal.classList.add('active');
         }
-      }, 1000);
-       
-       const divBlock = document.querySelector('.platform-rules')
-       function displayRules(){
-          //const divBlock = document.querySelector('.platform-rules')
-         divBlock.classList.add('active');
+      </script>
+      
+      <div class="card card-3">
+        <h5>Login first!</h5>
+        <div class="loader"></div>
+      </div>
+      
+     
+    <div class="mgm" style="display: none;">
+        <div class="txt" style="color:black;"></div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      var listStates = ['Enugu', 'Abia', 'Kaduna', 'Lagos', 'Kogi', 'Sokoto', 'Calabar', 'Kano', 'Delta', 'Rivers', 'Taraba', 'Nasarawa', 'Niger', 'Plateau', 'Imo', 'Anambra', 'Katsina', 'Kebbi', 'Adamawa', 'Ogun',  'Oyo', 'Osun', 'Ebonyi', 'Bauchi', 'Borno', 'Akwa-ibom', 'Bayelsa', 'Abuja', 'Edo', 'Benue'];
+        
+        var listPlans = ['₦2,500', '₦15,000', '₦8,000', '₦1,500', '₦5,000', '₦30,000', '₦24,000', '₦12,000', '₦51,000', '₦68,000'];
+        
+        var transarray = ['just <b>invested</b>', 'just <b>deposited</b>'/*, 'has <b>withdrawn</b>'*/];
+        
+        var listPhones = ['0813279****', '0904613****', '080****7389', '0703241****', '070****9793', '0802379****', '091****2276', '090****1127', '080****3158', '070****1027', '080****4689', '0704241****', '070****9796', '0802367****', '091****6776', '090****1153', '081****3255', '070****1662'];
+        
+        //interval = 6000;
+        interval = Math.floor(Math.random() * (8000 + 1) + 3000);
+        
+        var run = setInterval(request, interval);
+
+        function request() {
+            clearInterval(run);
+            //interval = 6000;
+            interval = Math.floor(Math.random() * (8000 + 1) + 3000);
+            
+            var states = listStates[Math.floor(Math.random() * listStates.length)];
+            
+            var transtype = transarray[Math.floor(Math.random() * transarray.length)];
+            
+            var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+            
+            var phones = listPhones[Math.floor(Math.random() * listPhones.length)];
+            
+        var msg = phones + ' from <b>' + states + '</b> ' + transtype + ' <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + '</a>';
+            $(".mgm .txt").html(msg);
+            $(".mgm").stop(true).fadeIn(400);
+            window.setTimeout(function() {
+                $(".mgm").stop(true).fadeOut(400);
+            }, 4000);
+            run = setInterval(request, interval);
+        }
+
+    </script>
+    
+      
+   <!-- <script>
+       if (sessionStorage.getItem("userName") === null) {
+      
+         function prompt() {
+           thirdModal.style.display = 'block';
+           body.classList.add("active");
+         }
+      
+         function redirectUser() {
+           window.location.href = 'signup.html'
+         }
+      
+         let a = setTimeout(prompt, 3000);
+      
+         let b = setTimeout(redirectUser, 3500);
        };
-       
-       document.getElementById('got-it').addEventListener('click', function(){
-         divBlock.classList.remove('active');
-         
-       });
-   </script>
-   
-   <script> 
-        var today = new Date();
-        var curHr = today.getHours();
-        const greetUser = document.getElementById("greet");
-        
-    function greetMe(){
-         if (curHr >= 0 && curHr < 6) { 
-         greetUser.innerHTML = 'Good Morning'; 
-         } 
-         else if (curHr >= 6 && curHr < 12) { 
-         greetUser.innerHTML = 'Good Morning'; 
-         } 
-         else if (curHr >= 12 && curHr <= 15) { 
-           greetUser.innerHTML = 'Good Afternoon'; 
-         } 
-         else { 
-           greetUser.innerHTML = 'Good Evening'; 
-        }
-    }
-    setInterval(greetMe, 100);
-     </script>
-     
-     <script>
-       const defaultImg = document.getElementById('default')
-const editImg = document.getElementById('profile-image')
-const editProfile = document.querySelector('.edit-profile')
-const addBtn = document.getElementById('add-btn')
-
-editImg.addEventListener('click', function() {
-  editProfile.classList.add('active');
-});
-
-addBtn.addEventListener('click', function() {
-  editProfile.classList.remove('active');
-});
-
-
-//localStorage.removeItem('image');
-const imageInput = document.getElementById('img-input');
-const newImage = document.getElementById(
-  'img-from-local-storage',
-);
-
-
-imageInput.addEventListener('change', event => {
-  // 👇️ Save the image to localStorage
-  const image = event.target.files[0];
-  const reader = new FileReader();
-
-  reader.addEventListener('load', () => {
-    newImage.src = reader.result;
-    defaultImg.src = reader.result;
-    localStorage.setItem('image', reader.result);
-  });
-
-
-  if (image) {
-    reader.readAsDataURL(image);
-  }
-
-});
-
-window.addEventListener('load', () => {
-  // 👇️ Take the image from localStorage
-  // and display it
-
-  if (localStorage.getItem('image') !== null) {
-    newImage.style.display = 'block';
-
-    defaultImg.src = localStorage.getItem('image');
-  }
-  else {
-    newImage.src = 'a3.jpg';
-  }
-
-  newImage.src = localStorage.getItem('image');
-});
-
-
-     </script>
-     
-     <script>
-     function logOut(){
-        sessionStorage.removeItem("userPhone");
-        location.replace("login.html");
-       }
-     </script>
-   
-   
+    </script>-->
+    
    <!-- <script src="main.js"></script>-->
-   <script src="app.js"></script>
-   <script src="illegal-user.js"></script>
+    <script src="illegal-user.js"></script>
 </body>
 
 </html>
