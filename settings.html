@@ -177,7 +177,7 @@
    
    <div class="form-container">
       <h1>Password Reset</h1>
-      <form >
+      <form>
         <div class="input-cnt">
           <i class="material-icons">lock</i>
           <input id="old-password" type="password" placeholder="Old Password" required/>
@@ -216,24 +216,48 @@ const btn = document.querySelector('#btn')
   
 btn.addEventListener('click', function(){
   
-  if (oldPassword == '' || newPassword == '' || confirmNewPassword == '') {
-    iziToast.error({
+  if (oldPassword == '' || oldPassword == null) {
+    /*iziToast.error({
       title: 'Error!',
-      message: 'Please enter new password to change password!',
-    });
+      message: 'Please enter old password to continue.',
+    });*/
+    alert('Please enter old password to continue');
   }
   
-  else if(oldPassword !== userOldPassword){
-    iziToast.error({
+  else if(newPassword == '' newPassword == null){
+    /*iziToast.error({
       title: 'Error!',
-      message: 'Incorrect old password!',
-    });
+      message: 'Please enter new password to change password!',
+    });*/
+    alert('Please enter new password to change password');
   }
-  else if (confirmNewPassword !== newPassword) {
-    iziToast.error({
+  
+  else if(confirmNewPassword == '' confirmNewPassword == null){
+   /* iziToast.error({
       title: 'Error!',
-      message: 'Password does not match! Please recheck that the password matches',
-    });
+      message: 'Please enter password again to confirm.',
+    });*/
+    alert('Please enter password again to confirm');
+  }
+  
+  else if (confirmNewPassword !== newPassword) {
+    /*iziToast.error({
+      title: 'Error!',
+      message: 'Password does not match! Please re-check that the password matches',
+    });*/
+    alert('Password does not match!');
+  }
+  
+  else{
+    localStorage.removeItem('userpassword');
+    
+    localStorage.setItem('userpassword', newPassword);
+    
+    /*iziToast.success({
+      title: '',
+      message: 'Password changed successfully.',
+    });*/
+    alert('Password changed successfully');
   }
 })
 </script>
