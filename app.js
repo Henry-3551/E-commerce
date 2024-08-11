@@ -1,29 +1,3 @@
-// code to change background and text color
-/*let light = document.getElementById('light');
-let dark = document.getElementById('dark');
-
-const body = document.querySelector("body"),
-  toggle = document.querySelector(".toggle");
-  
-let getMode = localStorage.getItem("mode");
-if (getMode && getMode === "light") {
-  light.classList.add("active");
-  dark.classList.add("active");
-  body.classList.add("light");
-  toggle.classList.add("active");
-}
-toggle.addEventListener("click", () => {
-  light.classList.toggle("active");
-  dark.classList.toggle("active");
-  body.classList.toggle("light");
-  if (!body.classList.contains("light")) {
-    return localStorage.setItem("mode", "dark");
-  }
-  localStorage.setItem("mode", "light");
-});
-toggle.addEventListener("click", () => toggle.classList.toggle("active"));
-*/
-
 
 const backBtn = document.querySelector("#fi");
 
@@ -50,7 +24,7 @@ iziToast.settings({
       onClosing: function() {
         console.log("callback fechou!");
       }
-    });
+});
     
 
 
