@@ -13,11 +13,18 @@ window.onload = function() {
   
   const noEvent = document.querySelector('.no_event')
   const historyContainer = document.querySelector('.history-container')
+  const depositStatus_1 = 'APPROVED'
+  const depositStatus_2 = 'PENDING'
   
   
   if (localStorage.getItem('updatedPrice')) {
-    var samePrice = JSON.parse(localStorage.getItem('updatedPrice'));
-    localStorage.setItem('samePrice', samePrice);
+       
+   /* var samePrice = JSON.parse(localStorage.getItem('updatedPrice'));
+    localStorage.setItem('samePrice', samePrice);*/
+    
+    let deposDate = localStorage.getItem('depositDate');
+    depositDate = deposDate;
+    localStorage.setItem('storedDepositdate0', depositDate);
     
     
     var container = document.createElement('div');
@@ -27,17 +34,11 @@ window.onload = function() {
     
     var textNode = document.createTextNode('Deposit Amount: NGN ' + localStorage.getItem('updatedPrice'));
     
-    var textNodeTwo = document.createTextNode('Time: ' + localStorage.getItem('depositDate'));
+    var textNodeTwo = document.createTextNode('Time: ' + localStorage.getItem('storedDepositdate0'));
     
-    var textNodeThree = document.createTextNode('APPROVED');
-    
-    
-    h5.appendChild(textNode);
-    p.appendChild(textNodeTwo);
-    h6.appendChild(textNodeThree);
+    var textNodeThree = document.createTextNode(depositStatus_1);
     
     
-
     h5.appendChild(textNode);
     p.appendChild(textNodeTwo);
     h6.appendChild(textNodeThree);
@@ -54,6 +55,11 @@ window.onload = function() {
 
   if (localStorage.getItem('updatedPriceB')) {
 
+    let deposDate = localStorage.getItem('depositDate');
+    depositDate = deposDate;
+    localStorage.setItem('storedDepositdate1', depositDate);
+    
+    
     var container = document.createElement('div');
     var h5 = document.createElement('h5');
     var p = document.createElement('p');
@@ -61,14 +67,14 @@ window.onload = function() {
     
     var textNode = document.createTextNode('Deposit Amount: NGN ' + localStorage.getItem('updatedPriceB'));
     
-    var textNodeBTwo = document.createTextNode('Time: ' + localStorage.getItem('depositDate'));
+    var textNodeTwo = document.createTextNode('Time: ' + localStorage.getItem('storedDepositdate1'));
     
-    var textNodeBThree = document.createTextNode('APPROVED');
+    var textNodeThree = document.createTextNode(depositStatus_1);
     
     
     h5.appendChild(textNode);
-    p.appendChild(textNodeBTwo);
-    h6.appendChild(textNodeBThree);
+    p.appendChild(textNodeTwo);
+    h6.appendChild(textNodeThree);
     
     
     container.appendChild(h5);
@@ -77,7 +83,7 @@ window.onload = function() {
     
     noEvent.style.display = 'none';
     
-    historyContainer.appendChild(container);
+    historyContainer.appendChild(container)
   }
 
   if (localStorage.getItem('c') || localStorage.getItem('updatedPriceC')) {
@@ -323,7 +329,7 @@ window.onload = function() {
   
   
     h5.appendChild(textNode);
-    p.appendChild(localStorage.getItem('textNodeTwo'));
+    p.appendChild(textNodeTwo);
     h6.appendChild(textNodeThree);
   
   
