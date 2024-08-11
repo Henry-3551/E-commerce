@@ -20,7 +20,7 @@
 
 .detail-container #buy{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -37,11 +37,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.21);
 }
 
 .section{
@@ -94,7 +94,7 @@
 
 .detail-container1 #buy1{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -111,11 +111,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel1:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.21);
 }
 
 /***VIP2 PRODUCT***/
@@ -140,7 +140,7 @@
 
 .detail-container2 #buy2{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -157,11 +157,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel2:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP3 PRODUCT***/
@@ -186,7 +186,7 @@
 
 .detail-container3 #buy3{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -203,11 +203,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel3:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP4 PRODUCT***/
@@ -232,7 +232,7 @@
 
 .detail-container4 #buy4{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -249,11 +249,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel4:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP5 PRODUCT***/
@@ -278,7 +278,7 @@
 
 .detail-container5 #buy5{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -295,11 +295,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel5:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP6 PRODUCT***/
@@ -324,7 +324,7 @@
 
 .detail-container6 #buy6{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -341,11 +341,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel6:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP7 PRODUCT***/
@@ -370,7 +370,7 @@
 
 .detail-container7 #buy7{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -387,11 +387,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel7:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP8 PRODUCT***/
@@ -416,7 +416,7 @@
 
 .detail-container8 #buy8{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -433,11 +433,11 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel8:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.2);
 }
 
 /***VIP9 PRODUCT***/
@@ -462,7 +462,7 @@
 
 .detail-container9 #buy9{
   display: block;
-  background: royalblue;
+  background: linear-gradient(to bottom, royalblue, rgba(255,255,255,.3));
   padding: 10px 20px;
   width: 100%;
   color: white;
@@ -479,9 +479,9 @@
   padding: 10px 20px;
   width: 100%;
   color: white;
-  border: 2px solid whitesmoke;
+  border: 1.4px solid whitesmoke;
   border-radius: 20px;
 }
 #cancel9:active{
-  background: rgba(255,255,255,.51);
+  background: rgba(255,255,255,.21);
 }
