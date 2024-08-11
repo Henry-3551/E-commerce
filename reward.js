@@ -1,3 +1,16 @@
+const backBtn = document.querySelector("#fi");
+
+const notifyBtn = document.querySelector("#fi-bell");
+
+
+backBtn.addEventListener("click", function goBack() {
+  window.history.back();
+})
+
+notifyBtn.addEventListener("click", function notifyPage() {
+  window.location.href = 'notification.html';
+})
+
 
 const inviteLink = document.getElementById('invite-link');
       
@@ -72,7 +85,26 @@ const inviteLink = document.getElementById('invite-link');
       setInterval(rewardLoop, 100);
     
       
-      rewardBalance.value = initialBal;
+      //rewardBalance.value = initialBal;
+      
+      
+      var totalInvites = document.getElementById('inv');
+      
+      totalInvites.readOnly = true;
+      
+      let initialInvites = 0;
+      
+      inviteLoop = () => {
+        if (localStorage.getItem('currentInvites') == null) {
+          totalInvites.value = initialInvites;
+          localStorage.setItem('currentInvites', totalInvites.value);
+        }
+        else {
+          totalInvites.value = JSON.parse(localStorage.getItem('currentInvites'));
+        }
+      }
+      setInterval(inviteLoop, 100);
+      
       
       var checkInBonus = localStorage.getItem('checkInBonus');
       
@@ -80,7 +112,7 @@ const inviteLink = document.getElementById('invite-link');
       
         rewardBalvalue = JSON.parse(localStorage.getItem('currentRewardBal')) + JSON.parse(checkInBonus);
       
-        localStorage.setItem('currentAccBal', accBalvalue);
+        localStorage.setItem('currentRewardBal', rewardBalvalue);
       
         localStorage.removeItem('checkInBonus');
       }
@@ -99,6 +131,7 @@ const inviteLink = document.getElementById('invite-link');
           var lastCheckinDate = localStorage.getItem("lastCheckinDate");
           
           var checkInBonus = 30;
+          var reward = 30;
           
           var threshold = 1000 * 60 * 60 * 24; // 24 hours in milliseconds
           let currentDate = Date.now();
@@ -106,7 +139,7 @@ const inviteLink = document.getElementById('invite-link');
           var reTime = (threshold - (currentDate - lastCheckinDate)) / (1000 * 3600);
           var hoursLeftToCheckin = Math.round(reTime);
           
-          if (currentDate - lastCheckinDate < threshold) {
+          if (currentDate - lastCheckinDate > threshold) {
             
             iziToast.error({
               timeout: 3000,
@@ -121,6 +154,7 @@ const inviteLink = document.getElementById('invite-link');
             
             else {
               localStorage.setItem('checkInBonus', checkInBonus);
+              localStorage.setItem('reward', reward);
           
               localStorage.setItem("lastCheckinDate", currentDate);
        
@@ -130,7 +164,7 @@ const inviteLink = document.getElementById('invite-link');
                 message: "You've earned N" + checkInBonus + "!",
               });
               var today = new Date();
-              var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+              var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
               var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
               var dateTime = date + ' ' + time;
               
