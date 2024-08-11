@@ -25,35 +25,66 @@
       padding-top: 4.5rem;
     }
     .no_event {
-      background-image: url("nodata.png");
+      background-image: url("no.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       width: 100%;
-      height: 40vh;
+      height: 20vh;
+      top: 15vh;
+      margin: 0 auto;
       position: relative;
       border-radius: 30px;
     }
     
-    .no_event span {
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translate(-50%);
+    h5 {
+      position: relative;
+      top: 8vh;
+      text-align: center;
       font-size: .85rem;
       font-weight: 300;
     }
     
-    .record-container{
-      display: none;
-    }
-    .withdraw-Record{
-      background: transparent;
-      min-height: 4rem;
+    .history-container{
+      position: relative;
       width: 100%;
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 5rem;
+    }
+    .history-container div{
+      background: linear-gradient(to left, royalblue, purple);
+      border-radius: 5px;
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 20px;
+      min-height: 3.5rem;
+    }
+    .history-container div h5{
+      text-align: left;
+      font-size: .74rem;
+      color: yellow;
+      opacity: 1;
+    }
+    .history-container div p {
+      position: absolute;
+      bottom: 10px;
+      opacity: .7;
+      text-align: right;
+      font-size: .7rem;
+    }
+    .history-container div h6 {
+      position: absolute;
+      font-weight: 600;
+      right: 10px;
+      bottom: 10px;
+      color: greenyellow;
+      font-size: .7rem;
+    }
+    
+    .container{
+      display: none;
+      color: whitesmoke;
+      background: none;
+      margin-bottom: 4rem;
     }
   </style>
 </head>
@@ -72,52 +103,103 @@
   </header>
   
   <main>
+    <h5 class="status">No withdrawal yet</h5>
     <div class="no_event">
-      <span>No withdrawal yet</span>
+  
     </div>
     
+    <section class="history-container">
     
-    <div class="record-container">
-    <div class="withdraw-Record_1"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
+    </section>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+      </table>
     </div>
+    
+    <script>
+  
+      var amount = JSON.parse(localStorage.getItem('sendAmount'));
+      var date = localStorage.getItem('withdrawalDate');
+      
+      const noEvent = document.querySelector('.no_event')
+      const status = document.querySelector('.status')
+      const historyContainer = document.querySelector('.history-container')
+  
+      let withdrawalHistory = localStorage.getItem("withdrawalHistory");
+      
+      if (withdrawalHistory == null) {
+        withdrawalHistory = [];
+      }
+      else{
+        noEvent.style.display = 'none';
+        historyContainer.style.display = 'block';
+        status.style.display = 'none';
+      }
+      
+      function storeWithdrawal(amount, date) {
+        withdrawalHistory.push([date, amount]);
+        localStorage.setItem("withdrawalHistory", withdrawalHistory);
+      }
+      
+      window.onload = function displayWithdrawalHistory() {
+       
+        for (let history of withdrawalHistory) {
+    
+          let container = document.createElement('div');
+        
+          let h5 = document.createElement('h5');
+          h5.innerHTML = history[1];
+        
+          let p = document.createElement('p');
+          p.innerHTML = history[0];
+          
+          container.appendChild(h5);
+          container.appendChild(p);
+          historyContainer.appendChild(container);
+        }
+      }
+      
+      //storeWithdrawal(amount, date);
+    </script>
+    
   </main>
   
   <section>
     <div class="CS"></div>
   </section>
   
-   <section class="horizontal-nav">
-      <a href="index.html"><div>
+    <section class="horizontal-nav">
+      <div onclick="window.location.href='index.html'">
         <i class="fi fi-rr-home"></i>
         <h5>HOME</h5>
-      </div></a>
-      
-      <a href="product.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='product.html'">
         <i class="fi fi-rr-box-open"></i>
         <h5>PRODUCT</h5>
-      </div></a>
-      
-      <a href="deposit.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='deposit.html'">
         <i class="fi fi-rr-money-from-bracket"></i>
         <h5>DEPOSIT</h5>
-      </div></a>
-      
-      <a href="reward.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='reward.html'">
         <i class="fi fi-rr-trophy-star"></i>
         <h5>REWARD</h5>
-      </div></a>
-      
-      <a href="profile.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='profile.html'">
         <i class="fi fi-rr-circle-user"></i>
         <h5>PROFILE</h5>
-      </div></a>
-      
+      </div>
+   
     </section>
     
     
@@ -126,7 +208,7 @@
         <div class="loader"></div>
       </div>
     
-    <script src="main.js"></script>
+   <!-- <script src="main.js"></script>-->
     <script src="app.js"></script>
     <script src="illegal-user.js"></script>
 </body>
