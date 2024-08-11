@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="royalblue"/>
   <title>User Profile Page</title>
+  <!--<script src="https://alwingulla.com/88/tag.min.js" data-zone="80483" async data-cfasync="false"></script>-->
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="common-style.css">
   <link rel="stylesheet" href="profile.css">
@@ -16,6 +18,8 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+   <script src="wallet.js" async></script>
 </head>
 
 <body id="body" onmousedown="return false" onselectstart="return false">
@@ -36,26 +40,90 @@
     <div class="profile">
       <div id="profile-image" class="profile-image">
         <span id="span"></span>
+        <img id="default" src="a3.jpg" alt="">
+        <span id="edit-img"></span>
       </div>
+      
       <h2><span id="greet"> </span>! <span id="welcome"> </span></h2>
       
-      <div class="cs-1"></div>
+      <div class="edit-profile">
+        <h3>Edit Profile </h3>
+        
+          <img id="img-from-local-storage">
+        
+        <div class="edit-info">
+          <input type="file" id="img-input" />
+        
+        
+          <!--<label for="fullname">Full name</label>
+          <input type="text" class="input" name="" id="fullname">
+          
+          <label for="phone">Phone</label>
+          <input type="number" class="input" name="" id="phone">
+          
+          <label for="password">Password</label>
+          <input type="password" class="input" name="" id="pass">-->
+  
+        <button id="add-btn" type="button">Save Changes</button>
+      </div>
+      <script>
+        const saveBtn = document.getElementById('add-btn')
+        saveBtn.addEventListener('click', function(){
+          iziToast.success({
+            timeout: 2000,
+            title: 'Success!',
+            message: 'Profile picture saved!',
+          });
+        })
+      </script>
+      </div>
+      
+     
+      <a href="https://t.me/primetek_cs" target="_blank"><div class="cs-1"></div></a>
     </div>
     
     <section class="balance-section">
       <div class="balance-box">
         <h4>Wallet Balance:</h4>
-        <p>₦<input type="number" id="accountBal" value=""></p>
+        <p>₦<input type="number" id="accountBal" value="200"></p>
       </div>
       
       <div class="entice">
         
       </div>
       
+      <a id="historial" href="withdrawal-history.html">History ></a>
+      
       <div class="transact-box">
         <a href="withdrawal.html"><button id="btn1">Withdraw</button></a>
         
         <a href="deposit.html"><button id="btn2">+ Add Money</button></a>
+      </div>
+    </section>
+    
+    <section class="summary">
+      <div class="data">
+        <span>NGN</span>
+        <span id="today-income">200</span>
+        Today's Income
+      </div>
+      
+      <!--<div class="data">
+        <span>NGN</span>
+        <span id="asset-value">0</span>
+        Asset value
+      </div>-->
+      
+      <div class="data">
+        <span>NGN</span>
+        <span id="total-income">200</span>
+        Total Income
+      </div>
+      
+      <div class="data">
+        <span>NGN</span>
+        <span id="withdrawable">200</span>
+        Withdrawable
       </div>
     </section>
 
@@ -93,7 +161,7 @@
         </li>
         
         
-        <li onclick="location.href='index.html#about'"><img class="dicons" src="about.png" alt=""> <p>About Us</p>
+        <li onclick="displayRules()"><img class="dicons" src="about.png" alt=""> <p>Platform rules</p>
       
          <img class="darrows" src="right-arrow.png" alt="">
          </li>
@@ -102,7 +170,7 @@
         timeout: 3000,
         title: 'Sorry!',
         message: 'The app version is still under review.',
-        });"><img class="dicons" src="apk-download.png" alt=""> <p>Download App</p>
+        });"><img class="dicons" src="apk-download.png" alt=""> <p>Download Android App</p>
       
         <img class="darrows" src="right-arrow.png" alt="">
         </li>
@@ -122,46 +190,69 @@
   </main>
     
     <section>
-      <div onclick="window.location.href='https://t.me/primetek_cs'" class="CS"></div>
+      <a href="https://t.me/primetek_cs" target="_blank"><div class="CS"></div></a>
     </section>
     
    <section class="horizontal-nav">
-      <a href="index.html"><div>
+      <div onclick="window.location.href='index.html'">
         <i class="fi fi-rr-home"></i>
         <h5>HOME</h5>
-      </div></a>
+      </div>
       
-      <a href="product.html"><div>
+      <div onclick="window.location.href='product.html'">
         <i class="fi fi-rr-box-open"></i>
         <h5>PRODUCT</h5>
-      </div></a>
+      </div>
       
-      <a href="deposit.html"><div>
+      <div onclick="window.location.href='deposit.html'">
         <i class="fi fi-rr-money-from-bracket"></i>
         <h5>DEPOSIT</h5>
-      </div></a>
+      </div>
       
-      <a href="reward.html"><div>
+      <div onclick="window.location.href='reward.html'">
         <i class="fi fi-rr-trophy-star"></i>
         <h5>REWARD</h5>
-      </div></a>
+      </div>
       
-      <a href="profile.html"><div class="current">
+      <div onclick="window.location.href='profile.html'" class="current">
         <i class="fi fi-rr-circle-user"></i>
         <h5>PROFILE</h5>
-      </div></a>
+      </div>
       
     </section>
    
    <!-- Section for modals, popup & cover screen -->
+   
+    <section class="main">
+      
+    </section>
    
      <div class="card card-3">
        <h5>Login first!</h5>
        <div class="loader"></div>
      </div>
      
-     <div class="settings-modal">
+     <div class="platform-rules">
+       <ul>
+         <li></li>
+         <li></li>
+         <li></li>
+       </ul>
        
+       <h3>Platform Rules</h3>
+       
+       <div class="rules">
+       <ol>
+         <li>Please follow the instructions on the "deposit page", "withdrawal page" and "reward page" strictly.</li>
+         <li>Ensure your account details binded to the system is valid, to avoid withdrawal failure.</li>
+         <li>Do not share your credentials with anyone, except to the customer support if necessary.</li>
+         <li>You can only register once. That's on one browser, because we don't accept creation of multiple accounts by one user.</li>
+         <li>Login is only possible on the same browser you registered with. Reason is above.</li>
+         <li>We shall suspend your account if you're traced to be a malicious user.</li>
+       </ol>
+       </div>
+       
+       <button id="got-it" type="button">Got it</button>
      </div>
      
    <script>
@@ -181,6 +272,16 @@
         }
       }, 1000);
        
+       const divBlock = document.querySelector('.platform-rules')
+       function displayRules(){
+          //const divBlock = document.querySelector('.platform-rules')
+         divBlock.classList.add('active');
+       };
+       
+       document.getElementById('got-it').addEventListener('click', function(){
+         divBlock.classList.remove('active');
+         
+       });
    </script>
    
    <script> 
@@ -206,16 +307,73 @@
      </script>
      
      <script>
+       const defaultImg = document.getElementById('default')
+const editImg = document.getElementById('profile-image')
+const editProfile = document.querySelector('.edit-profile')
+const addBtn = document.getElementById('add-btn')
+
+editImg.addEventListener('click', function() {
+  editProfile.classList.add('active');
+});
+
+addBtn.addEventListener('click', function() {
+  editProfile.classList.remove('active');
+});
+
+
+//localStorage.removeItem('image');
+const imageInput = document.getElementById('img-input');
+const newImage = document.getElementById(
+  'img-from-local-storage',
+);
+
+
+imageInput.addEventListener('change', event => {
+  // 👇️ Save the image to localStorage
+  const image = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener('load', () => {
+    newImage.src = reader.result;
+    defaultImg.src = reader.result;
+    localStorage.setItem('image', reader.result);
+  });
+
+
+  if (image) {
+    reader.readAsDataURL(image);
+  }
+
+});
+
+window.addEventListener('load', () => {
+  // 👇️ Take the image from localStorage
+  // and display it
+
+  if (localStorage.getItem('image') !== null) {
+    newImage.style.display = 'block';
+
+    defaultImg.src = localStorage.getItem('image');
+  }
+  else {
+    newImage.src = 'a3.jpg';
+  }
+
+  newImage.src = localStorage.getItem('image');
+});
+
+
+     </script>
+     
+     <script>
      function logOut(){
         sessionStorage.removeItem("userPhone");
         location.replace("login.html");
        }
      </script>
    
-    
-    <script src="wallet.js"></script>
-    <script src="main.js"></script>
-   <script src="app.js"></script>
+   
+   <!-- <script src="main.js"></script>-->
    <script src="illegal-user.js"></script>
 </body>
 
