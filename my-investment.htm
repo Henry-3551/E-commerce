@@ -20,9 +20,10 @@
   <style>
     main{
       background: rgb(30,30,30);
-      padding: 1em;
+      padding: 2em;
       padding-top: 4.5rem;
     }
+    
     .no_event {
       background-image: url("nodata.png");
       background-repeat: no-repeat;
@@ -45,16 +46,146 @@
       color: rgba(255,255,255,0.6);
     }
     
-    .record-container{
+    #proof{
+      color: coral;
+      font-size: 2em;
+    }
+    
+    .product-cycle{
+      position: relative;
+      background: rgba(48,48,48,0.8);
+      min-height: auto;
+      width: 100%;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .product-content{
+      margin: auto;
+      min-height: 20vh;
+      width: 50%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgba(255,255,255,0.4);
+    }
+    
+    #vip0{
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("oraimo-cord.jpg");
+    }
+    #vip1{
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("oraimo-charger.jpg");
+    }
+    #vip2 {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("oraimo-super-charger.jpg");
+    }
+    #vip3 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-super-charger.jpg");
+    }
+    #vip4 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-10Ah.jpg");
+    }
+    #vip5 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-20Ah.png");
+    }
+    #vip6 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-27Ah.jpg");
+    }
+    #vip7 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-30Ah.jpg");
+    }
+    #vip8 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-p500.jpg");
+    }
+    #vip9 {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("oraimo-p600.png");
+    }
+    
+    .product-subcontent{
+      position: relative;
+      width: 100%;
+    }
+    .product-subcontent h4{
+      color: seashell;
+      margin-bottom: 10px;
+      font-size: 90%;
+    }
+.product-subcontent h4 span{
+  color: red;
+  font-size: 100%;
+}
+    .product-subcontent button{
+      background: royalblue;
+      border-radius: 20px;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      width: 100%;
+    }
+    .product-subcontent button:active{
+      opacity: .6;
+    }
+    
+    
+    #cycle-0{
       display: none;
     }
-    .withdraw-Record{
-      background: antiquewhite;
-      min-height: 4rem;
-      width: 100%;
-      border-radius: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
+    #cycle-1 {
+      display: none;
+    }
+    #cycle-1 h3 {
+      color: palegreen;
+    }
+    #cycle-2 {
+      display: none;
+    }
+    #cycle-2 h3 {
+      color: pink;
+    }
+    #cycle-3 {
+      display: none;
+    }
+    #cycle-3 h3 {
+      color: cornsilk;
+    }
+    #cycle-4 {
+      display: none;
+    }
+    #cycle-4 h3 {
+      color: lightskyblue;
+    }
+    #cycle-5 {
+      display: none;
+    }
+    #cycle-5 h3 {
+      color: peachpuff;
+    }
+    #cycle-6 {
+      display: none;
+    }
+    #cycle-6 h3 {
+      color: turquoise;
+    }
+    #cycle-7 {
+      display: none;
+    }
+    #cycle-7 h3 {
+      color: tan;
+    }
+    #cycle-8 {
+      display: none;
+    }
+    #cycle-8 h3 {
+      color: mediumslateblue;
+    }
+    #cycle-9 {
+      display: none;
+    }
+    #cycle-9 h3 {
+      color: darkkhaki;
     }
   </style>
 </head>
@@ -77,44 +208,168 @@
       <span>No available data</span>
     </div>
     
+    <div id="proof"></div>
     
-    <div class="record-container">
-    <div class="withdraw-Record_1"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
-    <div class="withdraw-Record"></div>
+    <div class="product-cycle-container">
+      
+      <div id="cycle-0" class="product-cycle">
+        <h3>VIP 0</h3>
+        
+        <div id="vip0" class="product-content"></div>
+        
+        <div class="product-subcontent">
+          
+          <h4>Next Income in: <span id="next-vip0-income"></span></h4>
+          
+          <button id="btn0" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-1" class="product-cycle">
+        <h3>VIP 1</h3>
+        
+        <div id="vip1" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip1-income"></span></h4>
+        
+          <button id="btn01" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-2" class="product-cycle">
+        <h3>VIP 2</h3>
+        
+        <div id="vip2" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip2-income"></span></h4>
+        
+          <button id="btn02" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-3" class="product-cycle">
+        <h3>VIP 3</h3>
+        
+        <div id="vip3" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip3-income"></span></h4>
+        
+          <button id="btn03" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-4" class="product-cycle">
+        <h3>VIP 4</h3>
+        
+        <div id="vip4" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip4-income"></span></h4>
+        
+          <button id="btn04" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-5" class="product-cycle">
+        <h3>VIP 5</h3>
+        
+        <div id="vip5" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip5-income"></span></h4>
+        
+          <button id="btn05" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-6" class="product-cycle">
+        <h3>VIP 6</h3>
+        
+        <div id="vip6" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip6-income"></span></h4>
+        
+          <button id="btn06" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-7" class="product-cycle">
+        <h3>VIP 7</h3>
+        
+        <div id="vip7" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip7-income"></span></h4>
+        
+          <button id="btn07" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-8" class="product-cycle">
+        <h3>VIP 8</h3>
+        
+        <div id="vip8" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip8-income"></span></h4>
+        
+          <button id="btn08" type="button">Claim Daily Income</button>
+        </div>
+      </div>
+      
+      <div id="cycle-9" class="product-cycle">
+        <h3>VIP 9</h3>
+        
+        <div id="vip9" class="product-content"></div>
+        
+        <div class="product-subcontent">
+        
+          <h4>Next Income in: <span id="next-vip9-income"></span></h4>
+        
+          <button id="btn09" type="button">Claim Daily Income</button>
+        </div>
+      </div>
     </div>
   </main>
   
-   <section class="horizontal-nav">
-      <a href="index.html"><div>
+    <section class="horizontal-nav">
+      <div onclick="window.location.href='index.html'">
         <i class="fi fi-rr-home"></i>
         <h5>HOME</h5>
-      </div></a>
-      
-      <a href="product.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='product.html'">
         <i class="fi fi-rr-box-open"></i>
         <h5>PRODUCT</h5>
-      </div></a>
-      
-      <a href="deposit.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='deposit.html'">
         <i class="fi fi-rr-money-from-bracket"></i>
         <h5>DEPOSIT</h5>
-      </div></a>
-      
-      <a href="reward.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='reward.html'">
         <i class="fi fi-rr-trophy-star"></i>
         <h5>REWARD</h5>
-      </div></a>
-      
-      <a href="profile.html"><div>
+      </div>
+   
+      <div onclick="window.location.href='profile.html'">
         <i class="fi fi-rr-circle-user"></i>
         <h5>PROFILE</h5>
-      </div></a>
-      
+      </div>
+   
     </section>
     
       <div class="card card-3">
@@ -122,8 +377,9 @@
         <div class="loader"></div>
       </div>
     
-    <script src="main.js"></script>
+   <!-- <script src="main.js"></script>-->
     <script src="app.js"></script>
+    <script src="cycle.js"></script>
     <script src="illegal-user.js"></script>
 </body>
 
