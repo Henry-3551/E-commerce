@@ -17,7 +17,11 @@ body{
 }
 
 h1{
-  color: rgba(255,255,255,0.6);
+  color: transparent;
+  font-weight: bold;
+  background-image: linear-gradient(to right, royalblue, mediumpurple);
+  background-clip: text;
+  -webkit-background-clip: text;
   font-size: 1.2rem;
 }
 h1 span{
@@ -212,6 +216,10 @@ button:hover{
   margin-right: 10px;
   border-radius: 10px;
 }
+.product-container .inactive{
+  background: lightgrey;
+  opacity: 1;
+}
 .product span{
   position: absolute;
   width: 28px;
@@ -293,70 +301,85 @@ button:hover{
   top: 0;
   left: 0;
 }
+.productDetails h4 span{
+  color: gold;
+}
 .productDetails h6{
   opacity: 1;
   font-family: Arial, Helvetica, sans-serif;
 }
 h6 span{
   margin-left: 3px;
-  color: royalblue;
+  color: orange;
 }
 #productImg0 {
-  background-image: url("oraimo-cord.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-cord.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg01 {
-  background-image: url("oraimo-charger.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-charger.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg1{
-  background-image: url("oraimo-super-charger.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-super-charger.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg2{
-  background-image: url("oraimo-mini-powerbank.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-mini-powerbank.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg3 {
-  background-image: url("oraimo-10Ah.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-10Ah.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg4 {
-  background-image: url("oraimo-20Ah.png");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-20Ah.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg5 {
-  background-image: url("oraimo-27Ah.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-27Ah.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg6 {
-  background-image: url("oraimo-30Ah.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-30Ah.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg7 {
-  background-image: url("oraimo-p500.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-p500.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #productImg8 {
-  background-image: url("oraimo-p600.png");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),url("oraimo-p600.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#productImg9 {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("triplebass.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#productImg10 {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("soundbass.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
