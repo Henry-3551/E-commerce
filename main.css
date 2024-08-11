@@ -9,6 +9,11 @@ nav img{
 }
 nav h1{
   display: inline;
+  color: transparent;
+  font-weight: bold;
+  background-image: linear-gradient(to right, royalblue, mediumpurple);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 main{
   padding: 0 20px;
@@ -28,7 +33,7 @@ h3::before{
   border-radius: 20px;
   height: 2px;
   width: 15%;
-  top: 2rem;
+  top: 1.76rem;
 }
 h4{
   color: rgba(255,255,255,0.7);
@@ -157,6 +162,15 @@ p{
     width: 100%;
     margin-bottom: 30px;
 }
+#security {
+  background-image: url("secure.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 30px;
+}
 
 /* testimonials */
 #testimonial {
@@ -245,6 +259,7 @@ p{
   margin-bottom: 20px;
 }
 .contact a{
+  text-align: center;
   font-size: .8rem;
   color: rgba(255,255,255,0.8);
   text-decoration: royalblue underline;
@@ -351,6 +366,16 @@ footer{
 }
 .entice-close span{
   width: 26px;
-  border: 1px solid white;
+  border: 1px solid antiquewhite;
+  color: mediumpurple;
   border-radius: 50%;
+}
+
+footer p{
+  font-size: 11px;
+}
+footer p a{
+  font-size: 10px;
+  color: whitesmoke;
+  text-decoration: underline;
 }
