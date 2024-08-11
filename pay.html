@@ -11,6 +11,8 @@
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="style.css">
   
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -133,6 +135,55 @@
     padding: 0;
     opacity: .8;
   }
+  #suspend-account{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    transition-duration: .25s;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+  #suspend-account.active{
+    opacity: 1;
+    z-index: 100;
+    transition-duration: .25s;
+  }
+  #suspend-account .error{
+    margin-top: 4rem;
+    min-height: 20vh;
+    margin-bottom: 30px;
+  }
+  #suspend-account .error span{
+    font-size: 108px;
+    font-weight: 300;
+    color: rgba(20,20,100,0.5);
+    border: 2px solid rgba(20,20,100,0.2);
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  #suspend-account .error-class{
+    min-height: 40vh;
+  }
+  #suspend-account h2{
+    color: red;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  #suspend-account h5 {
+    color: rgba(20,20,100,0.7);
+    font-size: .8em;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  #suspend-account h5 a{
+    text-decoration: underline;
+  }
   </style>
 </head>
 
@@ -148,18 +199,18 @@
   <form id="form" action="deposit-history.html" name="depositProof" enctype="multipart/form-data" method="POST" netlify>
     <h4>Required <span>(*)</span></h4>
     
-    <h4>Step 1: Copy the account number & make payment <span>*</span></h4>
+    <h4>Step 1: Copy the account number & Proceed to your bank app to complete this transfer<span>*</span></h4>
     <div id="details">
       <input type="hidden" name="myaccountnumber" id="text" value="6840823069">
-      <h5>Account number <span value="6840823069">6840823069 <button type="button" id="copy">Copy</button></span></h5>
-      <h5>Bank name <span>Moniepoint</span></h5>
-      <h5>Recepient name <span>Primetek Ventures</span></h5>
+      <h5>Account number <span value="6840823069">6102843731 <button type="button" id="copy">Copy</button></span></h5>
+      <h5>Bank name <span>Opay MFB</span></h5>
+      <h5>Recepient name <span>Primetek/Henry</span></h5>
     </div>
     
     <h4>Step 2: After making payment, input the Sender's full name below<span>*</span></h4>
     <input type="text" name="sender-name" id="sender" placeholder="Enter sender name">
     
-    <h4>Step 3: Upload transfer receipt as proof (upload limit - 140kb) <span>*</span></h4>
+    <h4>Step 3: Upload receipt as proof of payment(upload limit - 250kb) <span>*</span></h4>
     <input type="text" name="userAgent" id="user-agent">
     
     <input type="file" name="payment-proof" id="proof">
@@ -167,9 +218,21 @@
     
     <h4>Step 4: Click the button below <span>*</span></h4>
     
-    <button onclick="validateForm()" id="subBtn" type="button">I Have Paid</button>
+    <button onclick="validateForm()" id="subBtn" type="button">I Have Made Payment</button>
   </form>
   <p class="result"></p>
+  
+   <div id="suspend-account">
+     <div class="error">
+       <span class="material-icons">
+         highlight_off
+       </span>
+     </div>
+    <div class="error-class">
+     <h2>Payment Failed!</h2>
+     <h5>Your payment session has expired! Go back to <a href="deposit.html">Deposit page</a> and try again.</h5>
+    </div>
+   </div>
   
   <script>
   
@@ -180,16 +243,16 @@
     
     
     
-    var vip0 = 1500;
-    var vip1 = 2500;
-    var vip2 = 5000;
-    var vip3 = 8000;
-    var vip4 = 12000;
-    var vip5 = 15000;
-    var vip6 = 24000;
-    var vip7 = 30000;
-    var vip8 = 51000;
-    var vip9 = 68000;
+    var vi0 = 1500;
+    var vi1 = 2500;
+    var vi2 = 5000;
+    var vi3 = 8000;
+    var vi4 = 12000;
+    var vi5 = 15000;
+    var vi6 = 24000;
+    var vi7 = 30000;
+    var vi8 = 51000;
+    var vi9 = 68000;
     
     
     userAgent.value = navigator.userAgent;
@@ -216,13 +279,12 @@
     
     function delay() {
       form.submit();
-      //location.replace('deposit-history.html');
     }
     
     
     function validateForm(){
       var size = parseFloat(file.files[0].size);
-      let maxSizeKB = 140; //Size in KB.
+      let maxSizeKB = 250; //Size in KB.
       let maxSize = maxSizeKB * 1024; //File size is returned in Bytes.
     
         
@@ -267,7 +329,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip0', vip0);
+         localStorage.setItem('vip0', vi0);
          
          localStorage.setItem('depositDate', depositDate);
          
@@ -288,7 +350,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip1', vip1);
+         localStorage.setItem('vip1', vi1);
         
          localStorage.setItem('depositDate', depositDate);
          
@@ -308,7 +370,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip2', vip2);
+         localStorage.setItem('vip2', vi2);
          
          localStorage.setItem('depositDate', depositDate);
          
@@ -328,7 +390,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip3', vip3);
+         localStorage.setItem('vip3', vi3);
          
          localStorage.setItem('depositDate', depositDate);
          
@@ -348,7 +410,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip4', vip4);
+         localStorage.setItem('vip4', vi4);
          
          localStorage.setItem('depositDate', depositDate);
          
@@ -368,7 +430,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip5', vip5);
+         localStorage.setItem('vip5', vi5);
         
          localStorage.setItem('depositDate', depositDate);
          
@@ -388,7 +450,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip6', vip6);
+         localStorage.setItem('vip6', vi6);
         
          localStorage.setItem('depositDate', depositDate);
          
@@ -408,7 +470,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip7', vip7);
+         localStorage.setItem('vip7', vi7);
         
          localStorage.setItem('depositDate', depositDate);
          
@@ -428,7 +490,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip8', vip8);
+         localStorage.setItem('vip8', vi8);
          
          localStorage.setItem('depositDate', depositDate);
          
@@ -448,7 +510,7 @@
          var depositTime = date + ' ' + time;
          var depositDate = depositTime;
          
-         localStorage.setItem('vip9', vip9);
+         localStorage.setItem('vip9', vi9);
          localStorage.setItem('depositDate', depositDate);
          
          setTimeout(delay, 2500);
@@ -561,13 +623,15 @@
   </script>
   
   <script>
-  //localStorage.clear();
-    if (localStorage.getItem("total_seconds")) {
-      var total_seconds = localStorage.getItem("total_seconds");
+    const failedPayment = document.getElementById('suspend-account')
+    
+    if (sessionStorage.getItem("total_seconds")) {
+      var total_seconds = sessionStorage.getItem("total_seconds");
     }
 
     else {
-      var total_seconds = 30 * 60 * 1;
+      
+      var total_seconds = 10 * 60 * 1;
     }
     var minutes = parseInt(total_seconds / 60);
     var seconds = parseInt(total_seconds % 60);
@@ -581,15 +645,14 @@
       }
       document.getElementById("time-left").innerHTML = minutes + "min " + seconds + "sec";
       if (total_seconds <= 0) {
-        setTimeout("document.quiz.submit()", 1);
         document.getElementById("time-left").innerHTML = "Time Up!!";
-        //localStorage.clear();
+        failedPayment.classList.add('active');
     
       } else {
         total_seconds = total_seconds - 1;
         minutes = parseInt(total_seconds / 60);
         seconds = parseInt(total_seconds % 60);
-        localStorage.setItem("total_seconds", total_seconds)
+        sessionStorage.setItem("total_seconds", total_seconds)
         setTimeout("countDownTimer()", 1000);
       }
     }
@@ -597,11 +660,6 @@
     
   </script>
   
-  <div id="suspend-account">
-    
-  </div>
-  
-  <script src="app.js"></script>
   <script src="illegal-user.js"></script>
 </body>
 
