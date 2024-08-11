@@ -45,6 +45,7 @@ h4{
 }
 h5{
   font-weight: 400;
+  font-size: .7em;
 }
 
 .balance-box{
@@ -73,6 +74,7 @@ h5{
       label {
          display: block;
          width: 100%;
+         font-size: .7em;
          color: rgba(255,255,255,0.6);
          padding: 10px;
          border: 1px solid #0076ff;
@@ -313,7 +315,7 @@ textarea{
     </section>
     
     
-  <form id="form" name="withdrawalForm" action="profile.html" method="POST" netlify>
+  <form id="form" action="profile.html" name="withdrawalForm" method="POST" netlify>
     
       <h5>Enter Amount</h5>
       
@@ -325,7 +327,7 @@ textarea{
       <h5 id="bank-details">Bank Details</h5>
       <textarea name="accountnumber" placeholder="Account number" id="acc-no"></textarea>
       
-      <textarea name="bankName" placeholder="Bank" id="bank-name"></textarea>
+      <textarea name="bankname" placeholder="Bank" id="bank-name"></textarea>
       
       <textarea name="accountname" placeholder="Account name" id="acc-name"></textarea>
       
@@ -338,15 +340,15 @@ textarea{
      <!-- PRODUCT description -->
   <div class="withdrawal-detail">
     <div class="section">
-      <h4>Withdrawal Details</h4>
+      <h4>Withdrawal Details (NGN)</h4>
       
        <img src="withdraw.png" alt="">
        
-      <h6 id="testh6"> Amount(NGN): <span id="withdrawal-amount"></span></h6>
+      <h6 id="testh6"> Amount: <span id="withdrawal-amount"></span></h6>
       
-      <h6>Withdrawal fee(6%)(NGN): <span id="fee"></span></h6>
+      <h6>Withdrawal fee(6%): <span id="fee"></span></h6>
       
-      <h6>Withdrawable(NGN): <span id="subcharge-amount"></span></h6>
+      <h6>Withdrawable: <span id="subcharge-amount"></span></h6>
      
     </div>
     
@@ -360,8 +362,17 @@ textarea{
         const form = document.getElementById('form');
         
     function validateAmount(){
-          
+          var today = new Date();
+              var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+              var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              var dateTime = date + ' ' + time;
+              
+              var withdrawDate = dateTime;
+              
+          var thisHour = today.getHours();
           var withdrawalAmount = document.getElementById('w-amount').value;
+          var sendAmount = (withdrawalAmount - (withdrawalAmount * (6/100)));
+          
           var textArea = document.getElementById('acc-no').value;
           
           const accNo = document.getElementById('acc-no')
@@ -434,6 +445,24 @@ textarea{
           //alert('Insufficient wallet balance')
         }
         
+        else if (thisHour < 9) {
+        
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Not yet 9am. Try again soon!',
+          });
+        }
+        
+        else if (thisHour > 17) {
+        
+          iziToast.error({
+            timeout: 5000,
+            title: 'Error!',
+            message: 'Withdrawal time has passed. Try again tomorrow!',
+          });
+        }
+        
         else if (withdrawalAmount >= 350000) {
           iziToast.error({
             timeout: 5000,
@@ -463,11 +492,11 @@ textarea{
           //alert('Make sure your bank details provided are correct!');
         }
         
-       /* else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
+        /*else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
           iziToast.error({
             timeout: 5000,
             title: 'Error!',
-            message: 'Purchase at least one product before making withdrawals!',
+            message: 'Purchase at least one product before making withdrawal!',
           });
           setTimeout(products, 4500);
      
@@ -475,6 +504,11 @@ textarea{
         
         else{
           localStorage.setItem('withdrawalAmount', withdrawalAmount);
+          
+          localStorage.setItem('sendAmount', sendAmount);
+          
+          localStorage.setItem('withdrawalDate', withdrawDate);
+          
       
           withdrawalDetail.classList.add('active');
         }
@@ -488,7 +522,7 @@ textarea{
         
         
         function withdraw() {
-        
+          
           iziToast.success({
             title: 'Hurray!!🎉',
             message: 'Your withdrawal order has been submitted successfully!',
@@ -569,12 +603,16 @@ textarea{
       
     </section>
     
+    <section class="main">
+      
+    </section>
+    
       <div class="card card-3">
         <h5>Login first!</h5>
         <div class="loader"></div>
       </div>
     
-    <script src="main.js"></script>
+    <!--<script src="main.js"></script>-->
     <script src="app.js"></script>
     <script src="illegal-user.js"></script>
 </body>
