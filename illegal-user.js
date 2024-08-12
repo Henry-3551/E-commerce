@@ -7,7 +7,7 @@
   
 
 
-  const user1 = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36"
+  //const user1 = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36"
   
   const user2 = "Mozilla/5.0 (Linux; Android 7.1; HUAWEI TAG-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.74 Mobile Safari/537.36"
   
@@ -17,7 +17,7 @@
      window.location.replace('404.html');
   }
 
-  if(useragent === user1 || useragent === user2 || useragent === user3){
+  /*if(useragent === user1 || useragent === user2 || useragent === user3){
     
     iziToast.error({
       timeout: 3500,
@@ -26,4 +26,4 @@
       position: 'topRight',
     });
     setTimeout(delaySus, 3500);
-  }
+  }*/
