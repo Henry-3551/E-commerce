@@ -72,12 +72,21 @@ const inviteLink = document.getElementById('invite-link');
       rewardBalance.readOnly = true;
       
       let initialBal = 200;
+      var checkInBonus = localStorage.getItem('checkInBonus');
       
       rewardLoop = () => {
         if (localStorage.getItem('currentRewardBal') == null) {
           rewardBalance.value = initialBal;
           localStorage.setItem('currentRewardBal', rewardBalance.value);
         }
+      else if (checkInBonus) {
+      
+        rewardBalvalue = JSON.parse(localStorage.getItem('currentRewardBal')) + JSON.parse(checkInBonus);
+      
+        localStorage.setItem('currentRewardBal', rewardBalvalue);
+      
+        localStorage.removeItem('checkInBonus');
+      }
         else {
           rewardBalance.value = JSON.parse(localStorage.getItem('currentRewardBal'));
         }
@@ -104,18 +113,6 @@ const inviteLink = document.getElementById('invite-link');
         }
       }
       setInterval(inviteLoop, 100);
-      
-      
-      var checkInBonus = localStorage.getItem('checkInBonus');
-      
-      if (checkInBonus) {
-      
-        rewardBalvalue = JSON.parse(localStorage.getItem('currentRewardBal')) + JSON.parse(checkInBonus);
-      
-        localStorage.setItem('currentRewardBal', rewardBalvalue);
-      
-        localStorage.removeItem('checkInBonus');
-      }
       
         
         
