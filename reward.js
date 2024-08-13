@@ -139,7 +139,7 @@ const inviteLink = document.getElementById('invite-link');
           var reTime = (threshold - (currentDate - lastCheckinDate)) / (1000 * 3600);
           var hoursLeftToCheckin = Math.round(reTime);
           
-          if (currentDate - lastCheckinDate > threshold) {
+          if (currentDate - lastCheckinDate < threshold) {
             
             iziToast.error({
               timeout: 3000,
