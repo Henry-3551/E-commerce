@@ -72,7 +72,12 @@ function cycle0Loop(){
       
       localStorage.setItem('lastIncomeDate', currentDate);
       
-      alert("Congrats! You've received 340 NGN daily income");
+      //alert("Congrats! You've received 340 NGN daily income");
+      iziToast.success({
+            timeout: 3000,
+            title: 'Congrats!',
+            message: 'You have received ₦340 daily income!',
+          });
       
         count++;
         
@@ -90,7 +95,12 @@ function cycle0Loop(){
     
       localStorage.setItem('lastIncomeDate', currentDate);
     
-      alert("Congrats! You've received 340 NGN daily income");
+      //alert("Congrats! You've received 340 NGN daily income");
+      iziToast.success({
+            timeout: 3000,
+            title: 'Congrats!',
+            message: 'You have received ₦340 daily income!',
+          });
     
         count++;
     
@@ -138,7 +148,12 @@ btn1.addEventListener('click', function addBalanceVip1() {
 
     localStorage.setItem('vip1lastIncomeDate', vip1currentDate);
 
-    alert("Congrats! You've received 500 NGN daily income");
+    iziToast.success({
+            timeout: 3000,
+            title: 'Congrats!',
+            message: 'You have received ₦500 daily income!',
+          });
+    //alert("Congrats! You've received 500 NGN daily income");
 
     btn1Count++;
 
@@ -156,7 +171,12 @@ btn1.addEventListener('click', function addBalanceVip1() {
 
     localStorage.setItem('vip1lastIncomeDate', vip1currentDate);
 
-    alert("Congrats! You've received 500 NGN daily income");
+    //alert("Congrats! You've received 500 NGN daily income");
+    iziToast.success({
+            timeout: 3000,
+            title: 'Congrats!',
+            message: 'You have received 500 NGN daily income!',
+          });
 
     btn1Count++;
 
@@ -204,7 +224,12 @@ cycle2Loop = () => {
 
       localStorage.setItem('vip2lastIncomeDate', vip2currentDate);
 
-      alert("Congrats! You've received 700 NGN daily income");
+      //alert("Congrats! You've received 700 NGN daily income");
+      iziToast.success({
+            timeout: 3000,
+            title: 'Congrats!',
+            message: 'You have received 700 NGN daily income!',
+          });
 
       btn2Count++;
 
@@ -222,7 +247,9 @@ cycle2Loop = () => {
 
       localStorage.setItem('vip2lastIncomeDate', vip2currentDate);
 
-      alert("Congrats! You've received 700 NGN daily income");
+      //alert("Congrats! You've received 700 NGN daily income");
+
+
 
       btn2Count++;
 
