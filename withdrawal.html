@@ -503,7 +503,7 @@ textarea{
           //alert('Make sure your bank details provided are correct!');
         }
         
-        else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
+        else if (localStorage.getItem('vip0Invest') == null || localStorage.getItem('vip1Invest') == null || localStorage.getItem('vip2Invest') == null || localStorage.getItem('vip3Invest') == null || localStorage.getItem('vip4Invest') == null || localStorage.getItem('vip5Invest') == null || localStorage.getItem('vip6Invest') == null || localStorage.getItem('vip7Invest') == null || localStorage.getItem('vip8Invest') == null || localStorage.getItem('vip9Invest') == null) {
           iziToast.error({
             timeout: 5000,
             title: 'Error!',
