@@ -358,6 +358,17 @@ textarea{
   
   
         <script>
+      /*localStorage.removeItem('vip0Invest');
+      localStorage.removeItem('vip1Invest');
+      localStorage.removeItem('vip2Invest');
+      localStorage.removeItem('vip3Invest');
+      localStorage.removeItem('vip4Invest');
+      localStorage.removeItem('vip5Invest');
+      localStorage.removeItem('vip6Invest');
+      localStorage.removeItem('vip7Invest');
+      localStorage.removeItem('vip8Invest');
+      localStorage.removeItem('vip9Invest');*/
+        
         const withdrawalDetail = document.querySelector('.withdrawal-detail')
         const form = document.getElementById('form');
         
@@ -492,7 +503,7 @@ textarea{
           //alert('Make sure your bank details provided are correct!');
         }
         
-        /*else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
+        else if (localStorage.getItem('vip0Invest') == null && localStorage.getItem('vip1Invest') == null && localStorage.getItem('vip2Invest') == null && localStorage.getItem('vip3Invest') == null && localStorage.getItem('vip4Invest') == null && localStorage.getItem('vip5Invest') == null && localStorage.getItem('vip6Invest') == null && localStorage.getItem('vip7Invest') == null && localStorage.getItem('vip8Invest') == null && localStorage.getItem('vip9Invest') == null) {
           iziToast.error({
             timeout: 5000,
             title: 'Error!',
@@ -500,7 +511,7 @@ textarea{
           });
           setTimeout(products, 4500);
      
-        }*/
+        }
         
         else{
           localStorage.setItem('withdrawalAmount', withdrawalAmount);
