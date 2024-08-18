@@ -109,7 +109,7 @@
     </div>
     
     <section class="history-container">
-      <div id="withdrawal-history"></div>
+      <!--<div id="withdrawal-history"></div>-->
     </section>
     
     
@@ -140,16 +140,20 @@ function displayWithdrawals() {
   let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
   let html = '';
   withdrawals.forEach((withdrawal, index) => {
+    
     html += `<p>Withdrawal ${index + 1}: ${withdrawal.amount} on ${withdrawal.date}</p>`;
+    
+    let container = document.createElement('div');
+    container.innerHTML = html;
+    
+    historyContainer.appendChild(container);
   });
-  document.getElementById('withdrawal-history').innerHTML = html;
+ // document.getElementById('withdrawal-history').innerHTML = html;
 }
 
 // Example usage:
-addWithdrawal(amount, date);
-//addWithdrawal();
-//addWithdrawal(100, '2024-08-17');
-//addWithdrawal(50, '2024-08-16');
+addWithdrawal(100, '2024-08-17');
+addWithdrawal(50, '2024-08-16');
 displayWithdrawals();
 
     </script>
