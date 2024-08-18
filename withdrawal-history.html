@@ -109,22 +109,53 @@
     </div>
     
     <section class="history-container">
-    
+      <div id="withdrawal-history"></div>
     </section>
-    <div class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
+    
+    
+    <script>
+    var amount = JSON.parse(localStorage.getItem('sendAmount'));
+    var date = localStorage.getItem('withdrawalDate');
+      
+      const noEvent = document.querySelector('.no_event')
+      const status = document.querySelector('.status')
+      const historyContainer = document.querySelector('.history-container')
+  
+  if(localStorage.getItem('withdrawals')){
+    noEvent.style.display = 'none';
+    historyContainer.style.display = 'block';
+    status.style.display = 'none';
+  }
+
+
+   // Function to add withdrawal history to localStorage
+function addWithdrawal(amount, date) {
+  let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
+  withdrawals.push({ amount, date });
+  localStorage.setItem('withdrawals', JSON.stringify(withdrawals));
+}
+
+// Function to display withdrawal history
+function displayWithdrawals() {
+  let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
+  let html = '';
+  withdrawals.forEach((withdrawal, index) => {
+    html += `<p>Withdrawal ${index + 1}: $${withdrawal.amount} on ${withdrawal.date}</p>`;
+  });
+  document.getElementById('withdrawal-history').innerHTML = html;
+}
+
+// Example usage:
+//addWithdrawal();
+addWithdrawal(100, '2024-08-17');
+addWithdrawal(50, '2024-08-16');
+displayWithdrawals();
+
+    </script>
     
     <script>
   
-      var amount = JSON.parse(localStorage.getItem('sendAmount'));
+      /*var amount = JSON.parse(localStorage.getItem('sendAmount'));
       var date = localStorage.getItem('withdrawalDate');
       
       const noEvent = document.querySelector('.no_event')
@@ -165,7 +196,7 @@
         }
       }
       
-      storeWithdrawal(amount, date);
+      storeWithdrawal(amount, date);*/
     </script>
     
   </main>
