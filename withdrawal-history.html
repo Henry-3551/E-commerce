@@ -140,7 +140,7 @@ function displayWithdrawals() {
   let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
   let html = '';
   withdrawals.forEach((withdrawal, index) => {
-    html += `<p>Withdrawal ${index + 1}: $${withdrawal.amount} on ${withdrawal.date}</p>`;
+    html += `<p>Withdrawal ${index + 1}: ${withdrawal.amount} on ${withdrawal.date}</p>`;
   });
   document.getElementById('withdrawal-history').innerHTML = html;
 }
