@@ -7,7 +7,6 @@
   <title>Withdrawal History Page</title>
   <link rel="icon" type="image/x-icon" href="prime-logo.png">
   <link rel="stylesheet" href="common-style.css">
-  <link rel="stylesheet" href="profile.css">
 
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
@@ -60,14 +59,16 @@
     }
     .history-container div h5{
       text-align: left;
+      top: 0;
       font-size: .74rem;
       color: yellow;
       opacity: 1;
     }
     .history-container div p {
       position: absolute;
+      color: yellow;
       bottom: 10px;
-      opacity: .7;
+      opacity: 1;
       text-align: right;
       font-size: .7rem;
     }
@@ -140,10 +141,12 @@ function displayWithdrawals() {
   let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
   let html = '';
   withdrawals.forEach((withdrawal, index) => {
-    
-    html += `<p>Withdrawal ${index + 1}: ${withdrawal.amount} on ${withdrawal.date}</p>`;
-    
     let container = document.createElement('div');
+    
+    html += `<p>Withdrawal: ${withdrawal.amount} on ${withdrawal.date}</p>`;
+    
+   /* html += `<p>Withdrawal ${index + 1}: ${withdrawal.amount} on ${withdrawal.date}</p>`;*/
+    
     container.innerHTML = html;
     
     historyContainer.appendChild(container);
@@ -185,7 +188,7 @@ displayWithdrawals();
         localStorage.setItem("withdrawalHistory", withdrawalHistory);
       }
       
-      window.onload = function displayWithdrawalHistory() {
+      function displayWithdrawalHistory() {
        
         for (let history of withdrawalHistory) {
     
@@ -203,7 +206,8 @@ displayWithdrawals();
         }
       }
       
-      storeWithdrawal(amount, date);*/
+      storeWithdrawal(amount, date);
+      displayWithdrawalHistory();*/
     </script>
     
   </main>
