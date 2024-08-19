@@ -141,7 +141,7 @@ function displayWithdrawals() {
   let withdrawals = JSON.parse(localStorage.getItem('withdrawals')) || [];
   let html = '';
   withdrawals.forEach((withdrawal, index) => {
-    let container = document.createElement('div');
+    let container += document.createElement('div');
     
     html = `<p>Withdrawal: ${withdrawal.amount} on ${withdrawal.date}</p>`;
     
